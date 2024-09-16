@@ -19,7 +19,7 @@ redirect_from:
 
 I received the B.E. degree at China University of Petroleum (Beijing) in 2020, received the M.Eng. degree at Jiangnan University in 2023, supervised by Prof. Shouyu Wang. Now I am pursuing my Ph.D. degree in Fudan University, Shanghai since 2023, supervised by Prof. Biqin Dong.
 
-My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers at the peer reviewed journals with total. [![Google Scholar Citations](https://img.shields.io/endpoint?url=https://scholar.google.com/citations?user=DN4ZT7YAAAAJ&hl=en&json=true&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations)](https://scholar.google.com/citations?user=DN4ZT7YAAAAJ&hl=en)
+My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers at the peer reviewed journals with total. <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 # 🔥 News
 - *08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)** 
@@ -43,19 +43,15 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
 - **Deep-learning-assisted spectroscopic single-molecule localization microscopy based on spectrum-to-spectrum denoising.** Dandan Xu, **Yuanjie Gu**, Jun Lu, Lei Xu, Wei Wang & Biqin Dong* (2024). **Nanoscale, 16(11), 5729-5736.**
-<div><div class="badge">IEEE J-BHI 2023<div class='paper-box'><div class='paper-box-image'></div> <div class='paper-box-text' markdown="1">
-- **SegCoFusion: An Integrative Multimodal Volumetric Segmentation Cooperating with Fusion Pipeline to Enhance Lesion Awareness.** **Yuanjie Gu**#, Yinghan Guan#, Zekuan Yu & Biqin Dong* (2023). **IEEE Journal of Biomedical and Health Informatics, 27(12), 5860-5871.** 
-- **Physics Driven Deep Retinex Fusion for Adaptive Infrared and Visible Image Fusion.** **Yuanjie Gu**, Zhibo Xiao, Yinghan Guan, Haoran Dai, Cheng Liu, Liang Xue & Shouyu Wang* (2023). **Optical Engineering, 62(8), 083101.** 😄 [**Promotion on the SPIE WeChat account.**](https://mp.weixin.qq.com/s/HJuL6tDjmgBBY30dZOG60Q)
+- ``IEEE J-BHI``**SegCoFusion: An Integrative Multimodal Volumetric Segmentation Cooperating with Fusion Pipeline to Enhance Lesion Awareness.** **Yuanjie Gu**#, Yinghan Guan#, Zekuan Yu & Biqin Dong* (2023). **IEEE Journal of Biomedical and Health Informatics, 27(12), 5860-5871.** 
+- **Physics Driven Deep Retinex Fusion for Adaptive Infrared and Visible Image Fusion.** **Yuanjie Gu**, Zhibo Xiao, Yinghan Guan, Haoran Dai, Cheng Liu, Liang Xue & Shouyu Wang* (2023). **Optical Engineering, 62(8), 083101.** 😄 [**Promotion on the SPIE WeChat account.**](https://mp.weixin.qq.com/s/HJuL6tDjmgBBY30dZOG60Q) [![](https://img.shields.io/github/stars/walker-hyf/ECSS?style=social&label=Code+Stars)](https://github.com/GuYuanjie/Deep-Retinex-fusion)
 - **Deep SBP+: breaking through the space-bandwidth product limit based on a physical-driven cycle constraint framework.** Zhibo Xiao#, **Yuanjie Gu**#, Lin Zhu, Cheng Liu & Shouyu Wang* (2023). **Journal of the Optical Society of America A, 40(5), 833-840.**
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">OL 2023</div> <div class='paper-box-text' markdown="1">
-- **Deep-Gamma: deep low-excitation fluorescence imaging global enhancement.** Zhibo Xiao, Yinghan Guan, Ying Jin, Wei Hou, **Yuanjie Gu*** & Shouyu Wang* (2023). **Optics Letters, 48(9), 2496-2499.**
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">OL 2022</div> <div class='paper-box-text' markdown="1">
-- **Deep low-excitation fluorescence imaging enhancement.** **Yuanjie Gu**, Zhibo Xiao, Wei Hou, Cheng Liu, Ying Jin & Shouyu Wang* (2022). **Optics Letters, 47(16), 4175-4178.** 
+- ``Optica OL``**Deep-Gamma: deep low-excitation fluorescence imaging global enhancement.** Zhibo Xiao, Yinghan Guan, Ying Jin, Wei Hou, **Yuanjie Gu*** & Shouyu Wang* (2023). **Optics Letters, 48(9), 2496-2499.**
+- ``Optica OL``**Deep low-excitation fluorescence imaging enhancement.** **Yuanjie Gu**, Zhibo Xiao, Wei Hou, Cheng Liu, Ying Jin & Shouyu Wang* (2022). **Optics Letters, 47(16), 4175-4178.** 
 - **Deep fusion prior for plenoptic super-resolution all-in-focus imaging.** **Yuanjie Gu**, Yinghan Guan, Zhibo Xiao, Haoran Dai, Cheng Liu & Shouyu Wang (2022). **Optical Engineering, 61(12), 123103.**
-- **OpenRefocus: an open-source Qt-based tool for light field parallel refocusing.** **Yuanjie Gu**, Miao Yu, Lingyu Ai, Zhilong Jiang, Xiaoliang He, Yan Kong & Shouyu Wang* (2022). **Optical Engineering, 61(6), 063108-063108.**
+- **OpenRefocus: an open-source Qt-based tool for light field parallel refocusing.** **Yuanjie Gu**, Miao Yu, Lingyu Ai, Zhilong Jiang, Xiaoliang He, Yan Kong & Shouyu Wang* (2022). **Optical Engineering, 61(6), 063108-063108.** [![](https://img.shields.io/github/stars/walker-hyf/ECSS?style=social&label=Code+Stars)](https://github.com/GuYuanjie/OpenRefocus).
 - **Automatic whole blood cell analysis from blood smear using label-free multi-modal imaging with deep neural networks.** Chao Chen, **Yuanjie Gu**, Zhibo Xiao, Hailun Wang, Xiaoliang He, Zhilong Jiang, Yan Kong, Cheng Liu, Liang Xue, Javier Vargas, Shouyu Wang. (2022) **Analytica Chimica Acta, 1229(340401).**
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">OL 2021 </div> <div class='paper-box-text' markdown="1">
-- **REPAID: resolution-enhanced plenoptic all-in-focus imaging using deep neural networks.** Miao Yu#, **Yuanjie Gu**#, Zhilong Jiang, Xiaoliang He, Yan Kong, Cheng Liu & Shouyu Wang*. (2021). **Optics Letters, 46(12), 2896-2899.**
+- ``Optica OL``**REPAID: resolution-enhanced plenoptic all-in-focus imaging using deep neural networks.** Miao Yu#, **Yuanjie Gu**#, Zhilong Jiang, Xiaoliang He, Yan Kong, Cheng Liu & Shouyu Wang*. (2021). **Optics Letters, 46(12), 2896-2899.**
 
 # 💬 Academic Activities
 - *2024 - now*, Reviewer for **Scientific Reports** on the field of Multi-modal Fusion.
