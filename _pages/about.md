@@ -52,18 +52,18 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - **OpenRefocus: an open-source Qt-based tool for light field parallel refocusing.** **Yuanjie Gu**, Miao Yu, Lingyu Ai, Zhilong Jiang, Xiaoliang He, Yan Kong & Shouyu Wang* (2022). **Optical Engineering, 61(6), 063108-063108.** [![](https://img.shields.io/github/stars/walker-hyf/ECSS?style=social&label=Code+Stars)](https://github.com/GuYuanjie/OpenRefocus).
 - **Automatic whole blood cell analysis from blood smear using label-free multi-modal imaging with deep neural networks.** Chao Chen, **Yuanjie Gu**, Zhibo Xiao, Hailun Wang, Xiaoliang He, Zhilong Jiang, Yan Kong, Cheng Liu, Liang Xue, Javier Vargas, Shouyu Wang. (2022) **Analytica Chimica Acta, 1229(340401).**
 - ``Optica OL``**REPAID: resolution-enhanced plenoptic all-in-focus imaging using deep neural networks.** Miao Yu#, **Yuanjie Gu**#, Zhilong Jiang, Xiaoliang He, Yan Kong, Cheng Liu & Shouyu Wang*. (2021). **Optics Letters, 46(12), 2896-2899.**
+# 🎖 Honors and Awards
+- *02/2019* Meritorious winner of American Mathematical Contest in Modeling, COMAP
 
-# 💬 Academic Activities
-- *2024 - now*, Reviewer for **Scientific Reports** on the field of Multi-modal Fusion.
-- *2023 - now*, Reviewer for **IEEE Signal Processing Letters** on the field of Biomedical Classification.
   
 # 📖 Educations
 - *09/2023 - now*, Biomedical Engineering, Fudan University. 
 - *09/2020 - 06/2023*, Optical Engineering, Jiangnan University.
 - *09/2016 - 06/2020*, Software Engineering, China University of Petroleum (Beijing).
 
-# 🎖 Honors and Awards
-- *02/2019* Meritorious winner of American Mathematical Contest in Modeling, COMAP
+# 💬 Academic Activities
+- *2024 - now*, Reviewer for **Scientific Reports** on the field of Multi-modal Fusion.
+- *2023 - now*, Reviewer for **IEEE Signal Processing Letters** on the field of Biomedical Classification.
 
 # 💻 Internships
 - *10/2022 - 09/2023*, Intelligent Biomedical Optical Imaging and Diagnostics (DongLAB) @Fudan University, Shanghai, China.
