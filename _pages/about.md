@@ -23,8 +23,8 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 
 
 # 🔥 News
-- *09/08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)** 
-- *09/01/2023*: &nbsp;🎉🎉 Join <a href='https://donglab.fudan.edu.cn/'> Dong Lab @Fudan. 
+- *08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)** 
+- *01/2023*: &nbsp;🎉🎉 Join <a href='https://donglab.fudan.edu.cn/'> Dong Lab @Fudan. 
 
 # 📝 Publications 
 
@@ -58,16 +58,18 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *02/2019* Meritorious winner of American Mathematical Contest in Modeling, COMAP
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *09/2023 - now*, Biomedical Engineering, Fudan University. 
+- *09/2020 - 06/2023*, Optical Engineering, Jiangnan University.
+- *09/2016 - 06/2020*, Software Engineering, China University of Petroleum (Beijing).
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+# 💬 Academic Activities
+- *2024 - now*, Reviewer for **Scientific Reports** on the field of Multi-modal Fusion.
+- *2023 - now*, Reviewer for **IEEE Signal Processing Letters** on the field of Biomedical Classification.
 
 # 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+- *10/2022 - 09/2023*, Intelligent Biomedical Optical Imaging and Diagnostics (DongLAB) @Fudan University, Shanghai, China.
+- *07/2022 - 10/2022*, Molecular Imaging and Medical Intelligence Laboratory (MILAB) @Peking University, Online.
+- *12/2019 - 02/2020*, Tianjin Cloud Computing Research and Development Center @Lenovo Group, Tianjin, China.
