@@ -19,7 +19,7 @@ redirect_from:
 
 I received the B.E. degree at China University of Petroleum (Beijing) in 2020, received the M.Eng. degree at Jiangnan University in 2023, supervised by Prof. Shouyu Wang. Now I am pursuing my Ph.D. degree in Fudan University, Shanghai since 2023, supervised by Prof. Biqin Dong.
 
-My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers at the peer reviewed journals with total. <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers at the peer reviewed journals with total. <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FRayeRen%2Frayeren.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 # 🔥 News
 - *08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)** 
