@@ -54,8 +54,8 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - ```Optica OL```**REPAID: resolution-enhanced plenoptic all-in-focus imaging using deep neural networks.** Miao Yu#, **Yuanjie Gu**#, Zhilong Jiang, Xiaoliang He, Yan Kong, Cheng Liu & Shouyu Wang* (2021). **Optics Letters, 46(12), 2896-2899.**
 
 # 🎖 Honors and Awards
-- *09/2024*，**Gold Award** of China International College Students' Innovation Competition (CICSIC 24), Shanghai Division
-- *02/2019*, **Meritorious winner** of American Mathematical Contest in Modeling, COMAP
+- *09/2024*，**Gold Award** of China International College Students' Innovation Competition (CICSIC 24), Shanghai Division.
+- *02/2019*, **Meritorious winner** of American Mathematical Contest in Modeling, COMAP.
 
 # 📖 Educations
 - *09/2023 - now*, Biomedical Engineering, Fudan University. 
