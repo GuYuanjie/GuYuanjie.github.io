@@ -66,6 +66,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - *11/2023 - now*, Reviewer for **IEEE Signal Processing Letters** on the field of Biomedical Classification.
 
 # 💻 Internships
+- *08/2024 - 09/2024*, Data Science for Large-Scale Imaging of Neuronal Activity Summer School @Cold Spring Harbor Laboratory-Asia (CSHA), Soochow, China.
 - *10/2022 - 09/2023*, Intelligent Biomedical Optical Imaging and Diagnostics Laboratory (DongLAB) @Fudan University, Shanghai, China.
 - *07/2022 - 10/2022*, Molecular Imaging and Medical Intelligence Laboratory (MILAB) @Peking University, Online.
 - *12/2019 - 02/2020*, Tianjin Cloud Computing Research and Development Center @Lenovo Group, Tianjin, China.
