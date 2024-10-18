@@ -62,7 +62,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - *09/2016 - 06/2020*, Software Engineering, China University of Petroleum (Beijing).
 
 # 💬 Academic Activities
-- *10/2024 - now*, Young Editorial Board Member of [**Advanced Technology in Neuroscience**](https://journals.lww.com/atn/pages/default.aspx).
+- *10/2024 - now*, Young Editorial Board Member of [**Advanced Technology in Neuroscience**](https://journals.lww.com/atn/pages/default.aspx).😄
 - *11/2023 - now*, Reviewer of **IEEE Signal Processing Letters** on the field of Biomedical Classification.
 
 # 💻 Internships
