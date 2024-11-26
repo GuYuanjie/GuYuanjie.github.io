@@ -40,6 +40,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 </div>
 -->
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
+- ```IEEE T-IM```**Automated Enhanced Handheld Fundus Photography via Unpaired Learning.** **Yuanjie Gu**, Jiacheng Yang, Yiqun Wang, Mengwen Ye, Xin Li, Xiaoran Li, Na Li, Jun Zhang, Yitian Zhao, Zekuan Yu* & Biqin Dong* (2024). **IEEE Transactions on Instrumentation & Measurement, Accepted.** 
 - **Super Resolution Reconstruction of Fluorescence Microscopy Image by Convolutional Network with Physical Priors.** Qiangyu Cai, Jun Lu, Wenting Gu, Di Xiao, Boyi Li, Lei Xu, **Yuanjie Gu**, Biqin Dong* & Xin Liu* (2024). **Biomedical Optics Express, Accepted.**
 - **Deep-learning-assisted spectroscopic single-molecule localization microscopy based on spectrum-to-spectrum denoising.** Dandan Xu, **Yuanjie Gu**, Jun Lu, Lei Xu, Wei Wang & Biqin Dong* (2024). **Nanoscale, 16(11), 5729-5736.**
 - ```IEEE J-BHI```**SegCoFusion: An Integrative Multimodal Volumetric Segmentation Cooperating with Fusion Pipeline to Enhance Lesion Awareness.** **Yuanjie Gu**#, Yinghan Guan#, Zekuan Yu & Biqin Dong* (2023). **IEEE Journal of Biomedical and Health Informatics, 27(12), 5860-5871.** 
