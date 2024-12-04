@@ -22,6 +22,8 @@ I received the B.E. degree at China University of Petroleum (Beijing) in 2020, r
 My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the peer reviewed journals with total. 
 
 # 🔥 News
+- *12/2024*: &nbsp;🎉🎉 Obtain **The Huatai Securities Technology Scholarship**
+- *10/2024*: &nbsp;🎉🎉 Join journal **Advanced Technology in Neuroscience** as a young editorial board member.
 - *08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)** 
 - *01/2023*: &nbsp;🎉🎉 Join <a href='https://donglab.fudan.edu.cn/'> Dong Lab @Fudan. 
 
@@ -54,6 +56,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - ```Optica OL```**REPAID: resolution-enhanced plenoptic all-in-focus imaging using deep neural networks.** Miao Yu#, **Yuanjie Gu**#, Zhilong Jiang, Xiaoliang He, Yan Kong, Cheng Liu & Shouyu Wang* (2021). **Optics Letters, 46(12), 2896-2899.**
 
 # 🎖 Honors and Awards
+- *12/2024*, **The Huatai Securities Technology Scholarship 24**.
 - *10/2024*, **National Bronze Award** of China International College Students' Innovation Competition (CICSIC 24).
 - *09/2024*, **Gold Award** of China International College Students' Innovation Competition (CICSIC 24), Shanghai Division.
 - *02/2019*, **Meritorious winner** of American Mathematical Contest in Modeling, COMAP.
