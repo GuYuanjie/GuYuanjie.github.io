@@ -22,9 +22,10 @@ I received the B.E. degree at China University of Petroleum (Beijing) in 2020, r
 My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the peer reviewed journals with total. 
 
 # 🔥 News
-- *12/2024*: &nbsp;🎉🎉 Obtain **The Huatai Securities Technology Scholarship**
+- *01/2025*: &nbsp;🎉🎉 Won the **Youth Talents Support Project - Doctoral Student Special Program (首届中国科协青年人才托举工程-博士生专项)**.
+- *12/2024*: &nbsp;🎉🎉 Obtain **The Huatai Securities Technology Scholarship**.
 - *10/2024*: &nbsp;🎉🎉 Join journal **Advanced Technology in Neuroscience** as a young editorial board member.
-- *08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)** 
+- *08/2024*: &nbsp;🎉🎉 Attend **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)**.
 - *01/2023*: &nbsp;🎉🎉 Join <a href='https://donglab.fudan.edu.cn/'> Dong Lab @Fudan. 
 
 # 📝 Publications 
@@ -42,7 +43,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 </div>
 -->
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
-- ```IEEE T-IM```**Automated Enhanced Handheld Fundus Photography via Unpaired Learning.** **Yuanjie Gu**, Jiacheng Yang, Yiqun Wang, Mengwen Ye, Xin Li, Xiaoran Li, Na Li, Jun Zhang, Yitian Zhao, Zekuan Yu* & Biqin Dong* (2024). **IEEE Transactions on Instrumentation & Measurement, Accepted.** 
+- ```IEEE T-IM```**Automated Enhanced Handheld Fundus Photography via Unpaired Learning.** **Yuanjie Gu**, Jiacheng Yang, Yiqun Wang, Mengwen Ye, Xin Li, Xiaoran Li, Na Li, Jun Zhang, Yitian Zhao, Zekuan Yu* & Biqin Dong* (2025). **IEEE Transactions on Instrumentation & Measurement, 74(5005212), 1-12.** 
 - **Super Resolution Reconstruction of Fluorescence Microscopy Image by Convolutional Network with Physical Priors.** Qiangyu Cai, Jun Lu, Wenting Gu, Di Xiao, Boyi Li, Lei Xu, **Yuanjie Gu**, Biqin Dong* & Xin Liu* (2024). **Biomedical Optics Express, 15(11), 6638-6653.**
 - **Deep-learning-assisted spectroscopic single-molecule localization microscopy based on spectrum-to-spectrum denoising.** Dandan Xu, **Yuanjie Gu**, Jun Lu, Lei Xu, Wei Wang & Biqin Dong* (2024). **Nanoscale, 16(11), 5729-5736.** [![](https://img.shields.io/github/stars/FDU-donglab/spec2spec?style=social&label=Code+Stars)](https://github.com/FDU-donglab/spec2spec)
 - ```IEEE J-BHI```**SegCoFusion: An Integrative Multimodal Volumetric Segmentation Cooperating with Fusion Pipeline to Enhance Lesion Awareness.** **Yuanjie Gu**#, Yinghan Guan#, Zekuan Yu & Biqin Dong* (2023). **IEEE Journal of Biomedical and Health Informatics, 27(12), 5860-5871.** 
@@ -56,7 +57,8 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - ```Optica OL```**REPAID: resolution-enhanced plenoptic all-in-focus imaging using deep neural networks.** Miao Yu#, **Yuanjie Gu**#, Zhilong Jiang, Xiaoliang He, Yan Kong, Cheng Liu & Shouyu Wang* (2021). **Optics Letters, 46(12), 2896-2899.**
 
 # 🎖 Honors and Awards
-- *12/2024*, **The Huatai Securities Technology Scholarship 24**.
+- *01/2025*, **The Youth Talents Support Project - Doctoral Student Special Program (首届中国科协青年人才托举工程-博士生专项)**.
+- *12/2024*, **The Huatai Securities Technology Scholarship**.
 - *10/2024*, **National Bronze Award** of China International College Students' Innovation Competition (CICSIC 24).
 - *09/2024*, **Gold Award** of China International College Students' Innovation Competition (CICSIC 24), Shanghai Division.
 - *02/2019*, **Meritorious winner** of American Mathematical Contest in Modeling, COMAP.
