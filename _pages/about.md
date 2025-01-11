@@ -23,7 +23,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 
 # 🔥 News
 - *01/2025*: &nbsp;🎉🎉 Won the **Youth Talents Support Project - Doctoral Student Special Program (首届中国科协青年人才托举工程-博士生专项)**.
-- *12/2024*: &nbsp;🎉🎉 Obtained **The Huatai Securities Technology Scholarship**.
+- *12/2024*: &nbsp;🎉🎉 Won the **Huatai Securities Technology Scholarship**.
 - *10/2024*: &nbsp;🎉🎉 Joined journal **Advanced Technology in Neuroscience** as a young editorial board member.
 - *08/2024*: &nbsp;🎉🎉 Attended **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)**.
 - *01/2023*: &nbsp;🎉🎉 Joined <a href='https://donglab.fudan.edu.cn/'> Dong Lab @Fudan. 
