@@ -19,13 +19,12 @@ redirect_from:
 
 I received the B.E. degree at China University of Petroleum (Beijing) in 2020, received the M.Eng. degree at Jiangnan University in 2023, supervised by Prof. Shouyu Wang. Now I am pursuing my Ph.D. degree in Fudan University, Shanghai since 2023, supervised by Prof. Biqin Dong.
 
-My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 10 papers <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the peer reviewed journals with total. 
+My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 15 papers <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the peer reviewed journals with total. 
 
 # 🔥 News
 - *01/2025*: &nbsp;🎉🎉 Won the **Youth Talents Support Project - Doctoral Student Special Program (首届中国科协青年人才托举工程-博士生专项)**.
 - *12/2024*: &nbsp;🎉🎉 Won the **Huatai Securities Technology Scholarship**.
 - *10/2024*: &nbsp;🎉🎉 Joined journal **Advanced Technology in Neuroscience** as a young editorial board member.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='images/atn.jpg' alt="Advanced Technology in Neuroscience" width="30%">
 - *08/2024*: &nbsp;🎉🎉 Attended **Cold Spring Harbor Laboratory-Asia (CSHA)** Summer School: Data Science for Large-Scale Imaging of Neuronal Activity. **(Only 16 people are selected globally)**.
 - *01/2023*: &nbsp;🎉🎉 Joined <a href='https://donglab.fudan.edu.cn/'> Dong Lab @Fudan</a>.
 
@@ -79,6 +78,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 - *11/2023 - now*, Reviewer of [**IEEE Signal Processing Letters**](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=97).
 
 # 💻 Internships
+- *10/2023 - 03/2025*, Senior Algorithm Engineer @ Lishi Intelligent Technology Co., Ltd, Shanghai, China.
 - *08/2024 - 09/2024*, Data Science for Large-Scale Imaging of Neuronal Activity Summer School @Cold Spring Harbor Laboratory-Asia (CSHA), Soochow, China.
 - *10/2022 - 09/2023*, Intelligent Biomedical Optical Imaging and Diagnostics Laboratory (DongLAB) @Fudan University, Shanghai, China.
 - *07/2022 - 10/2022*, Molecular Imaging and Medical Intelligence Laboratory (MILAB) @Peking University, Online.
