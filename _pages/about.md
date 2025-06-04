@@ -74,6 +74,7 @@ My research interest includes Data-driven Neural Imaging and Intelligent Biomedi
 
 # 💬 Academic Activities
 - *10/2024 - now*, Young Editorial Board Member of [**Advanced Technology in Neuroscience**](https://journals.lww.com/atn/pages/default.aspx).
+- *05/2025 - now*, Reviewer of [**IEEE SMC 2025**](https://www.ieeesmc.org/events/the-2025-ieee-international-conference-on-systems-man-and-cybernetics-smc-vienna-austria/).
 - *04/2025 - now*, Reviewer of [**Artificial Intelligence in Medicine**](https://www.sciencedirect.com/journal/artificial-intelligence-in-medicine).
 - *11/2024 - now*, Reviewer of [**Biomedical Signal Processing and Control**](https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control).
 - *11/2023 - now*, Reviewer of [**IEEE Signal Processing Letters**](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=97).
