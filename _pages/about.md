@@ -22,7 +22,7 @@ I received the B.E. degree at China University of Petroleum (Beijing) in 2020, r
 My research interest includes Data-driven Neural Imaging and Intelligent Biomedical Engineering. I have published more than 15 papers <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the peer reviewed journals with total. 
 
 # 🔥 News
-- *07/2025*: &nbsp;🎉🎉 <a href='https://share.eyesnews.cn/news/news-news_detail-news_id-11515117012336.html'>**“领航计划”新闻报道]**</a>.
+- *07/2025*: &nbsp;🎉🎉 <a href='https://share.eyesnews.cn/news/news-news_detail-news_id-11515117012336.html'>**“领航计划”新闻报道**</a>.
 - *01/2025*: &nbsp;🎉🎉 Won the **Youth Talents Support Project - Doctoral Student Special Program (首届中国科协青年人才托举工程-博士生专项)**.
 - *12/2024*: &nbsp;🎉🎉 Won the **Huatai Securities Technology Scholarship**.
 - *10/2024*: &nbsp;🎉🎉 Joined journal **Advanced Technology in Neuroscience** as a young editorial board member.
