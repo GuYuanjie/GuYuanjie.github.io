@@ -55,7 +55,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo -d ./public --baseURL https://guyuanjie.github.io/public/
+          hugo --minify --gc --cleanDestinationDir --destination ./public
     
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
