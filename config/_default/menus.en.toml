@@ -1,0 +1,44 @@
+[[main]]
+name = "About me"
+pageRef = "aboutme"
+weight = 10
+
+[[main]]
+name = "Research"
+pageRef = "research"
+weight = 20
+
+[[main]]
+name = "Field 1"
+parent = "Research"
+pageRef = "/research/android"
+weight = 21
+
+[[main]]
+name = "Field 2"
+parent = "Research"
+pageRef = "/research/ui-ux"
+weight = 22
+
+[[main]]
+name = "Field 3"
+parent = "Research"
+pageRef = "/research/website"
+weight = 23
+
+[[main]]
+name = "Publication"
+pageRef = "publication"
+weight = 30
+
+[[main]]
+name = "Gallery"
+pageRef = "gallery"
+weight = 40
+
+[[main]]
+name = "Contact"
+pageRef = "contact"
+weight = 50
+
+

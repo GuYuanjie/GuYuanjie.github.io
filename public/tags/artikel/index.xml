@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artikel on Yuanjie&#39;s Home</title>
+    <link>//localhost:1313/tags/artikel/</link>
+    <description>Recent content in Artikel on Yuanjie&#39;s Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>guyuanjie.com ©2026</copyright>
+    <lastBuildDate>Mon, 17 Jun 2024 18:02:00 +0700</lastBuildDate><atom:link href="//localhost:1313/tags/artikel/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dumas Presisi</title>
+      <link>//localhost:1313/research/website/dumas-presisi/</link>
+      <pubDate>Mon, 17 Jun 2024 18:02:00 +0700</pubDate>
+      
+      <guid>//localhost:1313/research/website/dumas-presisi/</guid>
+      <description>&lt;p&gt;Dumas Presisi adalah sebuah aplikasi berbasis web, yang digunakan secara aktif
+oleh Kepolisian Negara Republik Indonesia untuk menampung aspirasi serta
+keluhan-keluhan masyarakat terhadap anggota Polri sampai dengan saat ini.&lt;/p&gt;
+&lt;p&gt;Bekerja sama dengan Itwasum Polri, Bareskrim Polri, dan Divpropam Polri, kami
+bersinergi untuk membawa Polri untuk menjadi sebuah instansi yang modern,
+terintegrasi, dan Presisi.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/research/website/dumas-presisi/featured.png" />
+    </item>
+    
+    <item>
+      <title>4 Reality - Web Tim Vtuber Indonesia</title>
+      <link>//localhost:1313/research/website/4reality/</link>
+      <pubDate>Mon, 06 Feb 2023 12:44:20 +0700</pubDate>
+      
+      <guid>//localhost:1313/research/website/4reality/</guid>
+      <description>&lt;p&gt;4 Reality adalah sebuah tim Virtual YouTuber (biasa disebut VTuber) yang
+berada di Indonesia. Dinamakan 4 Reality karena penemu dari tim VTuber ini
+terdiri dari 4 karakter: &lt;code&gt;Kurokami Itsuki&lt;/code&gt;, &lt;code&gt;Raihan Ikeda&lt;/code&gt;, &lt;code&gt;Karen&lt;/code&gt;, dan
+&lt;code&gt;Vyula&lt;/code&gt;.&lt;/p&gt;</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="//localhost:1313/research/website/4reality/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Yuanjie's Home"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  logo = "img/IMG_202512162268_50x50.png"
+  description = "My awesome website"
+  copyright = "guyuanjie.com ©2026"
+  dateFormat = "2 January 2026"
+
+[params.author]
+  name = "Yuanjie Gu"
+  image = "img/avatar.png"
+  headline = "Fudan University"
+  bio = "Yuanjie Gu is a Ph.D. Candidate at Fudan University, undertaking his research in conjunction with his role as Chief Technology Officer at Healin Tech Co., Ltd."
+   links = [
+     { google = "https://scholar.google.com/citations?user=DN4ZT7YAAAAJ&hl=zh-CN" },
+     { github = "https://github.com/guyuanjie" },
+     { orcid = "https://orcid.org/0000-0003-3099-8724" },
+     { researchgate = "https://www.researchgate.net/profile/username" },
+     { email = "mailto:yuanjie_gu@163.com" }
+   ]
