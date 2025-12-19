@@ -80,9 +80,12 @@
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
 
-  <!-- Final Adjustment for Floating ClustrMaps Globe Plugin -->
-  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
-  <div style="position: fixed; bottom: 10px; left: 10px; width: 5vw; height: 5vw; z-index: 1000; pointer-events: none;">
-    <div id="clustrmaps-globe-container" style="transform: scale(0.5); width: 100%; height: 100%;"></div>
+  <!-- Adjusted Layout for ClustrMaps Scripts -->
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <!-- ClustrMaps Plugin -->
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a"></script>
+
+    <!-- ClustrMaps Globe Plugin -->
+    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
   </div>
 </footer>
