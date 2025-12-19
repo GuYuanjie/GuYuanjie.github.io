@@ -96,65 +96,115 @@
 
 </div>
 
+<div class="map-wrapper">
+    <h3>访客地球仪</h3>
+    <div id="sandbox-globe"></div>
+</div>
+
+<div class="map-wrapper">
+    <h3>访客地图</h3>
+    <div id="sandbox-map"></div>
+</div>
+
+<style>
+    /* 确保容器有高度，否则 iframe 不显示 */
+    #sandbox-globe, #sandbox-map {
+        width: 100%;
+        height: 400px; /* 根据需要调整 */
+        border: 1px solid #eee; /* 可选：加个边框方便调试看到区域 */
+        background-color: #f9f9f9; /* 可选：加载前的背景色 */
+    }
+</style>
+
 <script>
-  window.addEventListener('load', function() {
+  window.addEventListener('DOMContentLoaded', function() {
     
-    // 定义一个创建沙箱 iframe 的函数
+    // 定义创建沙箱的函数
     function createSandbox(containerId, scriptSrc, scriptId) {
       const container = document.getElementById(containerId);
-      if (!container) return;
+      if (!container) {
+        console.error('容器未找到:', containerId);
+        return;
+      }
 
       // 1. 清空容器
       container.innerHTML = "";
 
       // 2. 创建 iframe
       const iframe = document.createElement('iframe');
+      iframe.id = `${containerId}-iframe`;
       iframe.style.width = "100%";
       iframe.style.height = "100%";
       iframe.style.border = "none";
       iframe.style.overflow = "hidden";
-      iframe.scrolling = "no"; // 禁止滚动条
+      iframe.style.display = "block"; // 确保显示
+      iframe.setAttribute("scrolling", "no");
       
-      // 3. 将 iframe 放入页面
+      // 3. 添加加载错误处理
+      iframe.onload = function() {
+        console.log(`${containerId} iframe 加载完成`);
+      };
+      
+      iframe.onerror = function() {
+        console.error(`${containerId} iframe 加载失败`);
+      };
+
+      // 4. 将 iframe 放入容器
       container.appendChild(iframe);
 
-      // 4. 在 iframe 内部写入 HTML 和 脚本
-      // 这样脚本就在 iframe 的 window 环境下运行，计算宽度时只会读取到 iframe 的宽度
-      const doc = iframe.contentWindow.document;
-      
-      doc.open();
-      doc.write(`
-        <!DOCTYPE html>
-        <html style="overflow:hidden; margin:0; padding:0; height:100%;">
-        <body style="margin:0; padding:0; overflow:hidden; height:100%; display:flex; justify-content:center; align-items:center;">
-          <!-- 插件需要的容器 ID (有些插件脚本依赖特定的 ID) -->
-          <div id="${scriptId}_container" style="width:100%; height:100%; display:flex; justify-content:center; align-items:center;">
-             <script type="text/javascript" id="${scriptId}" src="${scriptSrc}"><\/script>
-          </div>
-        </body>
-        </html>
-      `);
-      doc.close();
+      // 5. 等待 iframe 就绪
+      setTimeout(() => {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          
+          doc.open();
+          doc.write(`
+            <!DOCTYPE html>
+            <html style="overflow:hidden; margin:0; padding:0; height:100%;">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            <body style="margin:0; padding:0; overflow:hidden; height:100%;">
+              <div id="${scriptId}_container" 
+                   style="width:100%; height:100%; min-height:400px;">
+              </div>
+              <script type="text/javascript" 
+                      id="${scriptId}" 
+                      src="${scriptSrc}"
+                      async
+                      defer><\/script>
+            </body>
+            </html>
+          `);
+          doc.close();
+          
+          console.log(`${containerId} 内容已写入`);
+        } catch (error) {
+          console.error(`${containerId} 写入失败:`, error);
+        }
+      }, 100);
     }
 
-    // 延迟一点点执行，确保 iframe 容器已有宽度
+    // 延迟执行确保容器已渲染
     setTimeout(function() {
+      console.log('开始加载地图插件...');
       
       // 加载地球仪
       createSandbox(
         'sandbox-globe', 
-        '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA',
+        'https://clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA',
         'clustrmaps-globe'
       );
 
       // 加载平面地图
       createSandbox(
         'sandbox-map', 
-        '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a',
+        'https://clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a',
         'clustrmaps-map'
       );
-
-    }, 200);
+      
+    }, 500);
 
   });
 </script>
