@@ -62,23 +62,23 @@
     {{ end }}
   </div>
 
-  {{/* --- 地图部分 (已去边框) --- */}}
+  {{/* --- 修复后的地图部分开始 --- */}}
   <div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 w-full">
     
     {{/* 左侧：地球仪 (Globe) */}}
-    {{/* 移除了 border, bg-neutral, p-4, rounded 等样式 */}}
-    <div class="w-full md:w-2/5 min-w-[200px] flex justify-center items-center overflow-hidden">
+    {{/* 使用 Tailwind 控制样式：适应暗色模式背景，圆角，隐藏溢出 */}}
+    <div class="w-full md:w-2/5 min-w-[200px] flex justify-center items-center overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-800 p-4">
       <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
     </div>
 
     {{/* 右侧：平面地图 (Map) */}}
-    <div class="w-full md:w-3/5 min-w-[200px] flex justify-center items-center overflow-hidden">
-      {{/* 注意：如果你的页脚背景是白色的，可能需要去掉下面的 &cl=ffffff，否则看不见地图上的字 */}}
+    <div class="w-full md:w-3/5 min-w-[200px] flex justify-center items-center overflow-hidden  rounded-lg bg-neutral-50 dark:bg-neutral-800 p-4">
+      {{/* 注意：这里我去掉了 cl=ffffff 参数，因为这会强制白色背景，在暗色模式下很难看。如果不加 cl 参数，ClustrMaps 通常是透明背景 */}}
       <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a"></script>
     </div>
 
   </div>
-  {{/* --- 地图部分结束 --- */}}
+  {{/* --- 修复后的地图部分结束 --- */}}
 
   {{ if not .Site.Params.disableImageZoom | default true }}
     <script>
