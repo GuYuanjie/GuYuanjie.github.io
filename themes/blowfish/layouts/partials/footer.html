@@ -79,14 +79,60 @@
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
-<!-- 悬浮地球仪容器 -->
+{{/* ----------------------------------------------------------------- */}}
+{{/*  1. 公共变量定义                                                   */}}
+{{/* ----------------------------------------------------------------- */}}
+{{ $isRTL := .Site.Params.rtl | default false }}
+
+{{/* ----------------------------------------------------------------- */}}
+{{/*  2. 右侧逻辑 (回到顶部按钮) - 修复报错的关键在这里                    */}}
+{{/* ----------------------------------------------------------------- */}}
+{{ $coffeeIsRight := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") .Site.Params.buymeacoffee.globalWidget }}
+{{ if not $coffeeIsRight }}
+  {{ $coffeeIsRight = false }}
+{{ end }}
+{{/* 计算右侧是否需要避让 Coffee 插件 */}}
+{{ $needAvoidCoffeeRight := ne $coffeeIsRight $isRTL }}
+{{/* 定义 $toTopYOffset 变量 (这是你报错缺少的变量) */}}
+{{ $toTopYOffset := cond $needAvoidCoffeeRight "bottom-24" "bottom-6" }}
+
+
+{{/* ----------------------------------------------------------------- */}}
+{{/*  3. 左侧逻辑 (地球仪插件)                                           */}}
+{{/* ----------------------------------------------------------------- */}}
+{{ $coffeeIsLeft := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "left") .Site.Params.buymeacoffee.globalWidget }}
+{{ if not $coffeeIsLeft }}
+  {{ $coffeeIsLeft = false }}
+{{ end }}
+{{/* 计算左侧是否需要避让 Coffee 插件 */}}
+{{ $needAvoidCoffeeLeft := eq $coffeeIsLeft (not $isRTL) }}
+{{/* 定义 $mapYOffset 变量 */}}
+{{ $mapYOffset := cond $needAvoidCoffeeLeft "bottom-24" "bottom-6" }}
+
+
+{{/* ----------------------------------------------------------------- */}}
+{{/*  4. HTML 输出                                                      */}}
+{{/* ----------------------------------------------------------------- */}}
+
+<!-- [左下角] 悬浮地球仪插件 (使用 $mapYOffset) -->
 <div
   id="clustrmaps-widget-container"
-  class="fixed {{ $toTopYOffset }} start-6 z-50 flex items-center justify-center hidden md:block"
-  style="width: 3rem; height: 3rem;"> <!-- 设置宽高以保持与右侧按钮视觉对称 -->
-  
+  class="fixed {{ $mapYOffset }} start-6 z-50 flex items-center justify-center hidden md:flex"
+  style="width: 3rem; height: 3rem;">
   <!-- ClustrMaps 脚本 -->
   <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
-  
+</div>
+
+<!-- [右下角] 回到顶部按钮 (使用 $toTopYOffset) -->
+<div
+  id="scroll-to-top"
+  class="fixed {{ $toTopYOffset }} end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="{{ i18n "nav.scroll_to_top_title" }}"
+    title="{{ i18n "nav.scroll_to_top_title" }}">
+    &uarr;
+  </a>
 </div>
 </footer>
