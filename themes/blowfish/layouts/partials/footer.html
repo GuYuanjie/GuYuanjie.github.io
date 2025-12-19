@@ -79,113 +79,95 @@
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
+<!-- ClustrMaps 容器区域 -->
+<!-- 使用 Tailwind 的 Grid 布局，在手机单列，平板/电脑双列 -->
+<div class="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2 justify-items-center items-center">
 
-
-<!-- 1. 暴力 CSS 锁死：针对 ClustrMaps 生成的所有可能的标签 -->
-<style>
-  /* 定义一个强制性的容器类 */
-  .clustrmaps-control-box {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 300px !important; /* 强制最大宽度 */
-    max-height: 160px !important; /* 强制最大高度 */
-    overflow: hidden !important;  /* 溢出必须隐藏 */
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    border: 1px solid rgba(0,0,0,0.1); /* 可选：边界调试 */
-  }
-
-  /* 核心：穿透 ClustrMaps 的脚本，强制重置其内部所有元素的尺寸 */
-  .clustrmaps-control-box div, 
-  .clustrmaps-control-box canvas, 
-  .clustrmaps-control-box img,
-  .clustrmaps-control-box span,
-  .clustrmaps-control-box a {
-    max-width: 100% !important;  /* 宽度绝不允许超过父容器 */
-    max-height: 100% !important; /* 高度绝不允许超过父容器 */
-    width: auto !important;      /* 覆盖脚本写的固定 width */
-    height: auto !important;     /* 覆盖脚本写的固定 height */
-    box-sizing: border-box !important;
-  }
-
-  /* 针对 Flex 布局的保护 */
-  .layout-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* 居中对齐，防止两边拉扯 */
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .plugin-item {
-    flex: 1 1 300px; /* 基础宽度 300px，允许伸缩 */
-    min-width: 280px; /* 最小宽度 */
-    max-width: 400px; /* 最大宽度限制 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-</style>
-
-<!-- 2. HTML 结构 -->
-<div class="layout-wrapper">
-  
-  <!-- 地球仪 (Globe) -->
-  <div class="plugin-item">
-    <!-- 这里的 ID 只用于 JS 插入，样式全靠 class 控制 -->
-    <div id="clustrmaps-globe-container" class="clustrmaps-control-box"></div>
+  <!-- 1. 地球仪 (Globe) 容器 -->
+  <!-- 强制锁定宽高：w-[300px] 是 Tailwind 写法，强制宽度 300px -->
+  <div class="relative flex h-[200px] w-[300px] flex-col items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800">
+    <!-- loading 占位符 -->
+    <div id="globe-loading" class="absolute text-xs text-neutral-400">Loading Globe...</div>
+    <!-- 插件挂载点 -->
+    <div id="cm-globe-wrapper" class="z-10 flex h-full w-full items-center justify-center overflow-hidden"></div>
   </div>
 
-  <!-- 平面地图 (Map) -->
-  <div class="plugin-item">
-    <div id="clustrmaps-map-container" class="clustrmaps-control-box"></div>
+  <!-- 2. 平面地图 (Map) 容器 -->
+  <div class="relative flex h-[200px] w-[300px] flex-col items-center justify-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800">
+    <div id="map-loading" class="absolute text-xs text-neutral-400">Loading Map...</div>
+    <div id="cm-map-wrapper" class="z-10 flex h-full w-full items-center justify-center overflow-hidden"></div>
   </div>
 
 </div>
 
-<!-- 3. 脚本 (去除了复杂的 iframe，回归最原始的加载，但增加了清理) -->
+<!-- 终极修正样式：强制覆盖插件内部样式 -->
+<style>
+  /* 针对 ClustrMaps 生成的 Canvas 进行降维打击 */
+  #cm-globe-wrapper canvas,
+  #cm-globe-wrapper img,
+  #cm-globe-wrapper div,
+  #cm-map-wrapper canvas,
+  #cm-map-wrapper img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important; /* 允许自动缩放，但受 max-width 限制 */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  
+  /* 隐藏多余的文字链接，只保留图形 */
+  .clustrmaps-control-box a {
+    display: block !important;
+  }
+</style>
+
 <script>
   window.addEventListener('load', function() {
     
-    // 定义加载器
-    function injectClustrMap(containerId, src) {
-      var container = document.getElementById(containerId);
+    // 封装加载函数
+    function loadScript(containerId, src, scriptId) {
+      const container = document.getElementById(containerId);
       if (!container) return;
-
-      // 强行清空，防止重复
+      
+      // 清空容器，移除 loading 文字
+      // 注意：这里不清空 container 的父级，只清空 wrapper 内部
       container.innerHTML = '';
 
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true; // 异步加载，不阻塞页面
+      const script = document.createElement('script');
       script.src = src;
+      script.id = scriptId;
+      script.type = 'text/javascript';
+      script.async = true; 
       
-      // 错误处理：如果脚本加载失败，至少不会让页面留白太丑
-      script.onerror = function() {
-        container.innerText = "Map Error";
-      };
-
       container.appendChild(script);
     }
 
-    // 执行加载
-    // Globe
-    injectClustrMap(
-      'clustrmaps-globe-container', 
-      '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA'
-    );
+    // --- 核心逻辑：错峰加载 ---
+    
+    // 1. 立即加载平面地图 (Map) -因为它比较稳定
+    setTimeout(() => {
+      const mapLoading = document.getElementById('map-loading');
+      if(mapLoading) mapLoading.style.display = 'none';
+      
+      loadScript(
+        'cm-map-wrapper',
+        '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a',
+        'script-map-v2'
+      );
+    }, 500); // 页面加载完 0.5秒后加载地图
 
-    // Map
-    injectClustrMap(
-      'clustrmaps-map-container', 
-      '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a'
-    );
+    // 2. 延迟加载地球仪 (Globe) - 它是“捣乱分子”，最后加载
+    setTimeout(() => {
+      const globeLoading = document.getElementById('globe-loading');
+      if(globeLoading) globeLoading.style.display = 'none';
+
+      loadScript(
+        'cm-globe-wrapper',
+        '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA',
+        'script-globe'
+      );
+    }, 2500); // 【关键】推迟 2.5秒！等地图完全渲染完，布局定死后，再让地球仪进场
   });
 </script>
-
-
 </footer>
