@@ -84,24 +84,33 @@
   <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <!-- ClustrMaps Globe Plugin -->
     <div style="flex: 1; text-align: left; min-width: 0;">
-      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA" style="width: 70%; height: auto;"></script>
+      <div id="clustrmaps-globe-container" style="width: 70%; height: auto;"></div>
     </div>
 
     <!-- ClustrMaps Plugin -->
     <div style="flex: 2; text-align: center; min-width: 0;">
-      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a" style="width: 100%; height: auto;"></script>
+      <div id="clustrmaps-map-container" style="width: 100%; height: auto;"></div>
     </div>
   </div>
 
   <script>
-    // Ensure proper initialization of scripts after page load
+    // Ensure proper initialization of ClustrMaps and Globe plugins
     window.addEventListener('load', function() {
-      const globeScript = document.getElementById('clstr_globe');
-      const mapScript = document.getElementById('clustrmaps');
+      const globeContainer = document.getElementById('clustrmaps-globe-container');
+      const mapContainer = document.getElementById('clustrmaps-map-container');
 
-      if (globeScript && mapScript) {
-        globeScript.style.width = '70%';
-        mapScript.style.width = '100%';
+      if (globeContainer) {
+        const globeScript = document.createElement('script');
+        globeScript.type = 'text/javascript';
+        globeScript.src = '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA';
+        globeContainer.appendChild(globeScript);
+      }
+
+      if (mapContainer) {
+        const mapScript = document.createElement('script');
+        mapScript.type = 'text/javascript';
+        mapScript.src = '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a';
+        mapContainer.appendChild(mapScript);
       }
     });
   </script>
