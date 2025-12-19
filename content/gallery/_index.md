@@ -129,15 +129,3 @@ showTableOfContents: true
   </div>
 
 </div>
-
-<!-- 
-  自定义字体样式 
-  如果没有引入手写字体，会回退到 cursive
--->
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
-  
-  .font-handwriting {
-    font-family: 'Caveat', cursive;
-  }
-</style>
