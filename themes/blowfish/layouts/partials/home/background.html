@@ -75,7 +75,7 @@
             </h2>
           {{ end }}
             {{ with .Site.Params.Author.bio }}
-            <h2 class="mt-0 mb-0 text-xl text-neutral-800 dark:text-neutral-300">
+           <h2 class="mt-0 mb-0 text-lg font-normal text-neutral-800 dark:text-neutral-300">
               {{ . | markdownify }}
             </h2>
           {{ end }}
@@ -104,6 +104,9 @@
     </div>
   </div>
 </article>
+<section>
+  {{ partial "news/main.html" . }}
+</section>
 <section>
   {{ partial "recent-articles/main.html" . }}
 </section>

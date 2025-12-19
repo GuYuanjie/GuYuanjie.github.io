@@ -1,0 +1,116 @@
+{{/* 获取 _news.md 页面数据 */}}
+{{ $newsPage := site.GetPage "_news.md" }}
+
+<section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 mb-12">
+  <div class="flex items-center mb-6">
+    <span class="text-3xl mr-3">⚡</span>
+    <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+      Latest News
+    </h2>
+    <span class="ml-auto text-xs font-mono px-2 py-1 rounded bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400">
+      Last updated: {{ if $newsPage }}{{ $newsPage.Lastmod.Format "2006-01-02" }}{{ else }}N/A{{ end }}
+    </span>
+  </div>
+
+  {{ if $newsPage }}
+    <!-- 
+      News 容器 
+      max-h-[500px]: 限制高度，超过出现滚动条 (模拟 GitHub Activity Feed)
+      overflow-y-auto: 允许滚动
+    -->
+    <div class="github-feed-container relative p-6 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 shadow-sm max-h-[600px] overflow-y-auto">
+      
+      <!-- 渲染 Markdown 内容，并应用自定义的 timeline 样式 -->
+      <article class="prose dark:prose-invert max-w-none">
+        {{ $newsPage.Content }}
+      </article>
+
+    </div>
+  {{ else }}
+    <div class="p-4 rounded-lg bg-red-50 text-red-600 border border-red-200">
+      ⚠️ 请在 content 目录下创建 <code>_news.md</code> 文件并设置 <code>headless: true</code>
+    </div>
+  {{ end }}
+</section>
+
+<!-- 
+  核心 CSS：将普通 Markdown 转换为 GitHub 时间轴风格 
+  这里使用了 Tailwind 的 @apply 逻辑或原生 CSS 注入
+-->
+<style>
+  /* 隐藏原生的圆点列表样式 */
+  .github-feed-container .prose ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* 每一个列表项 */
+  .github-feed-container .prose li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  /* 列表项前面的小图标 (类似 GitHub commit icon) */
+  .github-feed-container .prose li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em; /* 调整对齐 */
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #d1d5db; /* neutral-300 */
+  }
+  
+  /* 暗黑模式下的小图标颜色 */
+  :is(.dark .github-feed-container .prose li::before) {
+    background-color: #52525b; /* neutral-600 */
+  }
+
+  /* 
+   * 关键部分：将 H3 标题变成时间节点 
+   */
+  .github-feed-container .prose h3 {
+    position: relative;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 600;
+    color: #52525b; /* neutral-600 */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  :is(.dark .github-feed-container .prose h3) {
+    color: #a1a1aa; /* neutral-400 */
+  }
+
+  /* 时间轴的竖线 */
+  .github-feed-container .prose {
+    position: relative;
+    border-left: 2px solid #e5e7eb; /* neutral-200 */
+    margin-left: 0.75rem; /* 留出左边距给线 */
+    padding-left: 1rem;
+  }
+  
+  :is(.dark .github-feed-container .prose) {
+    border-left-color: #404040; /* neutral-700 */
+  }
+
+  /* 时间节点的大圆点 (套在 H3 上) */
+  .github-feed-container .prose h3::before {
+    content: '';
+    position: absolute;
+    left: -1.4rem; /* 调整圆点位置以覆盖竖线 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #2563eb; /* primary-600
