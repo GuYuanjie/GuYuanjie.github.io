@@ -79,22 +79,6 @@
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
-
-{{/* 1. 获取是否为 RTL (从右向左) 布局 */}}
-{{ $isRTL := .Site.Params.rtl | default false }}
-
-{{/* 2. 判断 Buy Me a Coffee 是否在“左侧” */}}
-{{/* 逻辑：如果设置了 globalWidget 且位置配置为 "left" */}}
-{{ $coffeeIsLeft := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "left") .Site.Params.buymeacoffee.globalWidget }}
-{{ if not $coffeeIsLeft }}
-  {{ $coffeeIsLeft = false }}
-{{ end }}
-
-{{/* 3. 计算避让逻辑 */}}
-{{/* 如果 Coffee 在左侧 且 布局不是 RTL（即视觉上真的重叠了），则需要避让 */}}
-{{ $needAvoidCoffeeLeft := eq $coffeeIsLeft (not $isRTL) }}
-{{ $mapYOffset := cond $needAvoidCoffeeLeft "bottom-24" "bottom-6" }}
-
 <!-- 悬浮地球仪容器 -->
 <div
   id="clustrmaps-widget-container"
