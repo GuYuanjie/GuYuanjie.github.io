@@ -6,7 +6,7 @@ showTableOfContents: true
 ---
 
 {{< lead >}}
-你好！我是 **顾元杰 (Gu Yuanjie)**。一名热衷于构建优雅解决方案的开发者，开源爱好者，也是一名终身学习者。
+你好！我是 **谷元杰 (Gu Yuanjie)**。一名热衷于构建优雅解决方案的开发者，开源爱好者，也是一名终身学习者。
 {{< /lead >}}
 
 <!-- 
@@ -61,8 +61,4 @@ showTableOfContents: true
       </ul>
     </div>
   </div>
-
-  <!-- 经历 2 -->
-  <div class="relative pl-8">
-    <div class="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border border-white dark:border-neutral-900 bg-neutral-300 dark:bg-neutral-600"></div>
-    <time class="mb-
+</div>

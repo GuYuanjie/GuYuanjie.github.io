@@ -1,5 +1,5 @@
-colorScheme = "github"
-defaultAppearance = "night"
+colorScheme = "autumn"
+defaultAppearance = "light"
 autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
