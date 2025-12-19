@@ -80,16 +80,16 @@
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
 
-  <!-- Adjusted Layout for ClustrMaps and Globe Plugins -->
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <!-- ClustrMaps Plugin -->
-    <div style="flex: 2; text-align: center;">
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff' style="width: 100%; height: auto;"></script>
-    </div>
-
+  <!-- Adjusted Layout with Spacing for ClustrMaps and Globe Plugins -->
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px;">
     <!-- ClustrMaps Globe Plugin -->
     <div style="flex: 1; text-align: center;">
-      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA" style="width: 70%; height: auto;"></script>
+      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA" style="width: 100%; height: auto;"></script>
+    </div>
+
+    <!-- ClustrMaps Plugin -->
+    <div style="flex: 2; text-align: center;">
+      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a" style="width: 100%; height: auto;"></script>
     </div>
   </div>
 </footer>
