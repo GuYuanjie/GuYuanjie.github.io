@@ -83,9 +83,9 @@
             <script>
               document.addEventListener('DOMContentLoaded', function () {
                 new TypeIt('#bio-typeit', {
-                  strings: [{{ . | markdownify | plainify | jsonify }}], 
+                  strings: [{{ . | markdownify | plainify | jsonify }}], // Use jsonify for safety
                   speed: 75,
-                  loop: true,
+                  loop: false,
                   waitUntilVisible: true
                 }).go();
               });
