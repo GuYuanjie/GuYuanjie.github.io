@@ -112,16 +112,8 @@
 </section>
 
 <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20 mt-8">
-  <!-- 
-    设计思路：
-    1. bg-[#1e1e20]: 强制使用深灰色背景，以配合地图的白色文字(cl=ffffff)
-    2. rounded-2xl: 大圆角，与 Blowfish 主题风格一致
-    3. shadow-lg: 增加立体感
-    4. group: 用于鼠标悬停特效
-  -->
   <div class="relative overflow-hidden rounded-2xl bg-[#1e1e20] border border-neutral-700 shadow-xl group">
     
-    <!-- 顶部装饰栏 (模拟 Dashboard 界面) -->
     <div class="flex items-center justify-between px-6 py-3 border-b border-neutral-700/50 bg-neutral-800/50 backdrop-blur-sm">
       <div class="flex items-center gap-2">
         <span class="relative flex h-2 w-2">
@@ -130,21 +122,15 @@
         </span>
         <span class="text-xs font-mono font-bold tracking-widest text-neutral-400 uppercase">Live Visitor Map</span>
       </div>
-      <!-- 装饰性的小点 -->
+
       <div class="flex gap-1.5">
         <div class="w-2 h-2 rounded-full bg-neutral-600"></div>
         <div class="w-2 h-2 rounded-full bg-neutral-600"></div>
       </div>
     </div>
 
-    <!-- 地图容器 -->
-    <!-- grayscale-[0.3]: 默认稍微降低一点饱和度，看起来更高级 -->
-    <!-- group-hover:grayscale-0: 鼠标放上去时恢复全彩 -->
+
     <div class="p-2 opacity-90 transition-all duration-500 grayscale-[0.3] group-hover:grayscale-0 group-hover:opacity-100">
-      <!-- 
-        ClustrMaps 脚本 
-        注意：w=a 参数会让它自动适应父容器宽度
-      -->
       <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA'></script>
     </div>
     
