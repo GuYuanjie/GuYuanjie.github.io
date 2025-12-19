@@ -80,11 +80,16 @@
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
 
-  <!-- Adjusted Layout for ClustrMaps Scripts -->
+  <!-- Adjusted Layout and Size for ClustrMaps Scripts -->
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <!-- ClustrMaps Plugin -->
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=150&t=tt&d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA'></script>
+    <div style="flex: 1; text-align: center;">
+      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a" style="transform: scale(0.1);"></script>
+    </div>
+
     <!-- ClustrMaps Globe Plugin -->
-    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
+    <div style="flex: 1; text-align: center;">
+      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA" style="transform: scale(0.1);"></script>
+    </div>
   </div>
 </footer>
