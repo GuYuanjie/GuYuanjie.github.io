@@ -81,8 +81,8 @@ showTermCount = true
 # enableTrackEvent = true
 
 [buymeacoffee]
-identifier = ""
-globalWidget = true
-globalWidgetMessage = "Hello"
-globalWidgetColor = "#FFDD00"
-globalWidgetPosition = "right"
+# identifier = ""
+# globalWidget = true
+# globalWidgetMessage = "Hello"
+# globalWidgetColor = "#FFDD00"
+# globalWidgetPosition = "right"
