@@ -9,7 +9,7 @@ title = "Yuanjie's Home"
   rtl = false
   logo = "img/IMG_202512162268_50x50.png"
   description = "My awesome website"
-  copyright = "guyuanjie.com ©2026"
+  copyright = "Global visitor map"
   dateFormat = "2 January 2026"
 
 [params.author]

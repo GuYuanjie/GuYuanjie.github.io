@@ -77,8 +77,8 @@ excludedKinds = [ ]
 showTermCount = true
 
 [selineAnalytics]
-token = "XXXXXX"
-enableTrackEvent = true
+# token = "XXXXXX"
+# enableTrackEvent = true
 
 [buymeacoffee]
 identifier = ""
