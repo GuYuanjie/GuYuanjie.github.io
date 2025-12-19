@@ -81,82 +81,109 @@
   {{ end }}
 
 
-<!-- 布局容器 -->
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; width: 100%; gap: 20px;">
+<!-- 1. 暴力 CSS 锁死：针对 ClustrMaps 生成的所有可能的标签 -->
+<style>
+  /* 定义一个强制性的容器类 */
+  .clustrmaps-control-box {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 300px !important; /* 强制最大宽度 */
+    max-height: 160px !important; /* 强制最大高度 */
+    overflow: hidden !important;  /* 溢出必须隐藏 */
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 1px solid rgba(0,0,0,0.1); /* 可选：边界调试 */
+  }
+
+  /* 核心：穿透 ClustrMaps 的脚本，强制重置其内部所有元素的尺寸 */
+  .clustrmaps-control-box div, 
+  .clustrmaps-control-box canvas, 
+  .clustrmaps-control-box img,
+  .clustrmaps-control-box span,
+  .clustrmaps-control-box a {
+    max-width: 100% !important;  /* 宽度绝不允许超过父容器 */
+    max-height: 100% !important; /* 高度绝不允许超过父容器 */
+    width: auto !important;      /* 覆盖脚本写的固定 width */
+    height: auto !important;     /* 覆盖脚本写的固定 height */
+    box-sizing: border-box !important;
+  }
+
+  /* 针对 Flex 布局的保护 */
+  .layout-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中对齐，防止两边拉扯 */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .plugin-item {
+    flex: 1 1 300px; /* 基础宽度 300px，允许伸缩 */
+    min-width: 280px; /* 最小宽度 */
+    max-width: 400px; /* 最大宽度限制 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+</style>
+
+<!-- 2. HTML 结构 -->
+<div class="layout-wrapper">
   
-  <!-- 左侧：地球仪 (Globe) - 这里的样式控制 iframe 的大小 -->
-  <div style="flex: 1; min-width: 250px; height: 200px; display: flex; justify-content: center; align-items: center; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-    <!-- 我们只放一个空的容器，稍后用 JS 往里面塞 iframe -->
-    <div id="sandbox-globe" style="width: 100%; height: 100%;"></div>
+  <!-- 地球仪 (Globe) -->
+  <div class="plugin-item">
+    <!-- 这里的 ID 只用于 JS 插入，样式全靠 class 控制 -->
+    <div id="clustrmaps-globe-container" class="clustrmaps-control-box"></div>
   </div>
 
-  <!-- 右侧：平面地图 (Map) -->
-  <div style="flex: 2; min-width: 250px; height: 200px; display: flex; justify-content: center; align-items: center; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-    <div id="sandbox-map" style="width: 100%; height: 100%;"></div>
+  <!-- 平面地图 (Map) -->
+  <div class="plugin-item">
+    <div id="clustrmaps-map-container" class="clustrmaps-control-box"></div>
   </div>
 
 </div>
 
+<!-- 3. 脚本 (去除了复杂的 iframe，回归最原始的加载，但增加了清理) -->
 <script>
   window.addEventListener('load', function() {
     
-    // 定义一个创建沙箱 iframe 的函数
-    function createSandbox(containerId, scriptSrc, scriptId) {
-      const container = document.getElementById(containerId);
+    // 定义加载器
+    function injectClustrMap(containerId, src) {
+      var container = document.getElementById(containerId);
       if (!container) return;
 
-      // 1. 清空容器
-      container.innerHTML = "";
+      // 强行清空，防止重复
+      container.innerHTML = '';
 
-      // 2. 创建 iframe
-      const iframe = document.createElement('iframe');
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      iframe.style.border = "none";
-      iframe.style.overflow = "hidden";
-      iframe.scrolling = "no"; // 禁止滚动条
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true; // 异步加载，不阻塞页面
+      script.src = src;
       
-      // 3. 将 iframe 放入页面
-      container.appendChild(iframe);
+      // 错误处理：如果脚本加载失败，至少不会让页面留白太丑
+      script.onerror = function() {
+        container.innerText = "Map Error";
+      };
 
-      // 4. 在 iframe 内部写入 HTML 和 脚本
-      // 这样脚本就在 iframe 的 window 环境下运行，计算宽度时只会读取到 iframe 的宽度
-      const doc = iframe.contentWindow.document;
-      
-      doc.open();
-      doc.write(`
-        <!DOCTYPE html>
-        <html style="overflow:hidden; margin:0; padding:0; height:100%;">
-        <body style="margin:0; padding:0; overflow:hidden; height:100%; display:flex; justify-content:center; align-items:center;">
-          <!-- 插件需要的容器 ID (有些插件脚本依赖特定的 ID) -->
-          <div id="${scriptId}_container" style="width:100%; height:100%; display:flex; justify-content:center; align-items:center;">
-             <script type="text/javascript" id="${scriptId}" src="${scriptSrc}"><\/script>
-          </div>
-        </body>
-        </html>
-      `);
-      doc.close();
+      container.appendChild(script);
     }
 
-    // 延迟一点点执行，确保 iframe 容器已有宽度
-    setTimeout(function() {
-      
-      // 加载地球仪
-      createSandbox(
-        'sandbox-globe', 
-        '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA',
-        'clustrmaps-globe'
-      );
+    // 执行加载
+    // Globe
+    injectClustrMap(
+      'clustrmaps-globe-container', 
+      '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA'
+    );
 
-      // 加载平面地图
-      createSandbox(
-        'sandbox-map', 
-        '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a',
-        'clustrmaps-map'
-      );
-
-    }, 200);
-
+    // Map
+    injectClustrMap(
+      'clustrmaps-map-container', 
+      '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a'
+    );
   });
 </script>
 
