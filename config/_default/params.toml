@@ -1,5 +1,5 @@
 colorScheme = "github"
-defaultAppearance = "light"
+defaultAppearance = "night"
 autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
@@ -12,7 +12,7 @@ verification = { }
 layout = "fixed-fill-blur"
 
 [footer]
-showCopyright = true
+showCopyright = false
 showThemeAttribution = false
 showAppearanceSwitcher = true
 showScrollToTop = true
