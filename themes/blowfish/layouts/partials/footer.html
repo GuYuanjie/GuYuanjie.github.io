@@ -1,3 +1,60 @@
+{{/* ----------------------------------------------------------------- */}}
+{{/*  1. 公共变量定义                                                   */}}
+{{/* ----------------------------------------------------------------- */}}
+{{ $isRTL := .Site.Params.rtl | default false }}
+
+{{/* ----------------------------------------------------------------- */}}
+{{/*  2. 右侧逻辑 (回到顶部按钮) - 修复报错的关键在这里                    */}}
+{{/* ----------------------------------------------------------------- */}}
+{{ $coffeeIsRight := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") .Site.Params.buymeacoffee.globalWidget }}
+{{ if not $coffeeIsRight }}
+  {{ $coffeeIsRight = false }}
+{{ end }}
+{{/* 计算右侧是否需要避让 Coffee 插件 */}}
+{{ $needAvoidCoffeeRight := ne $coffeeIsRight $isRTL }}
+{{/* 定义 $toTopYOffset 变量 (这是你报错缺少的变量) */}}
+{{ $toTopYOffset := cond $needAvoidCoffeeRight "bottom-24" "bottom-6" }}
+
+
+{{/* ----------------------------------------------------------------- */}}
+{{/*  3. 左侧逻辑 (地球仪插件)                                           */}}
+{{/* ----------------------------------------------------------------- */}}
+{{ $coffeeIsLeft := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "left") .Site.Params.buymeacoffee.globalWidget }}
+{{ if not $coffeeIsLeft }}
+  {{ $coffeeIsLeft = false }}
+{{ end }}
+{{/* 计算左侧是否需要避让 Coffee 插件 */}}
+{{ $needAvoidCoffeeLeft := eq $coffeeIsLeft (not $isRTL) }}
+{{/* 定义 $mapYOffset 变量 */}}
+{{ $mapYOffset := cond $needAvoidCoffeeLeft "bottom-24" "bottom-6" }}
+
+
+{{/* ----------------------------------------------------------------- */}}
+{{/*  4. HTML 输出                                                      */}}
+{{/* ----------------------------------------------------------------- */}}
+
+<!-- [左下角] 悬浮地球仪插件 (使用 $mapYOffset) -->
+<div
+  id="clustrmaps-widget-container"
+  class="fixed {{ $mapYOffset }} start-6 z-50 flex items-center justify-center hidden md:flex"
+  style="width: 3rem; height: 3rem;">
+  <!-- ClustrMaps 脚本 -->
+  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
+</div>
+
+<!-- [右下角] 回到顶部按钮 (使用 $toTopYOffset) -->
+<div
+  id="scroll-to-top"
+  class="fixed {{ $toTopYOffset }} end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="{{ i18n "nav.scroll_to_top_title" }}"
+    title="{{ i18n "nav.scroll_to_top_title" }}">
+    &uarr;
+  </a>
+</div>
+
 <footer id="site-footer" class="py-10 print:hidden">
   {{/* Footer menu */}}
   {{ if .Site.Params.footer.showMenu | default true }}
@@ -79,60 +136,105 @@
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partialCached "extend-footer.html" . }}
   {{ end }}
-{{/* ----------------------------------------------------------------- */}}
-{{/*  1. 公共变量定义                                                   */}}
-{{/* ----------------------------------------------------------------- */}}
-{{ $isRTL := .Site.Params.rtl | default false }}
+  
+<!-- 1. 暴力 CSS 锁死：针对 ClustrMaps 生成的所有可能的标签 -->
+<style>
+  /* 定义一个强制性的容器类 */
+  .clustrmaps-control-box {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 300px !important; /* 强制最大宽度 */
+    max-height: 160px !important; /* 强制最大高度 */
+    overflow: hidden !important;  /* 溢出必须隐藏 */
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 1px solid rgba(0,0,0,0.1); /* 可选：边界调试 */
+  }
 
-{{/* ----------------------------------------------------------------- */}}
-{{/*  2. 右侧逻辑 (回到顶部按钮) - 修复报错的关键在这里                    */}}
-{{/* ----------------------------------------------------------------- */}}
-{{ $coffeeIsRight := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "right") .Site.Params.buymeacoffee.globalWidget }}
-{{ if not $coffeeIsRight }}
-  {{ $coffeeIsRight = false }}
-{{ end }}
-{{/* 计算右侧是否需要避让 Coffee 插件 */}}
-{{ $needAvoidCoffeeRight := ne $coffeeIsRight $isRTL }}
-{{/* 定义 $toTopYOffset 变量 (这是你报错缺少的变量) */}}
-{{ $toTopYOffset := cond $needAvoidCoffeeRight "bottom-24" "bottom-6" }}
+  /* 核心：穿透 ClustrMaps 的脚本，强制重置其内部所有元素的尺寸 */
+  .clustrmaps-control-box div, 
+  .clustrmaps-control-box canvas, 
+  .clustrmaps-control-box img,
+  .clustrmaps-control-box span,
+  .clustrmaps-control-box a {
+    max-width: 100% !important;  /* 宽度绝不允许超过父容器 */
+    max-height: 100% !important; /* 高度绝不允许超过父容器 */
+    width: auto !important;      /* 覆盖脚本写的固定 width */
+    height: auto !important;     /* 覆盖脚本写的固定 height */
+    box-sizing: border-box !important;
+  }
 
+  /* 针对 Flex 布局的保护 */
+  .layout-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中对齐，防止两边拉扯 */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
 
-{{/* ----------------------------------------------------------------- */}}
-{{/*  3. 左侧逻辑 (地球仪插件)                                           */}}
-{{/* ----------------------------------------------------------------- */}}
-{{ $coffeeIsLeft := and (eq (lower site.Params.buymeacoffee.globalWidgetPosition) "left") .Site.Params.buymeacoffee.globalWidget }}
-{{ if not $coffeeIsLeft }}
-  {{ $coffeeIsLeft = false }}
-{{ end }}
-{{/* 计算左侧是否需要避让 Coffee 插件 */}}
-{{ $needAvoidCoffeeLeft := eq $coffeeIsLeft (not $isRTL) }}
-{{/* 定义 $mapYOffset 变量 */}}
-{{ $mapYOffset := cond $needAvoidCoffeeLeft "bottom-24" "bottom-6" }}
-
-
-{{/* ----------------------------------------------------------------- */}}
-{{/*  4. HTML 输出                                                      */}}
-{{/* ----------------------------------------------------------------- */}}
-
-<!-- [左下角] 悬浮地球仪插件 (使用 $mapYOffset) -->
-<div
-  id="clustrmaps-widget-container"
-  class="fixed {{ $mapYOffset }} start-6 z-50 flex items-center justify-center hidden md:flex"
-  style="width: 3rem; height: 3rem;">
-  <!-- ClustrMaps 脚本 -->
-  <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA"></script>
+  .plugin-item {
+    flex: 1 1 300px; /* 基础宽度 300px，允许伸缩 */
+    min-width: 280px; /* 最小宽度 */
+    max-width: 400px; /* 最大宽度限制 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+</style>
+<!-- 2. HTML 结构 -->
+<div class="layout-wrapper">
+  <!-- 地球仪 (Globe) -->
+  <div class="plugin-item">
+    <!-- 这里的 ID 只用于 JS 插入，样式全靠 class 控制 -->
+    <div id="clustrmaps-globe-container" class="clustrmaps-control-box"></div>
+  </div>
+  <!-- 平面地图 (Map) -->
+  <div class="plugin-item">
+    <div id="clustrmaps-map-container" class="clustrmaps-control-box"></div>
+  </div>
 </div>
+<!-- 3. 脚本 (去除了复杂的 iframe，回归最原始的加载，但增加了清理) -->
+<script>
+  window.addEventListener('load', function() {
+    
+    // 定义加载器
+    function injectClustrMap(containerId, src) {
+      var container = document.getElementById(containerId);
+      if (!container) return;
 
-<!-- [右下角] 回到顶部按钮 (使用 $toTopYOffset) -->
-<div
-  id="scroll-to-top"
-  class="fixed {{ $toTopYOffset }} end-6 z-50 transform translate-y-4 opacity-0 duration-200">
-  <a
-    href="#the-top"
-    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="{{ i18n "nav.scroll_to_top_title" }}"
-    title="{{ i18n "nav.scroll_to_top_title" }}">
-    &uarr;
-  </a>
-</div>
+      // 强行清空，防止重复
+      container.innerHTML = '';
+
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true; // 异步加载，不阻塞页面
+      script.src = src;
+      
+      // 错误处理：如果脚本加载失败，至少不会让页面留白太丑
+      script.onerror = function() {
+        container.innerText = "Map Error";
+      };
+
+      container.appendChild(script);
+    }
+
+    // 执行加载
+    // Globe
+    injectClustrMap(
+      'clustrmaps-globe-container', 
+      '//clustrmaps.com/globe.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA'
+    );
+
+    // Map
+    injectClustrMap(
+      'clustrmaps-map-container', 
+      '//clustrmaps.com/map_v2.js?d=jifEa5wkGJle7rCzR78Wj3gsC9ebbUKEwiITXbd3qGA&cl=ffffff&w=a'
+    );
+  });
+</script>
 </footer>
