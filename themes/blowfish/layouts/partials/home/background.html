@@ -74,24 +74,11 @@
               {{ . | markdownify }}
             </h2>
           {{ end }}
-            
-          {{ with .Site.Params.Author.bio }}
-            <h2 id="bio-typeit" class="mt-0 mb-0 text-lg font-normal text-neutral-800 dark:text-neutral-300 h-auto" style="min-height: 1.5rem;">
-              {{/* The h-auto and min-height are good for preventing layout shift while the text is being typed */}}
+            {{ with .Site.Params.Author.bio }}
+           <h2 class="mt-0 mb-0 text-lg font-normal text-neutral-800 dark:text-neutral-300">
+              {{ . | markdownify }}
             </h2>
-            <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-            <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                new TypeIt('#bio-typeit', {
-                  strings: [{{ . | markdownify | plainify | jsonify }}], 
-                  speed: 75,
-                  loop: ture,
-                  waitUntilVisible: true
-                }).go();
-              });
-            </script>
           {{ end }}
-
           <div class="mt-3 mb-10 text-2xl">
             {{ with .Site.Params.Author.links }}
               <div class="flex flex-wrap">
