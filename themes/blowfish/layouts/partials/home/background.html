@@ -85,7 +85,7 @@
                 new TypeIt('#bio-typeit', {
                   strings: [{{ . | markdownify | plainify | jsonify }}], 
                   speed: 75,
-                  loop: false,
+                  loop: true,
                   waitUntilVisible: true
                 }).go();
               });
