@@ -1,7 +1,8 @@
 ---
 title: "About Me"
 description: "Ph.D. Candidate @ Fudan University | AI & Computational Imaging"
-layout: "profile"
+layout: "simple"
+draft: false
 fullWidth: true 
 showDate: false
 showReadingTime: false
