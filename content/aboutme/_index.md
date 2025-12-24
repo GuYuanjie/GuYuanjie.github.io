@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: "PhD Student @ Fudan University | Visiting Scholar @ Tsinghua University"
+description: "Ph.D. Candidate @ Fudan University | Visiting Scholar @ Tsinghua University"
 layout: "profile"
 ---
 
