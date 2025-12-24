@@ -1,94 +1,73 @@
-# 👋 Hello, I'm Yuanjie Gu (谷元杰)
+# Yuanjie Gu (谷元杰) 
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=guyuanjie&label=Profile%20views&color=0e75b6&style=flat" alt="guyuanjie" />
-  <a href="https://guyuanjie.com"><img src="https://img.shields.io/badge/Website-guyuanjie.com-blue?style=flat&logo=google-chrome&logoColor=white" /></a>
-  <a href="mailto:guyj23@m.fudan.edu.cn"><img src="https://img.shields.io/badge/Email-guyj23%40m.fudan.edu.cn-red?style=flat&logo=gmail&logoColor=white" /></a>
-  <img src="https://img.shields.io/badge/Location-Shanghai,China-green?style=flat&logo=mapmarker" />
+  <img src="https://img.shields.io/badge/PhD%20Student-Fudan%20University-blue?style=flat-square" /> <img src="https://img.shields.io/badge/Visiting-Tsinghua%20University-purple?style=flat-square" /> <img src="https://img.shields.io/badge/Field-AI%20%26%20BioImaging-orange?style=flat-square" /> <img src="https://img.shields.io/badge/Status-Seeking%20Collaboration-green?style=flat-square" />
 </p>
 
 ---
 
-### 💡 About Me
+### 👋 About Me
+I am a PhD student at the **Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University**, supervised by Prof. Biqin Dong. Currently, I am a joint-training scholar at the **Laboratory of Imaging and Intelligence, Tsinghua University**, led by Academician Qionghai Dai. 
 
-> **"Exploring the intersection of Intelligence and Vision to decode the Brain."**
-
-I am a PhD student at **Fudan University**, Institute of Science and Technology for Brain-Inspired Intelligence. My research sits at the fascinating crossroads of **Biomedical Artificial Intelligence**, **Computational Optical Imaging**, and **Brain-Computer Interfaces (BCI)**. 
-
-I am currently a visiting scholar at the **Tsinghua University**, working under the guidance of Prof. Zhi Lu.
+My work focuses on the intersection of **Artificial Intelligence** and **Advanced Imaging**, aiming to push the boundaries of how we observe and modulate neural activities at the subcellular level.
 
 ---
 
-### 🚀 Research Interests
-
-<p align="center">
-  <img src="https://img.shields.io/badge/AI-Deep%20Learning-blueviolet?style=for-the-badge&logo=pytorch" />
-  <img src="https://img.shields.io/badge/Imaging-Computational%20Optics-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Neuroscience-BCI-ff69b4?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/BioMedicine-Microscopy-yellow?style=for-the-badge" />
+### 🔍 Research Interests
+<p align="left">
+  <img src="https://img.shields.io/badge/-Artificial%20Intelligence-3776AB?style=flat-square&logo=pytorch&logoColor=white" /> <img src="https://img.shields.io/badge/-Computational%20Imaging-yellowgreen?style=flat-square" /> <img src="https://img.shields.io/badge/-Brain--Computer%20Interface-FF69B4?style=flat-square" /> <img src="https://img.shields.io/badge/-Neuro--Modulation-9cf?style=flat-square" /> <img src="https://img.shields.io/badge/-Deep%20Learning-orange?style=flat-square" />
 </p>
 
-- **Intelligent Frameworks:** Developing closed-loop all-optical neuro-modulation systems.
-- **Biomedical Enhancement:** Generative foundation models for ultra-fast, high-resolution fluorescence microscopy.
-- **Neural Decoding:** Large-scale neural activity analysis and real-time denoising.
+- **Intelligent Frameworks:** Developing closed-loop systems for all-optical neural modulation.
+- **Biomedical Vision:** Foundation models for generalizable biomedical image enhancement.
+- **Microscopy Automation:** Stochastic and self-supervised denoising for high-speed fluorescence imaging.
 
 ---
 
 ### 🎓 Education
-
-| Period | Institution | Degree & Major |
-| :--- | :--- | :--- |
-| **2023 - Present** | **Fudan University** | **Ph.D.** in Biomedical Engineering |
-| 2020 - 2023 | Jiangnan University | **M.S.** in Optical Engineering |
-| 2016 - 2020 | China University of Petroleum | **B.S.** in Software Engineering |
+- **Ph.D. in Biomedical Engineering** | Fudan University | *2023 – Present*
+- **M.S. in Optical Engineering** | Jiangnan University | *2020 – 2023*
+- **B.S. in Computer Science** | China University of Petroleum | *2016 – 2020*
 
 ---
 
-### 🏆 Honors & News
-<details open>
-<summary><b>Click to expand my latest milestones</b></summary>
-
-- 🚀 **[2025.10]** Awarded the **National Scholarship** for Doctoral Students.
-- 🌟 **[2024.12]** Selected for the **Young Talent Lifting Project** by CAST (China Association for Science and Technology).
-- 🔬 **[2024.08]** One of the **16 global participants** selected for the Cold Spring Harbor (Asia) Summer School on Neural Imaging.
-- 🏅 **[2024]** Gold Medal in the China International College Students' Innovation Competition (Shanghai Division).
-- 📖 **[Ongoing]** Leading a **NSFC project** on intelligent frameworks for neuro-modulation (PI, 300k CNY).
-</details>
+### 📑 Research Projects
+* **PI (Principal Investigator)**: "Intelligent Frameworks for All-Optical Closed-Loop Neural Modulation", **National Natural Science Foundation of China (NSFC)**, 2026-2028.
+* **Core Member**: "Foundation Models for Generalizable Biomedical Image Enhancement", **Alibaba DAMO Academy** & Tsinghua Air Project, 2026-2027.
 
 ---
 
-### 🛠 Academic Service
+### 🏆 Selected Honors & News
+- **[2025.10]** 🏅 **National Scholarship** for Doctoral Students (Highest honor in China).
+- **[2024.12]** 🚀 Selected for the **Young Talent Lifting Project** (By China Association for Science and Technology).
+- **[2025.08]** 🌏 Selected for the **"Pilot Program"** for Young Scientific Talents.
+- **[2024.08]** 🧬 Selected for **CSHL (Asia)** Summer School on Neural Imaging (1 of 16 globally).
+- **[2024.00]** 🥇 **Gold Medal**, China International College Students' Innovation Competition (Shanghai Division).
 
+---
+
+### 🛠 Professional Services
 #### **Editorial Roles**
 - **Youth Editorial Board Member:** *Advanced Technology in Neuroscience*
 - **Youth Editorial Board Member:** *Chinese Clinical Medicine*
-- **Guest Scientific Editor:** *China Laser Press*
+- **Scientific Editor:** *China Laser Press*
 
-#### **Reviewer Service**
-I serve as an independent reviewer for top-tier journals across multiple disciplines:
-- **General/Methodology:** `Nature Methods (Co-reviewer)`
-- **Medical/AI:** `Artificial Intelligence in Medicine`, `npj Digital Medicine`
-- **Signal Processing:** `IEEE Transactions on Instrumentation & Measurement`, `IEEE Signal Processing Letters`
-- **Optics:** `Optics Letters`, `Optical Engineering`
+#### **Peer Reviewer**
+Regularly review for high-impact journals:
+- `Nature Methods` (Co-reviewer)
+- `IEEE Transactions on Instrumentation & Measurement`
+- `Biomedical Signal Processing and Control`
+- `Artificial Intelligence in Medicine`
+- `Optics Letters` / `Optical Engineering`
 
 ---
 
-### 📊 Skills & Tools
+### 📧 Contact Information
 <p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/MATLAB-ED8B00?style=flat" />
-  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat&logo=qt&logoColor=white" />
-  <img src="https://img.shields.io/badge/Deep%20Learning-Object%20Detection%20%26%20Segmentation-red" />
+<a href="mailto:guyj23@m.fudan.edu.cn"><img src="https://img.shields.io/badge/Email-guyj23%40m.fudan.edu.cn-D14836?style=flat-square&logo=gmail&logoColor=white" /></a> <a href="https://guyuanjie.com"><img src="https://img.shields.io/badge/Website-guyuanjie.com-blue?style=flat-square&logo=google-chrome&logoColor=white" /></a> <a href="https://github.com/guyuanjie"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" /></a>
 </p>
 
 ---
-
-### 📬 Get in Touch
-- **WeChat/Mobile:** +86-17851927165
-- **Personal Web:** [guyuanjie.com](https://guyuanjie.com)
-- **Collaborations:** Open to discussions on AI for Science and Advanced Bio-imaging.
-
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Quote" />
+  <img src="https://komarev.com/ghpvc/?username=guyuanjie&label=Profile%20Views&color=blue&style=flat-square" />
 </p>
