@@ -1,12 +1,12 @@
 ---
 title: "About Me"
-description: "Ph.D. Candidate @ Fudan University | Visiting Scholar @ Tsinghua University"
+description: "PhD Student @ Fudan University | AI & Computational Imaging"
 layout: "profile"
 showDate: false
 showReadingTime: false
 ---
 
-{{< typeit tag="h1" speed=50 >}}
+{{< typeit tag="h1" speed=40 >}}
 👋 Hello, I'm Yuanjie Gu (谷元杰)
 {{< /typeit >}}
 
@@ -17,11 +17,11 @@ showReadingTime: false
 ---
 
 ### 🚀 Research Interests
-<!-- 注意：为了确保并列一行，短代码之间绝对不能有空格或换行 -->
+<!-- 强制并列一行：短代码之间绝对不要留空格或换行 -->
 {{< badge >}}Artificial Intelligence{{< /badge >}}{{< badge color="orange" >}}Computational Imaging{{< /badge >}}{{< badge color="red" >}}Deep Learning{{< /badge >}}{{< badge color="green" >}}Neuroscience{{< /badge >}}{{< badge color="blue" >}}Bio-Microscopy{{< /badge >}}
 
 *   **Intelligent Frameworks:** Closed-loop all-optical neuro-modulation systems.
-*   **Biomedical Enhancement:** Generative foundation models for ultra-fast, high-resolution microscopy.
+*   **Biomedical Enhancement:** Generative foundation models for ultra-fast fluorescence microscopy.
 *   **Neural Decoding:** Large-scale neural activity analysis via self-supervised learning.
 
 ---
@@ -34,38 +34,39 @@ showReadingTime: false
 {{< /timelineItem >}}
 
 {{< timelineItem icon="school" header="M.S. in Optical Engineering" badge="2020 - 2023" >}}
-**Jiangnan University**, School of Department of Optoelectronic Information Science and Engineering.
+**Jiangnan University**, Department of Optoelectronic Information Science and Engineering.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="code" header="B.S. in Computer Science" badge="2016 - 2020" >}}
-**China University of Petroleum (Beijing)**, Department of Computer Science and Technology.
+**China University of Petroleum (Beijing)**, Department of Computer Science.
 {{< /timelineItem >}}
 {{< /timeline >}}
 
 ---
 
 ### 🔬 Research Projects
-<!-- 移除了报错的 grid 标签，直接并列使用 card -->
-{{< card title="NSFC Project (Principal Investigator)" icon="briefcase" >}}
-Leading research on **"Intelligent Frameworks and Methods for All-optical Closed-loop Neuromodulation"** (Grant No. 625B2053), funded by National Natural Science Foundation of China (2026-2028).
-{{< /card >}}
+{{< timeline >}}
+{{< timelineItem icon="briefcase" header="NSFC Project (Principal Investigator)" badge="2026 - 2028" >}}
+Leading the project **"Research on Intelligent Frameworks for All-optical Closed-loop Neuromodulation"** (Grant No. 625B2053), supported by the National Natural Science Foundation of China.
+{{< /timelineItem >}}
 
-{{< card title="Alibaba DAMO Air Project" icon="lightning-bolt" >}}
-**Project Backbone.** Developing **"Generalizable Foundation Models for Biomedical Image Enhancement"**, joint project between Tsinghua University and Alibaba DAMO Academy (2026-2027).
-{{< /card >}}
+{{< timelineItem icon="lightning-bolt" header="Alibaba DAMO Air Project" badge="2026 - 2027" >}}
+**Project Backbone.** "Generalizable Foundation Models for Biomedical Image Enhancement", a joint initiative between Tsinghua University and Alibaba DAMO Academy.
+{{< /timelineItem >}}
+{{< /timeline >}}
 
 ---
 
 ### 🏆 Honors & Milestones
 {{< timeline >}}
 {{< timelineItem icon="star" header="National Scholarship" badge="2025" >}}
-Awarded the **National Scholarship** for Doctoral Students (Highest academic honor).
+Awarded the **National Scholarship** for Doctoral Students.
 {{< /timelineItem >}}
 {{< timelineItem icon="rocket" header="Young Talent Lifting Project" badge="2024" >}}
 Selected by **CAST** (China Association for Science and Technology) for the Elite Doctoral Program.
 {{< /timelineItem >}}
 {{< timelineItem icon="microscope" header="CSHL (Asia) Scholar" badge="2024" >}}
-One of **16 global participants** selected for the Cold Spring Harbor (Asia) Summer School on Neural Data Analysis.
+One of **16 global participants** selected for the Cold Spring Harbor (Asia) Summer School.
 {{< /timelineItem >}}
 {{< /timeline >}}
 
@@ -79,7 +80,7 @@ One of **16 global participants** selected for the Cold Spring Harbor (Asia) Sum
 ---
 
 ### 📬 Get in Touch
-<!-- 社交标签并列一行 -->
+<!-- 社交 Tag 并列一行 -->
 {{< badge icon="github" >}}guyuanjie{{< /badge >}}{{< badge icon="envelope" color="red" >}}guyj23@m.fudan.edu.cn{{< /badge >}}{{< badge icon="link" color="blue" >}}guyuanjie.com{{< /badge >}}
 
 <br>
