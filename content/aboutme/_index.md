@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-description: "PhD Student @ Fudan University | AI & Computational Imaging"
+description: "Ph.D. Candidate @ Fudan University | AI & Computational Imaging"
 layout: "profile"
 showDate: false
 showReadingTime: false
@@ -13,16 +13,6 @@ showReadingTime: false
 {{< lead >}}
 **"Exploring the intersection of Intelligence and Vision to decode the Brain."**
 {{< /lead >}}
-
----
-
-### 🚀 Research Interests
-<!-- 强制并列一行：短代码之间绝对不要留空格或换行 -->
-{{< badge >}}Artificial Intelligence{{< /badge >}}{{< badge color="orange" >}}Computational Imaging{{< /badge >}}{{< badge color="red" >}}Deep Learning{{< /badge >}}{{< badge color="green" >}}Neuroscience{{< /badge >}}{{< badge color="blue" >}}Bio-Microscopy{{< /badge >}}
-
-*   **Intelligent Frameworks:** Closed-loop all-optical neuro-modulation systems.
-*   **Biomedical Enhancement:** Generative foundation models for ultra-fast fluorescence microscopy.
-*   **Neural Decoding:** Large-scale neural activity analysis via self-supervised learning.
 
 ---
 
@@ -44,10 +34,20 @@ showReadingTime: false
 
 ---
 
+### 🚀 Research Interests
+<!-- 紧凑排列确保并列一行：去除空格和换行 -->
+{{< badge >}}Artificial Intelligence{{< /badge >}}{{< badge color="orange" >}}Computational Imaging{{< /badge >}}{{< badge color="red" >}}Deep Learning{{< /badge >}}{{< badge color="green" >}}Neuroscience{{< /badge >}}{{< badge color="blue" >}}Bio-Microscopy{{< /badge >}}
+
+*   **Intelligent Frameworks:** Closed-loop all-optical neuro-modulation systems.
+*   **Biomedical Enhancement:** Generative foundation models for ultra-fast fluorescence microscopy.
+*   **Neural Decoding:** Large-scale neural activity analysis via self-supervised learning.
+I have published more than 15 papers <a href='https://scholar.google.com/citations?user=DN4ZT7YAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> at the peer reviewed journals with total in these fields. 
+---
+
 ### 🔬 Research Projects
 {{< timeline >}}
 {{< timelineItem icon="briefcase" header="NSFC Project (Principal Investigator)" badge="2026 - 2028" >}}
-Leading the project **"Research on Intelligent Frameworks for All-optical Closed-loop Neuromodulation"** (Grant No. 625B2053), supported by the National Natural Science Foundation of China.
+**"Intelligent Frameworks for All-optical Closed-loop Neuromodulation"** (No. 625B2053). Funded by the National Natural Science Foundation of China.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="lightning-bolt" header="Alibaba DAMO Air Project" badge="2026 - 2027" >}}
@@ -60,27 +60,28 @@ Leading the project **"Research on Intelligent Frameworks for All-optical Closed
 ### 🏆 Honors & Milestones
 {{< timeline >}}
 {{< timelineItem icon="star" header="National Scholarship" badge="2025" >}}
-Awarded the **National Scholarship** for Doctoral Students.
+Awarded the **National Scholarship** for Doctoral Students (Highest Honor).
 {{< /timelineItem >}}
 {{< timelineItem icon="rocket" header="Young Talent Lifting Project" badge="2024" >}}
-Selected by **CAST** (China Association for Science and Technology) for the Elite Doctoral Program.
+Selected by **CAST** (China Association for Science and Technology).
 {{< /timelineItem >}}
 {{< timelineItem icon="microscope" header="CSHL (Asia) Scholar" badge="2024" >}}
-One of **16 global participants** selected for the Cold Spring Harbor (Asia) Summer School.
+Selected for the Cold Spring Harbor (Asia) Summer School (1 of 16 globally).
 {{< /timelineItem >}}
-{{< /timeline >}}
+{{< timeline >}}
 
 ---
 
 ### 🛠 Professional Services
-*   {{< icon "pencil-alt" >}} **Editorial Board:** Youth Editorial Board Member of *Advanced Technology in Neuroscience* and *Chinese Clinical Medicine*.
-*   {{< icon "check-circle" >}} **Peer Reviewer:** *Nature Methods* (Co-reviewer), *IEEE TIM*, *Artificial Intelligence in Medicine*, *Optics Letters*.
-*   {{< icon "user-group" >}} **Scientific Editor:** Part-time Scientific Editor at *China Laser Press*.
+<!-- 使用 Emoji 替代容易报错的 icon 短代码，确保编译通过 -->
+- ✍️ **Editorial Board:** Youth Editorial Board Member of *Advanced Technology in Neuroscience* and *Chinese Clinical Medicine*.
+- 🔍 **Peer Reviewer:** *Nature Methods* (Co-reviewer), *IEEE TIM*, *Artificial Intelligence in Medicine*, *Optics Letters*.
+- 📖 **Scientific Editor:** Part-time Scientific Editor at *China Laser Press*.
 
 ---
 
 ### 📬 Get in Touch
-<!-- 社交 Tag 并列一行 -->
+<!-- 社交 Tag 强制并列一行 -->
 {{< badge icon="github" >}}guyuanjie{{< /badge >}}{{< badge icon="envelope" color="red" >}}guyj23@m.fudan.edu.cn{{< /badge >}}{{< badge icon="link" color="blue" >}}guyuanjie.com{{< /badge >}}
 
 <br>
