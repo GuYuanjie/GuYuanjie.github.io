@@ -62,14 +62,15 @@ I have published more than 15 papers <a href='https://scholar.google.com/citatio
 {{< timelineItem icon="star" header="National Scholarship" badge="2025" >}}
 Awarded the **National Scholarship** for Doctoral Students (Highest Honor).
 {{< /timelineItem >}}
+
 {{< timelineItem icon="rocket" header="Young Talent Lifting Project" badge="2024" >}}
 Selected by **CAST** (China Association for Science and Technology).
 {{< /timelineItem >}}
+
 {{< timelineItem icon="microscope" header="CSHL (Asia) Scholar" badge="2024" >}}
 Selected for the Cold Spring Harbor (Asia) Summer School (1 of 16 globally).
 {{< /timelineItem >}}
-{{< timeline >}}
-
+{{< /timeline >}}
 ---
 
 ### 🛠 Professional Services
