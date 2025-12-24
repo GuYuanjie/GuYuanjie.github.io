@@ -1,64 +1,94 @@
----
-title: "About Me"
-description: "More than just code."
-layout: "simple" 
-showTableOfContents: true
----
+# 👋 Hello, I'm Yuanjie Gu (谷元杰)
 
-{{< lead >}}
-你好！我是 **谷元杰 (Gu Yuanjie)**。一名热衷于构建优雅解决方案的开发者，开源爱好者，也是一名终身学习者。
-{{< /lead >}}
-
-<!-- 
-  GitHub Stats 部分 
-  请将 ?username=GuYuanjie 替换为你真实的 GitHub 用户名
-  theme=transparent 配合 Blowfish 的暗色模式非常完美
--->
-<div class="flex flex-col md:flex-row gap-4 mb-8 justify-center">
-  <img src="https://github-readme-stats.vercel.app/api?username=GuYuanjie&show_icons=true&theme=transparent&hide_border=true&title_color=2563eb&text_color=737373&icon_color=2563eb" alt="GitHub Stats" class="h-40 object-contain">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuYuanjie&layout=compact&theme=transparent&hide_border=true&title_color=2563eb&text_color=737373" alt="Top Langs" class="h-40 object-contain">
-</div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=guyuanjie&label=Profile%20views&color=0e75b6&style=flat" alt="guyuanjie" />
+  <a href="https://guyuanjie.com"><img src="https://img.shields.io/badge/Website-guyuanjie.com-blue?style=flat&logo=google-chrome&logoColor=white" /></a>
+  <a href="mailto:guyj23@m.fudan.edu.cn"><img src="https://img.shields.io/badge/Email-guyj23%40m.fudan.edu.cn-red?style=flat&logo=gmail&logoColor=white" /></a>
+  <img src="https://img.shields.io/badge/Location-Shanghai,China-green?style=flat&logo=mapmarker" />
+</p>
 
 ---
 
-## 🛠️ Tech Stack
+### 💡 About Me
 
-这里是我日常使用的工具和技术栈。
+> **"Exploring the intersection of Intelligence and Vision to decode the Brain."**
 
-### **Languages & Core**
-{{< badge color="indigo" >}}Go{{< /badge >}}
-{{< badge color="blue" >}}Python{{< /badge >}}
-{{< badge color="yellow" >}}JavaScript{{< /badge >}}
-{{< badge color="red" >}}HTML5{{< /badge >}}
-{{< badge color="blue" >}}CSS3{{< /badge >}}
-{{< badge color="neutral" >}}Markdown{{< /badge >}}
+I am a PhD student at **Fudan University**, Institute of Science and Technology for Brain-Inspired Intelligence. My research sits at the fascinating crossroads of **Biomedical Artificial Intelligence**, **Computational Optical Imaging**, and **Brain-Computer Interfaces (BCI)**. 
 
-### **Frameworks & Tools**
-{{< badge >}}Hugo{{< /badge >}}
-{{< badge >}}Tailwind CSS{{< /badge >}}
-{{< badge >}}Docker{{< /badge >}}
-{{< badge >}}Kubernetes{{< /badge >}}
-{{< badge >}}Git{{< /badge >}}
-{{< badge >}}PostgreSQL{{< /badge >}}
+I am currently a visiting scholar at the **Tsinghua University**, working under the guidance of Prof. Zhi Lu.
 
 ---
 
-## 🚀 Experience
+### 🚀 Research Interests
 
-<div class="relative border-l border-neutral-200 dark:border-neutral-700 ml-3 space-y-8 my-8">
+<p align="center">
+  <img src="https://img.shields.io/badge/AI-Deep%20Learning-blueviolet?style=for-the-badge&logo=pytorch" />
+  <img src="https://img.shields.io/badge/Imaging-Computational%20Optics-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Neuroscience-BCI-ff69b4?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/BioMedicine-Microscopy-yellow?style=for-the-badge" />
+</p>
 
-  <!-- 经历 1 -->
-  <div class="relative pl-8">
-    <div class="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border border-white dark:border-neutral-900 bg-primary-500"></div>
-    <time class="mb-1 text-sm font-normal leading-none text-neutral-400 dark:text-neutral-500">2023 - Present</time>
-    <h3 class="text-lg font-semibold text-neutral-900 dark:text-white">Senior Software Engineer</h3>
-    <div class="mb-4 text-base font-normal text-neutral-500 dark:text-neutral-400">
-      <strong>@ Tech Company Name</strong>
-      <ul class="list-disc list-inside mt-2 space-y-1">
-        <li>负责微服务架构的设计与重构，提升了系统 40% 的吞吐量。</li>
-        <li>主导了 CI/CD 流程的自动化，缩短了 50% 的部署时间。</li>
-        <li>Mentor 新人，组织内部技术分享会。</li>
-      </ul>
-    </div>
-  </div>
-</div>
+- **Intelligent Frameworks:** Developing closed-loop all-optical neuro-modulation systems.
+- **Biomedical Enhancement:** Generative foundation models for ultra-fast, high-resolution fluorescence microscopy.
+- **Neural Decoding:** Large-scale neural activity analysis and real-time denoising.
+
+---
+
+### 🎓 Education
+
+| Period | Institution | Degree & Major |
+| :--- | :--- | :--- |
+| **2023 - Present** | **Fudan University** | **Ph.D.** in Biomedical Engineering |
+| 2020 - 2023 | Jiangnan University | **M.S.** in Optical Engineering |
+| 2016 - 2020 | China University of Petroleum | **B.S.** in Software Engineering |
+
+---
+
+### 🏆 Honors & News
+<details open>
+<summary><b>Click to expand my latest milestones</b></summary>
+
+- 🚀 **[2025.10]** Awarded the **National Scholarship** for Doctoral Students.
+- 🌟 **[2024.12]** Selected for the **Young Talent Lifting Project** by CAST (China Association for Science and Technology).
+- 🔬 **[2024.08]** One of the **16 global participants** selected for the Cold Spring Harbor (Asia) Summer School on Neural Imaging.
+- 🏅 **[2024]** Gold Medal in the China International College Students' Innovation Competition (Shanghai Division).
+- 📖 **[Ongoing]** Leading a **NSFC project** on intelligent frameworks for neuro-modulation (PI, 300k CNY).
+</details>
+
+---
+
+### 🛠 Academic Service
+
+#### **Editorial Roles**
+- **Youth Editorial Board Member:** *Advanced Technology in Neuroscience*
+- **Youth Editorial Board Member:** *Chinese Clinical Medicine*
+- **Guest Scientific Editor:** *China Laser Press*
+
+#### **Reviewer Service**
+I serve as an independent reviewer for top-tier journals across multiple disciplines:
+- **General/Methodology:** `Nature Methods (Co-reviewer)`
+- **Medical/AI:** `Artificial Intelligence in Medicine`, `npj Digital Medicine`
+- **Signal Processing:** `IEEE Transactions on Instrumentation & Measurement`, `IEEE Signal Processing Letters`
+- **Optics:** `Optics Letters`, `Optical Engineering`
+
+---
+
+### 📊 Skills & Tools
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/MATLAB-ED8B00?style=flat" />
+  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat&logo=qt&logoColor=white" />
+  <img src="https://img.shields.io/badge/Deep%20Learning-Object%20Detection%20%26%20Segmentation-red" />
+</p>
+
+---
+
+### 📬 Get in Touch
+- **WeChat/Mobile:** +86-17851927165
+- **Personal Web:** [guyuanjie.com](https://guyuanjie.com)
+- **Collaborations:** Open to discussions on AI for Science and Advanced Bio-imaging.
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Quote" />
+</p>
