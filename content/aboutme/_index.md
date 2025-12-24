@@ -12,7 +12,7 @@ showReadingTime: false
 {{< /typeit >}}
 
 {{< lead >}}
-**"Exploring the intersection of Intelligence and Vision to decode the Brain."**
+**"Exploring the intersection of Intelligence and Vision to Biomedical Engineering."**
 {{< /lead >}}
 
 ---
@@ -33,15 +33,11 @@ showReadingTime: false
 - **Intelligent All-optical BCI:** Closed-loop all-optical neuro-modulation systems.
 - **Intelligent auxiliary diagnosis:** Diagnosis of diseases with AI-assisted image analysis.
 
-
-**Publications:** Published 15+ papers in peer-reviewed journals.  
-[<img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations">](https://scholar.google.com/citations?user=DN4ZT7YAAAAJ)
-
 ---
 
 ### 🔬 Research Projects
 - **Principal Investigator (PI)** | *2026 – 2028*  
-  **National Natural Science Foundation of China (NSFC)**: "Intelligent Frameworks for All-optical Closed-loop Neuromodulation" (No. 625B2053).
+  **National Natural Science Foundation of China (NSFC)**: "Intelligent Frameworks for All-optical Closed-loop Neuromodulation".
 - **Project Backbone** | *2026 – 2027*  
   **Alibaba DAMO Air Project**: "Generalizable Foundation Models for Biomedical Image Enhancement", joint initiative with Tsinghua University.
 
