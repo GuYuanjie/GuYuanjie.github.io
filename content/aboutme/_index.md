@@ -15,7 +15,7 @@ showReadingTime: false
 **"Exploring the intersection of Intelligence and Vision to Biomedical Engineering."**
 {{< /lead >}}
 
-<div class="flex flex-wrap gap-3 justify-center mb-10">
+<div class="flex flex-wrap gap-3 justify-start mb-10">
   <a href="#-education" class="px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-neutral-700 dark:text-neutral-300 transition-colors text-sm font-medium no-underline">
     🎓 Education
   </a>
