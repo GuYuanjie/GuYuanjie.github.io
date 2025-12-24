@@ -25,8 +25,8 @@ showReadingTime: false
   <a href="#-research-projects" class="px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-neutral-700 dark:text-neutral-300 transition-colors text-sm font-medium no-underline">
     🔬 Research Projects
   </a>
-  <a href="#-honors-milestones" class="px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-neutral-700 dark:text-neutral-300 transition-colors text-sm font-medium no-underline">
-    🏆 Honors & Milestones
+  <a href="#-honors" class="px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-neutral-700 dark:text-neutral-300 transition-colors text-sm font-medium no-underline">
+    🏆 Honors
   </a>
   <a href="#-professional-services" class="px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-primary-100 dark:hover:bg-primary-900 text-neutral-700 dark:text-neutral-300 transition-colors text-sm font-medium no-underline">
     🛠 Professional Services
@@ -62,7 +62,7 @@ showReadingTime: false
 
 ---
 
-### 🏆 Honors & Milestones
+### 🏆 Honors
 - 🏅 **National Scholarship** for Doctoral Students (Highest Honor), 2025.
 - 🚀 **Young Talent Lifting Project**, Selected by CAST (China Association for Science and Technology), 2024.
 - 🧬 **CSHL (Asia) Scholar**, Selected for Neural Data Analysis Summer School, 2024.
