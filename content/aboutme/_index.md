@@ -1,82 +1,96 @@
-# 👋 Hello, I'm Yuanjie Gu (谷元杰)
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=guyuanjie&label=Profile%20views&color=0e75b6&style=flat-square" alt="guyuanjie" />&nbsp;
-  <a href="https://guyuanjie.com"><img src="https://img.shields.io/badge/Website-guyuanjie.com-blue?style=flat-square&logo=google-chrome&logoColor=white" /></a>&nbsp;
-  <a href="mailto:guyj23@m.fudan.edu.cn"><img src="https://img.shields.io/badge/Email-guyj23%40m.fudan.edu.cn-red?style=flat-square&logo=gmail&logoColor=white" /></a>&nbsp;
-  <img src="https://img.shields.io/badge/Location-Shanghai,China-green?style=flat-square&logo=mapmarker" />
-</p>
-
+---
+title: "About Me"
+description: "PhD Student @ Fudan University | Visiting Scholar @ Tsinghua University"
+layout: "profile"
 ---
 
-### 💡 About Me
+{{< typeit tag="h1" speed=50 >}}
+👋 Hello, I'm Yuanjie Gu (谷元杰)
+{{< /typeit >}}
 
-> **"Exploring the intersection of Intelligence and Vision to decode the Brain."**
+{{< lead >}}
+**"Exploring the intersection of Intelligence and Vision to decode the Brain."**
+{{< /lead >}}
 
-I am a PhD student at **Fudan University** (ISTBI). My research sits at the fascinating crossroads of **Biomedical Artificial Intelligence**, **Computational Optical Imaging**, and **Brain-Computer Interfaces (BCI)**. Currently, I am a visiting scholar at the Laboratory of Imaging and Intelligence, **Tsinghua University**, working under the guidance of Prof. Zhi Lu and Academician Qionghai Dai.
+I am a PhD student at **Fudan University**, Institute of Science and Technology for Brain-Inspired Intelligence. My research sits at the crossroads of **Biomedical AI**, **Computational Optical Imaging**, and **BCI**. Currently, I am a visiting scholar at **Tsinghua University** (Academician Qionghai Dai's Lab).
 
----
-
-### 🎓 Education
-
-| Period | Institution | Degree & Major |
-| :--- | :--- | :--- |
-| **2023 - Present** | **Fudan University** | **Ph.D.** in Biomedical Engineering |
-| 2020 - 2023 | Jiangnan University | **M.S.** in Optical Engineering |
-| 2016 - 2020 | China University of Petroleum (Beijing) | **B.S.** in Computer Science |
+<!-- 状态标签并列一行 -->
+{{< badge >}}PhD Student{{< /badge >}} {{< badge color="cyan" >}}Fudan University{{< /badge >}} {{< badge color="purple" >}}Tsinghua Visiting{{< /badge >}} {{< badge icon="map-pin" >}}Shanghai{{< /badge >}}
 
 ---
 
 ### 🚀 Research Interests
+<!-- 使用 Blowfish Badge 实现并列一行，不换行 -->
+{{< badge >}}Artificial Intelligence{{< /badge >}}{{< badge color="orange" >}}Computational Imaging{{< /badge >}}{{< badge color="red" >}}Deep Learning{{< /badge >}}{{< badge color="green" >}}Neuroscience{{< /badge >}}{{< badge color="blue" >}}Bio-Microscopy{{< /badge >}}
 
-<!-- 关键修改：去除所有标签间的空格和换行，确保在同一行显示 -->
-<p align="center" style="white-space: nowrap;">
-<img src="https://img.shields.io/badge/AI-Deep%20Learning-blueviolet?style=for-the-badge&logo=pytorch" /><img src="https://img.shields.io/badge/Imaging-Computational%20Optics-orange?style=for-the-badge" /><img src="https://img.shields.io/badge/Neuroscience-BCI-ff69b4?style=for-the-badge" /><img src="https://img.shields.io/badge/BioMedicine-Microscopy-yellow?style=for-the-badge" />
-</p>
-
-- **Intelligent Frameworks:** Developing closed-loop all-optical neuro-modulation systems.
-- **Biomedical Enhancement:** Generative foundation models for ultra-fast, high-resolution fluorescence microscopy.
-- **Neural Decoding:** Large-scale neural activity analysis and real-time denoising via self-supervised learning.
+*   **Intelligent Frameworks:** Closed-loop all-optical neuro-modulation systems.
+*   **Biomedical Enhancement:** Foundation models for ultra-fast, high-resolution microscopy.
+*   **Neural Decoding:** Large-scale neural activity analysis via self-supervised learning.
 
 ---
 
-### 🔬 Research Projects
+### 🎓 Education
+<!-- 使用 Timeline 短代码展示教育经历，符合学术规范 -->
+{{< timeline >}}
+{{< timelineItem icon="academic-cap" header="Ph.D. in Biomedical Engineering" badge="2023 - Present" >}}
+**Fudan University**  
+Focus on Brain-Inspired Intelligence and Advanced Imaging.
+{{< /timelineItem >}}
 
-- **Principal Investigator (PI)**, "Research on Intelligent Frameworks and Methods for All-optical Closed-loop Neuromodulation", **National Natural Science Foundation of China (NSFC)**, Grant No. 625B2053, 2026-2028.
-- **Core Member**, "Generalizable Foundation Models for Biomedical Image Enhancement", **Alibaba DAMO Academy** & Tsinghua University Air Project, 2026-2027.
+{{< timelineItem icon="school" header="M.S. in Optical Engineering" badge="2020 - 2023" >}}
+**Jiangnan University**  
+Research on Computational Optics and Image Processing.
+{{< /timelineItem >}}
+
+{{< timelineItem icon="code" header="B.S. in Computer Science" badge="2016 - 2020" >}}
+**China University of Petroleum (Beijing)**  
+Foundation in Software Engineering and Algorithms.
+{{< /timelineItem >}}
+{{< /timeline >}}
 
 ---
 
-### 🏆 Honors & Milestones
-
-- 🏅 **[2025.10]** Awarded the **National Scholarship** for Doctoral Students (Top 1%).
-- 🚀 **[2024.12]** Selected for the **Young Talent Lifting Project** by CAST (China Association for Science and Technology).
-- 🧬 **[2024.08]** One of **16 global participants** selected for the **Cold Spring Harbor (Asia)** Summer School on Large-scale Neural Data Analysis.
-- 🌏 **[2025.08]** Selected for the **"Pilot Program"** for Young Scientific Talents (CAST Party School).
-- 🥇 **[2024]** **Gold Medal**, China International College Students' Innovation Competition (Shanghai Division).
+### 🔬 Key Research Projects
+<!-- 使用 Card 布局增加视觉高级感 -->
+{{< grid >}}
+  {{< card title="NSFC Project (PI)" icon="briefcase" >}}
+  **Principal Investigator.** Leading research on Intelligent Frameworks for All-optical Closed-loop Neuromodulation (2026-2028).
+  {{< /card >}}
+  {{< card title="Alibaba DAMO Air Project" icon="lightning-bolt" >}}
+  **Project Backbone.** Developing Generalizable Foundation Models for Biomedical Image Enhancement (2026-2027).
+  {{< /card >}}
+{{< /grid >}}
 
 ---
 
-### 🛠 Academic Service
+### 🏆 Honors & News
+{{< timeline >}}
+{{< timelineItem icon="star" header="National Scholarship" badge="2025" >}}
+Awarded the **National Scholarship** for Doctoral Students.
+{{< /timelineItem >}}
+{{< timelineItem icon="rocket" header="Young Talent Lifting Project" badge="2024" >}}
+Selected by **CAST** (China Association for Science and Technology).
+{{< /timelineItem >}}
+{{< timelineItem icon="microscope" header="CSHL (Asia) Scholar" badge="2024" >}}
+One of **16 global participants** at Cold Spring Harbor (Asia) Summer School.
+{{< /timelineItem >}}
+{{< /timeline >}}
 
-- **Editorial Roles:** 
-  - Youth Editorial Board Member: *Advanced Technology in Neuroscience*
-  - Youth Editorial Board Member & Assistant Editor: *Chinese Clinical Medicine* (Fudan Zhongshan Hospital)
-  - Scientific Editor: *China Laser Press*
-- **Journal Reviewer:** 
-  - *Nature Methods* (Co-reviewer)
-  - *IEEE Transactions on Instrumentation & Measurement*
-  - *Artificial Intelligence in Medicine*
-  - *Biomedical Signal Processing and Control*
-  - *Optics Letters* / *Optical Engineering*
+---
+
+### 🛠 Professional Services
+<!-- 使用 List 结合 Icon -->
+*   {{< icon "pencil-alt" >}} **Editorial Board:** *Advanced Technology in Neuroscience*, *Chinese Clinical Medicine*.
+*   {{< icon "check-circle" >}} **Journal Reviewer:** *Nature Methods* (Co-reviewer), *IEEE TIM*, *AI in Medicine*, *Optics Letters*.
+*   {{< icon "user-group" >}} **Scientific Editor:** *China Laser Press*.
 
 ---
 
 ### 📬 Get in Touch
-- **WeChat/Mobile:** +86-17851927165
-- **Personal Web:** [guyuanjie.com](https://guyuanjie.com)
-- **Collaborations:** Open to discussions on AI for Science, Neural Imaging, and BCI.
+<!-- 使用 Button 实现交互感 -->
+{{< button href="mailto:guyj23@m.fudan.edu.cn" target="_self" >}} Email Me {{< /button >}}
+{{< button href="https://guyuanjie.com" target="_blank" >}} Personal Website {{< /button >}}
 
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Quote" />
-</p>
+<br>
+
+{{< github repo="guyuanjie/guyuanj
