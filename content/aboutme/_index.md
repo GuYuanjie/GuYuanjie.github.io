@@ -20,7 +20,7 @@ showReadingTime: false
 ### 🎓 Education
 - **Ph.D. in Biomedical Engineering** (2023 – Present)  
   **Fudan University**, Institute of Science and Technology for Brain-Inspired Intelligence.  
-  *Visiting Scholar at Tsinghua University (Academician Qionghai Dai's Lab).*
+  *Visiting Scholar at Tsinghua University.*
 - **M.S. in Optical Engineering** (2020 – 2023)  
   **Jiangnan University**, Dept. of Optoelectronic Information Science and Engineering.
 - **B.S. in Computer Science** (2016 – 2020)  
@@ -29,13 +29,10 @@ showReadingTime: false
 ---
 
 ### 🚀 Research Interests
-<p align="left">
-{{< badge >}}Artificial Intelligence{{< /badge >}}{{< badge color="orange" >}}Computational Imaging{{< /badge >}}{{< badge color="red" >}}Deep Learning{{< /badge >}}{{< badge color="green" >}}Neuroscience{{< /badge >}}{{< badge color="blue" >}}Bio-Microscopy{{< /badge >}}
-</p>
+- **Computational Imaging:** Generative foundation models for microscopy.
+- **Intelligent All-optical BCI:** Closed-loop all-optical neuro-modulation systems.
+- **Intelligent auxiliary diagnosis:** Diagnosis of diseases with AI-assisted image analysis.
 
-- **Intelligent Frameworks:** Closed-loop all-optical neuro-modulation systems.
-- **Biomedical Enhancement:** Generative foundation models for ultra-fast fluorescence microscopy.
-- **Neural Decoding:** Large-scale neural activity analysis via self-supervised learning.
 
 **Publications:** Published 15+ papers in peer-reviewed journals.  
 [<img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FGuYuanjie%2Fguyuanjie.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations">](https://scholar.google.com/citations?user=DN4ZT7YAAAAJ)
@@ -53,12 +50,12 @@ showReadingTime: false
 ### 🏆 Honors & Milestones
 - 🏅 **National Scholarship** for Doctoral Students (Highest Honor), 2025.
 - 🚀 **Young Talent Lifting Project**, Selected by CAST (China Association for Science and Technology), 2024.
-- 🧬 **CSHL (Asia) Scholar**, Selected for Neural Data Analysis Summer School (1 of 16 globally), 2024.
+- 🧬 **CSHL (Asia) Scholar**, Selected for Neural Data Analysis Summer School, 2024.
 - 🥇 **Gold Medal**, China International College Students' Innovation Competition (Shanghai), 2024.
 
 ---
 
 ### 🛠 Professional Services
 - ✍️ **Editorial Board:** Youth Editorial Board Member of *Advanced Technology in Neuroscience* and *Chinese Clinical Medicine*.
-- 🔍 **Peer Reviewer:** *Nature Methods* (Co-reviewer), *IEEE TIM*, *Artificial Intelligence in Medicine*, *Optics Letters*.
+- 🔍 **Peer Reviewer:** *IEEE TIM*, *Artificial Intelligence in Medicine*, *Biomedical Signal Processing and Control*.
 - 📖 **Scientific Editor:** Part-time Scientific Editor at *China Laser Press*.
