@@ -3,7 +3,6 @@ title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
 layout: "simple"
 fullWidth: true 
-showDate: false
 ---
 
 <style>
