@@ -24,7 +24,7 @@ showTableOfContents: true
 
 
 ## 📅 Recent Publications
-
+<div class="publication-card"> <div class="publication-header"> <strong>1. 基于深度强化学习的自适应网络资源分配优化</strong> </div> <div class="publication-details"> <em>作者：</em> 张三，李四，王五<br> <em>期刊：</em> IEEE Transactions on Networking, 42(3), 456-470<br> <em>年份：</em> 2024<br> <em>DOI：</em> <a href="https://doi.org/10.1109/TNET.2024.1234567">10.1109/TNET.2024.1234567</a><br> <em>摘要：</em> 本文提出了一种基于深度强化学习的自适应网络资源分配框架，该框架能够在动态网络环境下实现资源的高效利用，显著提升网络吞吐量并降低延迟。实验结果表明，与现有方法相比，我们的方法在多种网络场景下均表现出优越性能。 </div> <div class="publication-links"> {{< button href="https://arxiv.org/abs/2401.12345" target="_blank" >}}预印本{{< /button >}} {{< button href="/papers/tnet2024.pdf" >}}PDF{{< /button >}} {{< button href="/bib/tnet2024.bib" >}}BibTeX{{< /button >}} </div> </div><div class="publication-card"> <div class="publication-header"> <strong>2. 多模态数据融合在医疗影像诊断中的前沿应用</strong> </div> <div class="publication-details"> <em>作者：</em> 李四，赵六，孙七<br> <em>期刊：</em> Medical Image Analysis, 85, 102345<br> <em>年份：</em> 2024<br> <em>DOI：</em> <a href="https://doi.org/10.1016/j.media.2024.102345">10.1016/j.media.2024.102345</a><br> <em>摘要：</em> 本研究探索了多模态数据融合技术在医疗影像诊断中的应用，结合MRI、CT和临床数据，提出了一种新型融合网络架构，显著提高了疾病检测的准确性和鲁棒性。 </div> <div class="publication-links"> {{< button href="/papers/medical2024.pdf" >}}PDF{{< /button >}} {{< button href="/bib/medical2024.bib" >}}BibTeX{{< /button >}} </div> </div>
 ### 2024
 
 <!-- PAPER ENTRY 2 (精简版 - 无图) -->
