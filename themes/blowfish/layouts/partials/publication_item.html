@@ -1,0 +1,59 @@
+{{ $title := .Get "title" }}
+{{ $year := .Get "year" }}
+{{ $type := .Get "type" }}
+{{ $tags := .Get "tags" }}
+{{ $search := .Get "search" }}
+{{ $authors := .Get "authors" }}
+{{ $venue := .Get "venue" }}
+{{ $award := .Get "award" }}
+{{ $meta := .Get "meta" }}
+{{ $venueStyle := .Get "venueStyle" }}
+{{ $bibtexId := .Get "bibtexId" }}
+
+<article class="pub-card" data-year="{{ $year }}" data-type="{{ $type }}" data-tags="{{ $tags }}" data-search="{{ $search }}">
+    <div class="pub-header">
+        <h3 class="pub-title">{{ $title }}</h3>
+        {{ if $venueStyle }}
+            <span class="meta-tag" style="{{ $venueStyle }}">{{ $venue | safeHTML }}</span>
+        {{ else }}
+            <span class="meta-tag">{{ $venue | safeHTML }}</span>
+        {{ end }}
+    </div>
+    
+    {{ if $award }}
+    <div class="award-badge"><i class="fa-solid fa-trophy"></i> {{ $award }}</div>
+    {{ end }}
+
+    <div class="pub-authors">
+        {{ $authors | safeHTML }}
+    </div>
+
+    <div class="pub-venue">
+        {{ if eq $type "conference" }}
+            {{ $venue | safeHTML }}
+        {{ else }}
+            {{ $venue | safeHTML }}
+        {{ end }}
+    </div>
+    
+    {{ if $meta }}
+    <div class="pub-meta">
+        {{ $meta | safeHTML }}
+    </div>
+    {{ end }}
+
+    <div class="pub-actions">
+        {{ .Inner }}
+    </div>
+
+    {{ if $bibtexId }}
+    <!-- Hidden BibTeX -->
+    <div id="{{ $bibtexId }}" class="bibtex-container">
+        <span class="copy-feedback">Copied!</span>
+        <div class="code-content" onclick="copyBibtex('{{ $bibtexId }}')">
+            {{ .Get "bibtex" }}
+        </div>
+        <div style="text-align: right; margin-top: 5px; color: var(--text-muted); font-size: 0.7rem;">Click to Copy</div>
+    </div>
+    {{ end }}
+</article>
