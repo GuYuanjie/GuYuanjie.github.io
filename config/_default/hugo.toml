@@ -29,3 +29,8 @@ googleAnalytics = "G-W2QC577QZD"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true 
