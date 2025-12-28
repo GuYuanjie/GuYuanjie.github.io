@@ -1,11 +1,11 @@
 ---
 title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
-layout: "simple"
+layout: "single"
 fullWidth: true
 ---
 
-<!-- 引入 FontAwesome 图标库 (如果你的主题未包含) -->
+<!-- 引入 FontAwesome 图标库 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -38,16 +38,28 @@ fullWidth: true
     margin-bottom: 2rem;
 }
 
-/* 统计卡片 - 更加紧凑 */
+/* 统计卡片 - 修正网格布局 */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     background: var(--tag-bg);
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+@media (min-width: 640px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .stat-item h4 {
@@ -144,6 +156,7 @@ fullWidth: true
     padding: 1.5rem;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     position: relative;
+    display: block; /* 确保默认显示 */
 }
 
 /* 仅在Hover时浮起，减少视觉干扰 */
@@ -204,6 +217,8 @@ fullWidth: true
     font-style: italic;
     color: var(--text-main);
     font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
 }
 
 .pub-meta {
@@ -220,6 +235,8 @@ fullWidth: true
     background: var(--tag-bg);
     padding: 2px 8px;
     border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 /* 按钮组 - 统一风格 */
@@ -283,6 +300,12 @@ fullWidth: true
     animation: fadeIn 0.3s ease;
 }
 
+.code-content {
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
 .copy-feedback {
     position: absolute;
     top: 5px;
@@ -302,16 +325,17 @@ fullWidth: true
 
 /* 移动端优化 */
 @media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
     .pub-header {
         flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .meta-tag {
+        align-self: flex-start;
     }
 }
 </style>
 
-<!-- 1. 统计面板 -->
 <div class="pub-toolbar">
     <div class="stats-grid">
         <div class="stat-item">
@@ -332,13 +356,13 @@ fullWidth: true
         </div>
     </div>
 
-    <!-- 2. 搜索框 -->
+    <!-- 搜索框 -->
     <div class="search-wrapper">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, venue, or keywords...">
     </div>
 
-    <!-- 3. 筛选器 -->
+    <!-- 筛选器 -->
     <div class="filter-group" id="filterContainer">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="selected">🔥 Selected</button>
@@ -350,14 +374,14 @@ fullWidth: true
     </div>
 </div>
 
-<!-- 4. 论文列表 (无标题分割，纯时间倒序，通过Tag区分) -->
+<!-- 论文列表 (无标题分割，纯时间倒序，通过Tag区分) -->
 <div class="pub-list" id="publicationList">
 
     <!-- Paper 1 -->
     <article class="pub-card" data-year="2024" data-type="journal" data-tags="cv generative-ai selected" data-search="generative pretraining tpami mask">
         <div class="pub-header">
             <h3 class="pub-title">Towards Scalable Visual Representation Learning with Masked Generative Pretraining</h3>
-            <span class="meta-tag" style="border: 1px solid var(--primary-color); color: var(--primary-color); font-weight: 600;">TPAMI 2024</span>
+            <span class="meta-tag" style="border: 1px solid var(--primary-color); color: var(--primary-color);">TPAMI 2024</span>
         </div>
         
         <div class="pub-authors">
@@ -400,7 +424,7 @@ fullWidth: true
     <article class="pub-card" data-year="2024" data-type="conference" data-tags="cv nerf selected" data-search="dynamic nerf view synthesis cvpr">
         <div class="pub-header">
             <h3 class="pub-title">Dynamic Neural Radiance Fields for Real-time View Synthesis</h3>
-            <span class="meta-tag" style="border: 1px solid #8b5cf6; color: #8b5cf6; font-weight: 600;">CVPR 2024</span>
+            <span class="meta-tag" style="border: 1px solid #8b5cf6; color: #8b5cf6;">CVPR 2024</span>
         </div>
         
         <div class="award-badge"><i class="fa-solid fa-trophy"></i> Oral Presentation (Top 3%)</div>
@@ -481,13 +505,6 @@ fullWidth: true
 </div>
 
 <script>
-/**
- * 核心功能逻辑
- * 1. 搜索过滤
- * 2. 按钮标签过滤
- * 3. BibTeX 显示与复制
- */
-
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -539,16 +556,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (matchesFilter && matchesSearch) {
                 card.style.display = 'block';
-                // 简单的淡入动画
-                card.style.opacity = '0';
-                setTimeout(() => card.style.opacity = '1', 50);
                 visibleCount++;
             } else {
                 card.style.display = 'none';
             }
         });
         
-        // 可选：如果没有任何结果显示提示信息 (此处略)
+        // 可选：如果没有任何结果显示提示信息
+        if (visibleCount === 0) {
+            console.log('No publications match your criteria.');
+        }
     }
 });
 
@@ -557,10 +574,9 @@ function toggleBibtex(id) {
     const el = document.getElementById(id);
     if (el.classList.contains('show')) {
         el.classList.remove('show');
-        setTimeout(() => el.style.display = 'none', 300); // 等待动画结束
+        setTimeout(() => el.style.display = 'none', 300);
     } else {
         el.style.display = 'block';
-        // 强制重绘以触发 transition
         setTimeout(() => el.classList.add('show'), 10);
     }
 }
