@@ -2,7 +2,6 @@
 title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
 layout: "simple"
-draft: false
 fullWidth: true 
 showDate: false
 ---
