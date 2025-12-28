@@ -1,91 +1,164 @@
 ---
 title: "Publications"
-layout: "simple"
-showTableOfContents: true
+description: "Selected peer-reviewed journals and conference proceedings."
+layout: "single"
+showTaxonomies: false
+showTableOfContents: false
 ---
 
-{{< lead >}}
-我的研究兴趣主要集中在 **计算机视觉 (Computer Vision)**、**深度学习 (Deep Learning)** 以及 **机器人 (Robotics)**。
-<br>
-你也可以在 
-<a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="text-primary-600 hover:underline">Google Scholar</a> 
-或 
-<a href="https://orcid.org/YOUR_ID" target="_blank" class="text-primary-600 hover:underline">ORCID</a> 
-上找到我的完整论文列表。
-{{< /lead >}}
+<!-- 引入简单的 Alpine.js 逻辑用于筛选 -->
+<div x-data="{ 
+    filterYear: 'All', 
+    filterTag: 'All', 
+    filterJournal: 'All',
+    filterFirstAuthor: false,
+    showItem(year, tags, journal, isFirst) {
+        const matchYear = (this.filterYear === 'All' || this.filterYear === year);
+        const matchTag = (this.filterTag === 'All' || tags.includes(this.filterTag));
+        const matchJournal = (this.filterJournal === 'All' || journal === this.filterJournal);
+        const matchFirst = (!this.filterFirstAuthor || isFirst === 'true');
+        return matchYear && matchTag && matchJournal && matchFirst;
+    }
+}">
 
-<!-- 筛选/图例 (可选) -->
-<div class="flex flex-wrap gap-2 mb-8 text-sm">
-  <span class="px-2 py-1 bg-red-100 text-red-700 rounded border border-red-200 dark:bg-red-900 dark:text-red-200 dark:border-red-800">🔥 Selected</span>
-  <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded border border-yellow-200 dark:bg-yellow-900 dark:text-yellow-200 dark:border-yellow-800">🏆 Best Paper</span>
+    <!-- 介绍部分 -->
+    <div class="mb-10">
+        <p class="text-lg text-neutral-600 dark:text-neutral-400">
+            我的研究主要集中在计算机视觉和深度学习。以下是发表的论文列表。
+            <br> (注：* 表示共同一作，下划线表示通讯作者)
+        </p>
+    </div>
+
+    <!-- 筛选器布局 -->
+    <div class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl mb-12 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex flex-wrap gap-4 items-center">
+            
+            <!-- 年份筛选 -->
+            <div class="flex flex-col">
+                <span class="text-xs font-bold uppercase mb-1 opacity-60">Year</span>
+                <select x-model="filterYear" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded text-sm p-1">
+                    <option value="All">All Years</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                </select>
+            </div>
+
+            <!-- 标签筛选 -->
+            <div class="flex flex-col">
+                <span class="text-xs font-bold uppercase mb-1 opacity-60">Category</span>
+                <select x-model="filterTag" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded text-sm p-1">
+                    <option value="All">All Types</option>
+                    <option value="Conference">Conference</option>
+                    <option value="Journal">Journal</option>
+                    <option value="Preprint">Preprint</option>
+                </select>
+            </div>
+
+            <!-- 期刊/会议筛选 -->
+            <div class="flex flex-col">
+                <span class="text-xs font-bold uppercase mb-1 opacity-60">Venue</span>
+                <select x-model="filterJournal" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded text-sm p-1">
+                    <option value="All">All Venues</option>
+                    <option value="CVPR">CVPR</option>
+                    <option value="Nature">Nature</option>
+                    <option value="IEEE TNNLS">IEEE TNNLS</option>
+                </select>
+            </div>
+
+            <!-- 第一作者开关 -->
+            <div class="flex items-center mt-5 ml-2">
+                <input type="checkbox" x-model="filterFirstAuthor" id="firstAuthor" class="mr-2">
+                <label for="firstAuthor" class="text-sm font-medium cursor-pointer">First Author Only</label>
+            </div>
+
+            <!-- 重置按钮 -->
+            <button @click="filterYear='All'; filterTag='All'; filterJournal='All'; filterFirstAuthor=false" 
+                    class="mt-5 ml-auto text-xs underline opacity-60 hover:opacity-100">
+                Reset Filters
+            </button>
+        </div>
+    </div>
+
+    <!-- 论文列表 -->
+    <div class="space-y-8">
+
+        <!-- 论文项目 1 -->
+        <div x-show="showItem('2024', ['Conference', 'Computer Vision'], 'CVPR', 'true')" 
+             class="group relative flex flex-col md:flex-row gap-6 p-4 rounded-2xl transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-700">
+            
+            <div class="w-full md:w-1/4 shrink-0">
+                <img src="/images/pub-teaser-1.png" alt="Paper Teaser" class="rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700 w-full h-auto object-cover">
+            </div>
+
+            <div class="flex-grow">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-200 rounded">CVPR 2024</span>
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-neutral-200 dark:bg-neutral-700 rounded">Oral</span>
+                </div>
+                
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
+                    Innovative Deep Learning Architecture for Real-time Scene Understanding
+                </h3>
+                
+                <div class="text-sm mb-3">
+                    <strong>Your Name*</strong>, Jane Doe*, John Smith, <span class="underline">Advisor Name</span>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {{< badge >}}Computer Vision{{< /badge >}}
+                    {{< badge >}}Scene Parsing{{< /badge >}}
+                </div>
+
+                <div class="flex gap-4 text-sm font-medium">
+                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "paper" >}} Paper</a>
+                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "github" >}} Code</a>
+                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "quote" >}} BibTeX</a>
+                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "video" >}} Video</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 论文项目 2 -->
+        <div x-show="showItem('2023', ['Journal', 'Deep Learning'], 'IEEE TNNLS', 'false')" 
+             class="group relative flex flex-col md:flex-row gap-6 p-4 rounded-2xl transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-700">
+            
+            <div class="w-full md:w-1/4 shrink-0">
+                <img src="/images/pub-teaser-2.png" alt="Paper Teaser" class="rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700 w-full h-auto object-cover">
+            </div>
+
+            <div class="flex-grow">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-secondary-100 text-secondary-700 dark:bg-secondary-900 dark:text-secondary-200 rounded">IEEE TNNLS 2023</span>
+                </div>
+                
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
+                    A Comprehensive Survey on Robust Neural Networks
+                </h3>
+                
+                <div class="text-sm mb-3">
+                    Jane Doe, <strong>Your Name</strong>, John Smith
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {{< badge >}}Deep Learning{{< /badge >}}
+                    {{< badge >}}Survey{{< /badge >}}
+                </div>
+
+                <div class="flex gap-4 text-sm font-medium">
+                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "paper" >}} PDF</a>
+                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "quote" >}} BibTeX</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 更多论文... 复制上方 div 并修改参数 -->
+
+    </div>
+
+    <!-- 无搜索结果提示 -->
+    <div x-cloak x-show="!document.querySelector('.space-y-8').innerText.trim()" class="text-center py-20">
+        <p class="text-neutral-500">没有找到符合条件的论文。</p>
+    </div>
+
 </div>
-
----
-
-
-## 📅 Recent Publications
-<div class="publication-card"> <div class="publication-header"> <strong>1. 基于深度强化学习的自适应网络资源分配优化</strong> </div> <div class="publication-details"> <em>作者：</em> 张三，李四，王五<br> <em>期刊：</em> IEEE Transactions on Networking, 42(3), 456-470<br> <em>年份：</em> 2024<br> <em>DOI：</em> <a href="https://doi.org/10.1109/TNET.2024.1234567">10.1109/TNET.2024.1234567</a><br> <em>摘要：</em> 本文提出了一种基于深度强化学习的自适应网络资源分配框架，该框架能够在动态网络环境下实现资源的高效利用，显著提升网络吞吐量并降低延迟。实验结果表明，与现有方法相比，我们的方法在多种网络场景下均表现出优越性能。 </div> <div class="publication-links"> {{< button href="https://arxiv.org/abs/2401.12345" target="_blank" >}}预印本{{< /button >}} {{< button href="/papers/tnet2024.pdf" >}}PDF{{< /button >}} {{< button href="/bib/tnet2024.bib" >}}BibTeX{{< /button >}} </div> </div><div class="publication-card"> <div class="publication-header"> <strong>2. 多模态数据融合在医疗影像诊断中的前沿应用</strong> </div> <div class="publication-details"> <em>作者：</em> 李四，赵六，孙七<br> <em>期刊：</em> Medical Image Analysis, 85, 102345<br> <em>年份：</em> 2024<br> <em>DOI：</em> <a href="https://doi.org/10.1016/j.media.2024.102345">10.1016/j.media.2024.102345</a><br> <em>摘要：</em> 本研究探索了多模态数据融合技术在医疗影像诊断中的应用，结合MRI、CT和临床数据，提出了一种新型融合网络架构，显著提高了疾病检测的准确性和鲁棒性。 </div> <div class="publication-links"> {{< button href="/papers/medical2024.pdf" >}}PDF{{< /button >}} {{< button href="/bib/medical2024.bib" >}}BibTeX{{< /button >}} </div> </div>
-### 2024
-
-<!-- PAPER ENTRY 2 (精简版 - 无图) -->
-<div class="mb-8 relative pl-4 border-l-2 border-neutral-200 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500 transition-colors">
-  <div class="flex flex-wrap items-center gap-2 mb-1">
-    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-      Efficient Transformer for Edge Devices
-    </h3>
-    <span class="px-2 py-0.5 rounded text-xs font-bold bg-yellow-100 text-yellow-700 border border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-300">🏆 Best Paper Award</span>
-  </div>
-
-  <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-1">
-    **Yuanjie Gu**, Author Two
-  </p>
-  <p class="text-sm italic text-neutral-500 mb-2">ICLR 2024</p>
-  
-  <div class="flex gap-2">
-    <a href="#" class="text-xs font-medium text-primary-600 hover:underline">[PDF]</a>
-    <a href="#" class="text-xs font-medium text-primary-600 hover:underline">[Code]</a>
-    <a href="#" class="text-xs font-medium text-primary-600 hover:underline">[Slides]</a>
-  </div>
-</div>
-
-<!-- PAPER ENTRY 3 -->
-<div class="mb-8 relative pl-4 border-l-2 border-neutral-200 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500 transition-colors">
-  <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1">
-    A Survey on Multimodal Learning
-  </h3>
-  <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-1">
-    Author One, **Yuanjie Gu**, Author Three
-  </p>
-  <p class="text-sm italic text-neutral-500 mb-2">IEEE TPAMI (Under Review)</p>
-  
-  <div class="flex gap-2">
-    <a href="#" class="text-xs font-medium text-primary-600 hover:underline">[arXiv]</a>
-  </div>
-</div>
-
-### 2023
-
-<!-- PAPER ENTRY 4 -->
-<div class="mb-8 relative pl-4 border-l-2 border-neutral-200 dark:border-neutral-800 hover:border-primary-500 dark:hover:border-primary-500 transition-colors">
-  <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1">
-    Early works on Object Detection
-  </h3>
-  <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-1">
-    **Yuanjie Gu**, Supervisor Name
-  </p>
-  <p class="text-sm italic text-neutral-500 mb-2">ECCV 2022</p>
-  
-  <div class="flex gap-2">
-    <a href="#" class="text-xs font-medium text-primary-600 hover:underline">[PDF]</a>
-    <a href="#" class="text-xs font-medium text-primary-600 hover:underline">[Poster]</a>
-  </div>
-</div>
-
----
-
-## 🧩 Patents
-
-- **一种基于深度学习的图像修复方法**, CN102345678A, 2024. (**Yuanjie Gu**, et al.)
-- **A Method for Real-time Rendering**, US12345678, 2023. (Pending)
-
----
