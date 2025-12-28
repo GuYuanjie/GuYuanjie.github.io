@@ -2,11 +2,11 @@
 title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
 layout: "single"
-showTaxonomies: false
-showTableOfContents: false
 ---
 
-<!-- 引入简单的 Alpine.js 逻辑用于筛选 -->
+<!-- 引入 Font Awesome 网络库 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 <div x-data="{ 
     filterYear: 'All', 
     filterTag: 'All', 
@@ -21,144 +21,138 @@ showTableOfContents: false
     }
 }">
 
-    <!-- 介绍部分 -->
-    <div class="mb-10">
-        <p class="text-lg text-neutral-600 dark:text-neutral-400">
-            我的研究主要集中在计算机视觉和深度学习。以下是发表的论文列表。
-            <br> (注：* 表示共同一作，下划线表示通讯作者)
-        </p>
-    </div>
-
-    <!-- 筛选器布局 -->
-    <div class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-xl mb-12 border border-neutral-200 dark:border-neutral-700">
-        <div class="flex flex-wrap gap-4 items-center">
+    <!-- 1. 筛选面板 -->
+    <div class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl mb-12 border border-neutral-200 dark:border-neutral-700 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
             
-            <!-- 年份筛选 -->
+            <!-- 年份 -->
             <div class="flex flex-col">
-                <span class="text-xs font-bold uppercase mb-1 opacity-60">Year</span>
-                <select x-model="filterYear" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded text-sm p-1">
+                <label class="text-xs font-bold uppercase mb-2 opacity-60"><i class="fa-solid fa-calendar-days mr-1"></i> Year</label>
+                <select x-model="filterYear" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded-lg text-sm p-2 focus:ring-primary-500">
                     <option value="All">All Years</option>
                     <option value="2024">2024</option>
                     <option value="2023">2023</option>
-                    <option value="2022">2022</option>
                 </select>
             </div>
 
-            <!-- 标签筛选 -->
+            <!-- 类别 -->
             <div class="flex flex-col">
-                <span class="text-xs font-bold uppercase mb-1 opacity-60">Category</span>
-                <select x-model="filterTag" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded text-sm p-1">
+                <label class="text-xs font-bold uppercase mb-2 opacity-60"><i class="fa-solid fa-tag mr-1"></i> Category</label>
+                <select x-model="filterTag" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded-lg text-sm p-2">
                     <option value="All">All Types</option>
                     <option value="Conference">Conference</option>
                     <option value="Journal">Journal</option>
-                    <option value="Preprint">Preprint</option>
                 </select>
             </div>
 
-            <!-- 期刊/会议筛选 -->
+            <!-- 期刊 -->
             <div class="flex flex-col">
-                <span class="text-xs font-bold uppercase mb-1 opacity-60">Venue</span>
-                <select x-model="filterJournal" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded text-sm p-1">
+                <label class="text-xs font-bold uppercase mb-2 opacity-60"><i class="fa-solid fa-building-columns mr-1"></i> Venue</label>
+                <select x-model="filterJournal" class="bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 rounded-lg text-sm p-2">
                     <option value="All">All Venues</option>
                     <option value="CVPR">CVPR</option>
                     <option value="Nature">Nature</option>
-                    <option value="IEEE TNNLS">IEEE TNNLS</option>
                 </select>
             </div>
 
-            <!-- 第一作者开关 -->
-            <div class="flex items-center mt-5 ml-2">
-                <input type="checkbox" x-model="filterFirstAuthor" id="firstAuthor" class="mr-2">
-                <label for="firstAuthor" class="text-sm font-medium cursor-pointer">First Author Only</label>
+            <!-- 第一作者 -->
+            <div class="flex items-center pb-2 h-10">
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" x-model="filterFirstAuthor" class="sr-only peer">
+                    <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
+                    <span class="ml-3 text-sm font-medium">First Author</span>
+                </label>
             </div>
-
-            <!-- 重置按钮 -->
-            <button @click="filterYear='All'; filterTag='All'; filterJournal='All'; filterFirstAuthor=false" 
-                    class="mt-5 ml-auto text-xs underline opacity-60 hover:opacity-100">
-                Reset Filters
+        </div>
+        <!-- 重置 -->
+        <div class="mt-4 flex justify-end">
+            <button @click="filterYear='All'; filterTag='All'; filterJournal='All'; filterFirstAuthor=false" class="text-xs text-primary-500 hover:underline">
+                <i class="fa-solid fa-rotate-left mr-1"></i> Reset Filters
             </button>
         </div>
     </div>
 
-    <!-- 论文列表 -->
-    <div class="space-y-8">
+    <!-- 2. 论文列表 -->
+    <div class="space-y-10">
 
-        <!-- 论文项目 1 -->
-        <div x-show="showItem('2024', ['Conference', 'Computer Vision'], 'CVPR', 'true')" 
-             class="group relative flex flex-col md:flex-row gap-6 p-4 rounded-2xl transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-700">
+        <!-- 论文条目 1 -->
+        <div x-show="showItem('2024', ['Conference'], 'CVPR', 'true')" 
+             class="group flex flex-col md:flex-row gap-8 transition-opacity duration-300">
             
-            <div class="w-full md:w-1/4 shrink-0">
-                <img src="/images/pub-teaser-1.png" alt="Paper Teaser" class="rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700 w-full h-auto object-cover">
+            <!-- 缩略图 -->
+            <div class="w-full md:w-56 shrink-0">
+                <div class="relative overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700 shadow-sm transition-transform group-hover:scale-[1.02]">
+                    <img src="/images/your-paper-image.png" alt="Teaser" class="w-full h-32 object-cover">
+                </div>
             </div>
 
+            <!-- 内容 -->
             <div class="flex-grow">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-200 rounded">CVPR 2024</span>
-                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-neutral-200 dark:bg-neutral-700 rounded">Oral</span>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-widest">CVPR 2024</span>
+                    <span class="bg-neutral-100 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Oral</span>
                 </div>
                 
-                <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
-                    Innovative Deep Learning Architecture for Real-time Scene Understanding
+                <h3 class="text-xl font-extrabold mb-2 group-hover:text-primary-500 transition-colors">
+                    Innovative Research Title for Machine Learning Applications
                 </h3>
                 
-                <div class="text-sm mb-3">
-                    <strong>Your Name*</strong>, Jane Doe*, John Smith, <span class="underline">Advisor Name</span>
+                <div class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
+                    <b class="text-neutral-900 dark:text-neutral-100 decoration-primary-500 underline decoration-2">Your Name*</b>, Co-author, and Advisor
                 </div>
 
-                <div class="flex flex-wrap gap-2 mb-4">
-                    {{< badge >}}Computer Vision{{< /badge >}}
-                    {{< badge >}}Scene Parsing{{< /badge >}}
-                </div>
-
-                <div class="flex gap-4 text-sm font-medium">
-                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "paper" >}} Paper</a>
-                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "github" >}} Code</a>
-                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "quote" >}} BibTeX</a>
-                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "video" >}} Video</a>
+                <!-- 链接按钮 -->
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-neutral-500 hover:text-primary-500 transition-colors">
+                        <i class="fa-solid fa-file-pdf mr-1.5 text-base"></i> PAPER
+                    </a>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-neutral-500 hover:text-primary-500 transition-colors">
+                        <i class="fa-brands fa-github mr-1.5 text-base"></i> CODE
+                    </a>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-neutral-500 hover:text-primary-500 transition-colors">
+                        <i class="fa-solid fa-quote-left mr-1.5 text-base"></i> BIBTEX
+                    </a>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-neutral-500 hover:text-primary-500 transition-colors">
+                        <i class="fa-solid fa-video mr-1.5 text-base"></i> VIDEO
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- 论文项目 2 -->
-        <div x-show="showItem('2023', ['Journal', 'Deep Learning'], 'IEEE TNNLS', 'false')" 
-             class="group relative flex flex-col md:flex-row gap-6 p-4 rounded-2xl transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-700">
-            
-            <div class="w-full md:w-1/4 shrink-0">
-                <img src="/images/pub-teaser-2.png" alt="Paper Teaser" class="rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-700 w-full h-auto object-cover">
+        <!-- 论文条目 2 -->
+        <div x-show="showItem('2023', ['Journal'], 'Nature', 'false')" 
+             class="group flex flex-col md:flex-row gap-8 transition-opacity duration-300">
+            <div class="w-full md:w-56 shrink-0">
+                <div class="relative overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700 shadow-sm transition-transform group-hover:scale-[1.02]">
+                    <img src="/images/another-paper.png" alt="Teaser" class="w-full h-32 object-cover">
+                </div>
             </div>
-
             <div class="flex-grow">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-secondary-100 text-secondary-700 dark:bg-secondary-900 dark:text-secondary-200 rounded">IEEE TNNLS 2023</span>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-secondary-100 dark:bg-secondary-900 text-secondary-800 dark:text-secondary-200 text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-widest">Nature 2023</span>
                 </div>
-                
-                <h3 class="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
-                    A Comprehensive Survey on Robust Neural Networks
+                <h3 class="text-xl font-extrabold mb-2 group-hover:text-primary-500 transition-colors">
+                    A Major Scientific Breakthrough in Neutral Networks
                 </h3>
-                
-                <div class="text-sm mb-3">
-                    Jane Doe, <strong>Your Name</strong>, John Smith
+                <div class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
+                    First Author, <b class="text-neutral-900 dark:text-neutral-100 underline decoration-primary-500 decoration-2">Your Name</b>, and Senior Author
                 </div>
-
-                <div class="flex flex-wrap gap-2 mb-4">
-                    {{< badge >}}Deep Learning{{< /badge >}}
-                    {{< badge >}}Survey{{< /badge >}}
-                </div>
-
-                <div class="flex gap-4 text-sm font-medium">
-                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "paper" >}} PDF</a>
-                    <a href="#" class="flex items-center gap-1 text-primary-600 hover:underline">{{< icon "quote" >}} BibTeX</a>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-neutral-500 hover:text-primary-500 transition-colors">
+                        <i class="fa-solid fa-file-lines mr-1.5 text-base"></i> PDF
+                    </a>
+                    <a href="#" class="inline-flex items-center text-xs font-bold text-neutral-500 hover:text-primary-500 transition-colors">
+                        <i class="fa-solid fa-share-nodes mr-1.5 text-base"></i> PROJECT
+                    </a>
                 </div>
             </div>
         </div>
-
-        <!-- 更多论文... 复制上方 div 并修改参数 -->
 
     </div>
 
-    <!-- 无搜索结果提示 -->
-    <div x-cloak x-show="!document.querySelector('.space-y-8').innerText.trim()" class="text-center py-20">
-        <p class="text-neutral-500">没有找到符合条件的论文。</p>
+    <!-- 3. 无结果提示 -->
+    <div x-show="!$el.parentElement.querySelectorAll('.group[style*=\'display: none\']').length === $el.parentElement.querySelectorAll('.group').length" class="hidden">
+        <!-- 这里的逻辑稍微复杂，Alpine 简单处理可直接显示： -->
     </div>
 
 </div>
