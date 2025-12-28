@@ -1,6 +1,6 @@
 ---
 description: "Ph.D. Candidate @ Fudan University | AI & Computational Imaging"
-layout: "hero"
+layout: "simple"
 draft: false
 fullWidth: true 
 showDate: false

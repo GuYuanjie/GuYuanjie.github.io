@@ -1,7 +1,7 @@
 ---
 title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
-layout: "single"
+layout: "simple"
 date: 2024-01-01
 ---
 
