@@ -5,6 +5,7 @@ layout: "single"
 fullWidth: true
 ---
 
+<div class="publications-wrapper">
 <!-- 引入 FontAwesome 图标库 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -87,7 +88,7 @@ fullWidth: true
     width: 100%;
     padding: 12px 20px 12px 45px;
     border: 1px solid var(--border-color);
-    border-radius: 50px; /* 圆角更现代 */
+    border-radius: 50px;
     background: var(--bg-card);
     color: var(--text-main);
     font-size: 1rem;
@@ -148,7 +149,7 @@ fullWidth: true
     gap: 1.5rem;
 }
 
-/* 论文卡片设计 - 更加学术、极简 */
+/* 论文卡片设计 */
 .pub-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -156,10 +157,9 @@ fullWidth: true
     padding: 1.5rem;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     position: relative;
-    display: block; /* 确保默认显示 */
+    display: block;
 }
 
-/* 仅在Hover时浮起，减少视觉干扰 */
 .pub-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
@@ -239,7 +239,7 @@ fullWidth: true
     font-weight: 600;
 }
 
-/* 按钮组 - 统一风格 */
+/* 按钮组 */
 .pub-actions {
     display: flex;
     gap: 12px;
@@ -289,7 +289,7 @@ fullWidth: true
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
     overflow-x: auto;
-    display: none; /* 默认隐藏 */
+    display: none;
     position: relative;
     border: 1px solid var(--border-color);
     color: var(--text-main);
@@ -374,7 +374,7 @@ fullWidth: true
     </div>
 </div>
 
-<!-- 论文列表 (无标题分割，纯时间倒序，通过Tag区分) -->
+<!-- 论文列表 -->
 <div class="pub-list" id="publicationList">
 
     <!-- Paper 1 -->
@@ -597,3 +597,4 @@ function copyBibtex(id) {
     });
 }
 </script>
+</div>
