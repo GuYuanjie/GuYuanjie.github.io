@@ -2,7 +2,9 @@
 title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
 layout: "simple"
-date: 2024-01-01
+draft: false
+fullWidth: true 
+showDate: false
 ---
 
 <style>
