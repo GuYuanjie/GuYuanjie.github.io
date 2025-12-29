@@ -1,70 +1,65 @@
 <style>
-/* 核心变量定义 - 方便统一调整 */
+/* 核心变量定义 - 适配 Blowfish */
 :root {
-    --primary-color: #2563eb;       /* 学术蓝 */
-    --primary-hover: #1d4ed8;
-    --bg-card: #ffffff;
-    --border-color: #e5e7eb;
-    --text-main: #111827;
-    --text-muted: #6b7280;
-    --tag-bg: #f3f4f6;
-    --tag-text: #374151;
-    --award-color: #d97706;         /* 奖项金 */
-    --transition-speed: 0.2s;
+    --pub-primary: #2563eb;       /* 学术蓝 */
+    --pub-bg-card: #ffffff;
+    --pub-border: #e5e7eb;
+    --pub-text-main: #111827;
+    --pub-text-muted: #6b7280;
+    --pub-tag-bg: #f3f4f6;
+    --pub-award: #d97706;         /* 奖项金 */
+    --pub-transition: 0.2s ease;
 }
 
-/* 暗色模式适配 */
-.dark {
-    --bg-card: #1f2937;
-    --border-color: #374151;
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
-    --tag-bg: #374151;
-    --tag-text: #d1d5db;
+/* Blowfish 暗色模式适配 */
+html.dark :root {
+    --pub-primary: #60a5fa;       /* 暗色模式下蓝色调亮 */
+    --pub-bg-card: #1f2937;       /* 接近 Tailwind gray-800 */
+    --pub-border: #374151;        /* 接近 Tailwind gray-700 */
+    --pub-text-main: #f3f4f6;
+    --pub-text-muted: #9ca3af;
+    --pub-tag-bg: #374151;
 }
 
-/* 工具栏区域 (统计 + 搜索 + 筛选) */
-.pub-toolbar {
-    margin-bottom: 2rem;
+/* 容器重置 */
+.pub-container {
+    font-family: inherit;
+    width: 100%;
 }
 
-/* 统计卡片 - 修正网格布局 */
+/* 统计卡片 - 响应式网格 */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 手机端一行两个 */
     gap: 1rem;
-    background: var(--tag-bg);
+    background: var(--pub-tag-bg);
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 2rem;
     text-align: center;
-}
-
-@media (min-width: 640px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    border: 1px solid var(--pub-border);
 }
 
 @media (min-width: 768px) {
     .stats-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* 电脑端一行四个 */
     }
 }
 
 .stat-item h4 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--pub-primary);
     margin: 0;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .stat-item p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin: 0.5rem 0 0 0;
-    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--pub-text-muted);
+    margin: 0.3rem 0 0 0;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* 搜索框 */
@@ -76,18 +71,18 @@
 .search-input {
     width: 100%;
     padding: 12px 20px 12px 45px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--pub-border);
     border-radius: 50px;
-    background: var(--bg-card);
-    color: var(--text-main);
+    background: var(--pub-bg-card);
+    color: var(--pub-text-main);
     font-size: 1rem;
-    transition: all var(--transition-speed);
+    transition: all var(--pub-transition);
 }
 
 .search-input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--pub-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .search-icon {
@@ -95,7 +90,8 @@
     left: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-muted);
+    color: var(--pub-text-muted);
+    pointer-events: none;
 }
 
 /* 筛选标签组 */
@@ -105,30 +101,30 @@
     gap: 10px;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--pub-border);
 }
 
 .filter-btn {
     background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
+    border: 1px solid var(--pub-border);
+    color: var(--pub-text-muted);
     padding: 6px 16px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: all var(--transition-speed);
-    font-weight: 500;
+    transition: all var(--pub-transition);
+    font-weight: 600;
 }
 
 .filter-btn:hover {
-    background: var(--tag-bg);
-    color: var(--text-main);
+    background: var(--pub-tag-bg);
+    color: var(--pub-text-main);
 }
 
 .filter-btn.active {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
+    background: var(--pub-primary);
+    color: #ffffff;
+    border-color: var(--pub-primary);
 }
 
 /* 论文列表容器 */
@@ -138,21 +134,21 @@
     gap: 1.5rem;
 }
 
-/* 论文卡片设计 */
+/* 论文卡片 */
 .pub-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    background: var(--pub-bg-card);
+    border: 1px solid var(--pub-border);
+    border-radius: 10px;
     padding: 1.5rem;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: transform var(--pub-transition), box-shadow var(--pub-transition);
     position: relative;
-    display: block;
+    display: block; /* 默认显示 */
 }
 
 .pub-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+    border-color: var(--pub-primary);
 }
 
 .pub-header {
@@ -164,74 +160,79 @@
 }
 
 .pub-title {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--pub-text-main);
     margin: 0;
     line-height: 1.4;
+    flex: 1;
 }
 
-/* 奖项标记 */
+.meta-tag {
+    background: var(--pub-tag-bg);
+    color: var(--pub-text-muted);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
 .award-badge {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     font-size: 0.8rem;
-    color: var(--award-color);
+    color: var(--pub-award);
     font-weight: 700;
     background: rgba(217, 119, 6, 0.1);
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-top: 0.5rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin: 0.5rem 0;
     width: fit-content;
 }
 
 .pub-authors {
-    color: var(--text-muted);
+    color: var(--pub-text-muted);
     font-size: 0.95rem;
     margin: 0.5rem 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* 作者名字高亮 */
 .author-me {
-    color: var(--text-main);
+    color: var(--pub-text-main);
     font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: var(--primary-color);
-    text-underline-offset: 3px;
+    border-bottom: 2px solid var(--pub-primary); /* 下划线更现代 */
 }
 
 .pub-venue {
     font-style: italic;
-    color: var(--text-main);
+    color: var(--pub-text-main);
     font-weight: 500;
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
 }
 
 .pub-meta {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-}
-
-.meta-tag {
-    background: var(--tag-bg);
-    padding: 2px 8px;
-    border-radius: 4px;
     font-size: 0.8rem;
-    font-weight: 600;
+    color: var(--pub-text-muted);
+    margin-bottom: 1.2rem;
 }
 
-/* 按钮组 */
+.pub-meta span, .pub-meta a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 操作按钮 */
 .pub-actions {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     margin-top: 1rem;
 }
@@ -240,48 +241,53 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 6px;
     font-size: 0.85rem;
     font-weight: 600;
-    text-decoration: none;
-    transition: all var(--transition-speed);
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
+    text-decoration: none !important;
+    transition: all var(--pub-transition);
+    border: 1px solid var(--pub-border);
+    color: var(--pub-text-muted);
     background: transparent;
     cursor: pointer;
+    line-height: 1.2;
 }
 
-/* PDF/主按钮高亮 */
 .btn-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--pub-primary);
+    border-color: var(--pub-primary);
     background: rgba(37, 99, 235, 0.05);
 }
 
+html.dark .btn-primary {
+    background: rgba(96, 165, 250, 0.1);
+}
+
 .btn-action:hover {
-    background: var(--tag-bg);
-    color: var(--text-main);
+    background: var(--pub-tag-bg);
+    color: var(--pub-text-main);
+    transform: translateY(-1px);
 }
 
 .btn-primary:hover {
-    background: var(--primary-color);
-    color: white;
+    background: var(--pub-primary);
+    color: #ffffff;
 }
 
 /* BibTeX 区域 */
 .bibtex-container {
     margin-top: 1rem;
-    background: var(--tag-bg);
-    border-radius: 6px;
+    background: var(--pub-tag-bg);
+    border-radius: 8px;
     padding: 1rem;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
     overflow-x: auto;
     display: none;
     position: relative;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
+    border: 1px solid var(--pub-border);
+    color: var(--pub-text-main);
 }
 
 .bibtex-container.show {
@@ -290,20 +296,21 @@
 }
 
 .code-content {
-    white-space: pre;
-    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
     cursor: pointer;
 }
 
 .copy-feedback {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 8px;
+    right: 8px;
     background: #10b981;
     color: white;
     font-size: 0.7rem;
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 4px;
+    font-weight: bold;
     display: none;
 }
 
@@ -312,15 +319,17 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 移动端优化 */
-@media (max-width: 768px) {
+/* 移动端特定调整 */
+@media (max-width: 640px) {
     .pub-header {
         flex-direction: column;
-        align-items: flex-start;
     }
-    
     .meta-tag {
         align-self: flex-start;
+    }
+    .btn-action {
+        flex: 1 0 auto; /* 按钮在移动端自适应宽度 */
+        justify-content: center;
     }
 }
 </style>

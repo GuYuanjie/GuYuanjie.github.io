@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.pub-card');
     
-    // 当前激活的过滤器状态
+    // 安全检查：如果页面上没有这些元素，不执行后续逻辑
+    if (!searchInput || cards.length === 0) return;
+
     let activeFilter = 'all';
     
     // 1. 搜索功能
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
+        const query = e.target.value.toLowerCase().trim();
         filterPublications(activeFilter, query);
     });
 
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.classList.add('active');
             
             activeFilter = btn.getAttribute('data-filter');
-            const query = searchInput.value.toLowerCase();
+            const query = searchInput.value.toLowerCase().trim();
             
             filterPublications(activeFilter, query);
         });
@@ -36,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const year = card.getAttribute('data-year');
             const type = card.getAttribute('data-type');
             const tags = card.getAttribute('data-tags') || '';
+            // 将搜索内容组合：标题+自定义搜索关键词
             const searchData = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
 
-            // 检查标签匹配
+            // 检查标签匹配 (支持 year, type, tags)
             let matchesFilter = false;
             if (filter === 'all') matchesFilter = true;
             else if (filter === year) matchesFilter = true;
@@ -50,34 +53,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (matchesFilter && matchesSearch) {
                 card.style.display = 'block';
+                // 简单的淡入效果
+                card.style.opacity = '1'; 
                 visibleCount++;
             } else {
                 card.style.display = 'none';
+                card.style.opacity = '0';
             }
         });
-        
-        // 如果没有任何结果显示提示信息
-        if (visibleCount === 0) {
-            console.log('No publications match your criteria.');
-        }
     }
 });
 
-// 3. BibTeX 切换显示
-function toggleBibtex(id) {
+// 3. BibTeX 切换显示 (挂载到 window 以便 onclick 调用)
+window.toggleBibtex = function(id) {
     const el = document.getElementById(id);
+    if (!el) return;
+
     if (el.classList.contains('show')) {
         el.classList.remove('show');
         setTimeout(() => el.style.display = 'none', 300);
     } else {
         el.style.display = 'block';
+        // 延时添加 class 触发 CSS transition
         setTimeout(() => el.classList.add('show'), 10);
     }
 }
 
 // 4. BibTeX 复制功能
-function copyBibtex(id) {
+window.copyBibtex = function(id) {
     const container = document.getElementById(id);
+    if (!container) return;
+    
     const code = container.querySelector('.code-content').innerText;
     
     navigator.clipboard.writeText(code).then(() => {
@@ -88,6 +94,7 @@ function copyBibtex(id) {
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy: ', err);
+        alert('Failed to copy to clipboard.');
     });
 }
 </script>

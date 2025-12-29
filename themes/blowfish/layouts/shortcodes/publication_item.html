@@ -1,3 +1,4 @@
+{{/* layouts/shortcodes/publication_item.html */}}
 {{ $title := .Get "title" }}
 {{ $year := .Get "year" }}
 {{ $type := .Get "type" }}
@@ -9,14 +10,15 @@
 {{ $meta := .Get "meta" }}
 {{ $venueStyle := .Get "venueStyle" }}
 {{ $bibtexId := .Get "bibtexId" }}
+{{ $bibtex := .Get "bibtex" }}
 
 <article class="pub-card" data-year="{{ $year }}" data-type="{{ $type }}" data-tags="{{ $tags }}" data-search="{{ $search }}">
     <div class="pub-header">
-        <h3 class="pub-title">{{ $title }}</h3>
+        <h3 class="pub-title">{{ $title | safeHTML }}</h3>
         {{ if $venueStyle }}
-            <span class="meta-tag" style="{{ $venueStyle }}">{{ $venue | safeHTML }}</span>
+            <span class="meta-tag venue-tag" style="{{ $venueStyle | safeCSS }}">{{ $venue | safeHTML }}</span>
         {{ else }}
-            <span class="meta-tag">{{ $venue | safeHTML }}</span>
+            <span class="meta-tag venue-tag">{{ $venue | safeHTML }}</span>
         {{ end }}
     </div>
     
@@ -29,11 +31,7 @@
     </div>
 
     <div class="pub-venue">
-        {{ if eq $type "conference" }}
-            {{ $venue | safeHTML }}
-        {{ else }}
-            {{ $venue | safeHTML }}
-        {{ end }}
+        {{ $venue | safeHTML }}
     </div>
     
     {{ if $meta }}
@@ -47,13 +45,11 @@
     </div>
 
     {{ if $bibtexId }}
-    <!-- Hidden BibTeX -->
+    <!-- Hidden BibTeX Container -->
     <div id="{{ $bibtexId }}" class="bibtex-container">
         <span class="copy-feedback">Copied!</span>
-        <div class="code-content" onclick="copyBibtex('{{ $bibtexId }}')">
-            {{ .Get "bibtex" }}
-        </div>
-        <div style="text-align: right; margin-top: 5px; color: var(--text-muted); font-size: 0.7rem;">Click to Copy</div>
+        <div class="code-content" onclick="copyBibtex('{{ $bibtexId }}')">{{ $bibtex }}</div>
+        <div class="copy-hint">Click code to Copy</div>
     </div>
     {{ end }}
 </article>
