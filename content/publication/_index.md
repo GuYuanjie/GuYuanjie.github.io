@@ -25,8 +25,6 @@ fullWidth: true
 
 <!-- 论文列表 -->
 <div class="pub-list" id="publicationList">
-
-    <!-- 示例1 - 修正格式 -->
     {{< publication_item
         title="Towards Scalable Visual Representation Learning"
         year="2024"
@@ -55,7 +53,6 @@ fullWidth: true
         </a>
     {{< /publication_item >}}
 
-    <!-- 示例2 -->
     {{< publication_item
         title="Efficient Multi-Modal Learning for Visual Recognition"
         year="2023"
