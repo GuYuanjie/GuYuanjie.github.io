@@ -39,7 +39,7 @@ showReadingTime: false
 
 ### 🎓 Education
 - **Ph.D. in Biomedical Engineering** (2023 – Present)  
-  **Fudan University**, Institute of Science and Technology for Brain-Inspired Intelligence.  
+  **Fudan University**, College of Biomedical Engineering.  
   *Visiting Scholar at Tsinghua University.*
 - **M.S. in Optical Engineering** (2020 – 2023)  
   **Jiangnan University**, Dept. of Optoelectronic Information Science and Engineering.
