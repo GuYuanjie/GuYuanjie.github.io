@@ -1,3 +1,4 @@
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // BibTeX 复制功能
-function copyBibtex(id) {
+window.copyBibtex = function(id) {
     const container = document.getElementById(id);
     if (!container) return;
     
@@ -142,5 +143,17 @@ function copyBibtex(id) {
     });
 }
 
-// 暴露函数到全局
-window.copyBibtex = copyBibtex;
+// BibTeX 切换显示
+window.toggleBibtex = function(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    
+    if (el.classList.contains('show')) {
+        el.classList.remove('show');
+        setTimeout(() => el.style.display = 'none', 300);
+    } else {
+        el.style.display = 'block';
+        setTimeout(() => el.classList.add('show'), 10);
+    }
+}
+</script>

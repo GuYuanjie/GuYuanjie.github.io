@@ -1,4 +1,3 @@
-<!-- 修改为 Hugo 参数化 -->
 {{ $total := .Get "total" | default "15" }}
 {{ $first := .Get "first" | default "3" }}
 {{ $impact := .Get "impact" | default "24.3" }}
@@ -6,11 +5,11 @@
 
 <div class="stats-grid">
     <div class="stat-item">
-        <h4 class="stat-number" {{ if .Get "dynamic" }}id="stat-total"{{ end }}>{{ $total }}</h4>
+        <h4 class="stat-number">{{ $total }}</h4>
         <p class="stat-label">Total Papers</p>
     </div>
     <div class="stat-item">
-        <h4 class="stat-number" {{ if .Get "dynamic" }}id="stat-first"{{ end }}>{{ $first }}</h4>
+        <h4 class="stat-number">{{ $first }}</h4>
         <p class="stat-label">First Author</p>
     </div>
     <div class="stat-item">
