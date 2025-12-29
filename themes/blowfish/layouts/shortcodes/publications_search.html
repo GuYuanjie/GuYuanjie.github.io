@@ -12,9 +12,14 @@
     <div class="filter-group" id="filterContainer">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="selected">⭐ Selected</button>
-        {{ range seq 2026 2020 -1 }}
-            <button class="filter-btn" data-filter="{{ . }}">{{ . }}</button>
-        {{ end }}
+        
+        <!-- 修复：手动列出年份，避免 seq 函数问题 -->
+        <button class="filter-btn" data-filter="2026">2026</button>
+        <button class="filter-btn" data-filter="2025">2025</button>
+        <button class="filter-btn" data-filter="2024">2024</button>
+        <button class="filter-btn" data-filter="2023">2023</button>
+        <button class="filter-btn" data-filter="2022">2022</button>
+        
         <button class="filter-btn" data-filter="journal">Journal</button>
         <button class="filter-btn" data-filter="conference">Conference</button>
     </div>
