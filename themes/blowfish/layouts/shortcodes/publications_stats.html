@@ -1,7 +1,7 @@
 {{ $total := .Get "total" | default "15" }}
 {{ $first := .Get "first" | default "3" }}
 {{ $impact := .Get "impact" | default "24.3" }}
-{{ $citations := .Get "citations" | default "250+" }}
+{{ $citations := .Get "citations" | default "50+" }}
 
 <div class="stats-grid">
     <div class="stat-item">
@@ -14,7 +14,7 @@
     </div>
     <div class="stat-item">
         <h4 class="stat-number">{{ $impact }}</h4>
-        <p class="stat-label">Max Impact</p>
+        <p class="stat-label">Total Impact</p>
     </div>
     <div class="stat-item">
         <h4 class="stat-number">{{ $citations }}</h4>

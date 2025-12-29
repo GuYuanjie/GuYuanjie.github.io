@@ -9,7 +9,8 @@
 {{ $meta := .Get "meta" }}
 {{ $venueStyle := .Get "venueStyle" }}
 {{ $bibtexId := .Get "bibtexId" }}
-{{ $bibtex := .Get "bibtex" }}
+{{/* 这里修改为获取 bibtexContent */}}
+{{ $bibtex := .Get "bibtexContent" }}
 
 <article class="pub-card" 
          data-year="{{ $year }}" 
@@ -62,15 +63,17 @@
     </div>
 
     <!-- BibTeX（如果有） -->
-    {{ if $bibtexId }}
-    <div id="{{ $bibtexId }}" class="bibtex-container">
+    {{ if $bibtex }}
+    {{/* 添加 style="display: none;" 默认隐藏，配合 toggleBibtex JS函数使用 */}}
+    <div id="{{ $bibtexId }}" class="bibtex-container" style="display: none;">
         <div class="code-header">
             <span class="bibtex-label">BibTeX</span>
             <button class="copy-btn" onclick="copyBibtex('{{ $bibtexId }}')">
                 <i class="fas fa-copy"></i> Copy
             </button>
         </div>
-        <pre class="code-content">{{ $bibtex }}</pre>
+        <!-- 使用 safeHTML 确保内容正确输出，或者直接输出 -->
+        <pre class="code-content">{{ $bibtex | safeHTML }}</pre>
         <div class="copy-feedback">Copied to clipboard!</div>
     </div>
     {{ end }}

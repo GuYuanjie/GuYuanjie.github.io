@@ -148,6 +148,7 @@ html.dark {
     transition: all 0.2s;
     white-space: nowrap;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .filter-btn:hover {
@@ -299,19 +300,22 @@ html.dark {
     gap: 0.25rem;
 }
 
+/* === 按钮区域 === */
 .pub-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.75rem;
+    align-items: center;
 }
 
-/* 关键修复：防止按钮换行 */
+/* 关键修复：防止按钮换行和间距问题 */
 .pub-actions > * {
     margin: 0 !important;
     padding: 0 !important;
     display: inline-flex !important;
     line-height: 1 !important;
+    flex-shrink: 0;
 }
 
 .btn-action {
@@ -331,25 +335,61 @@ html.dark {
     transition: all 0.2s;
     line-height: 1;
     height: 32px;
-    min-width: fit-content;
+    min-width: 80px;
+    white-space: nowrap;
 }
 
+/* PDF按钮 - 移除默认蓝色背景，改为透明背景蓝色文字 */
+.btn-primary {
+    background: transparent !important;
+    border-color: var(--pub-primary);
+    color: var(--pub-primary) !important;
+}
+
+/* PDF按钮 - 鼠标悬停时才显示蓝色背景 */
+.btn-primary:hover {
+    background: var(--pub-primary) !important;
+    border-color: var(--pub-primary);
+    color: white !important;
+}
+
+/* PDF按钮特定宽度 */
+.btn-action[href*=".pdf"] {
+    min-width: 85px;
+}
+
+/* Code按钮特定宽度 */
+.btn-action[href*="github.com"],
+.btn-action[href*="code"] {
+    min-width: 85px;
+}
+
+/* BibTeX按钮特定宽度 */
+.btn-action[onclick*="toggleBibtex"] {
+    min-width: 85px;
+}
+
+/* arXiv等链接按钮 */
+.btn-action[href*="arxiv.org"],
+.btn-action[href*="doi.org"] {
+    min-width: 85px;
+}
+
+/* Project/Demo等长文本按钮 */
+.btn-action[href*="project"],
+.btn-action[href*="demo"] {
+    min-width: 90px;
+}
+
+.btn-action i {
+    font-size: 0.9em;
+}
+
+/* 普通按钮的悬停效果 */
 .btn-action:hover {
     background: var(--pub-tag-bg);
     border-color: var(--pub-primary);
     color: var(--pub-primary);
-}
-
-.btn-primary {
-    background: var(--pub-primary);
-    border-color: var(--pub-primary);
-    color: white !important;
-}
-
-.btn-primary:hover {
-    background: var(--pub-primary-light);
-    border-color: var(--pub-primary-light);
-    color: white !important;
 }
 
 /* === BibTeX 区域 === */
@@ -451,6 +491,11 @@ html.dark {
     .pub-card {
         padding: 1.25rem;
     }
+    
+    /* 桌面端按钮宽度调整 */
+    .btn-action {
+        min-width: 85px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -470,9 +515,39 @@ html.dark {
     }
     
     .pub-actions {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 0.5rem;
+        padding: 0.5rem 0;
+        gap: 0.4rem;
+    }
+    
+    .btn-action {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        height: 30px;
+        min-width: 75px;  /* 移动端稍微小一点 */
+    }
+    
+    .btn-action i {
+        font-size: 0.85em;
+    }
+    
+    /* 移动端特定按钮宽度 */
+    .btn-action[href*=".pdf"] {
+        min-width: 75px;
+    }
+    
+    .btn-action[href*="github.com"],
+    .btn-action[href*="code"] {
+        min-width: 75px;
+    }
+    
+    .btn-action[onclick*="toggleBibtex"] {
+        min-width: 75px;
+    }
+    
+    .btn-action[href*="arxiv.org"] {
+        min-width: 75px;
     }
 }
 
@@ -500,5 +575,26 @@ html.dark {
 .pub-controls *,
 .pub-card * {
     line-height: 1.2;
+}
+
+/* 按钮滚动条美化（移动端） */
+@media (max-width: 640px) {
+    .pub-actions::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .pub-actions::-webkit-scrollbar-track {
+        background: var(--pub-tag-bg);
+        border-radius: 2px;
+    }
+    
+    .pub-actions::-webkit-scrollbar-thumb {
+        background: var(--pub-border);
+        border-radius: 2px;
+    }
+    
+    .pub-actions::-webkit-scrollbar-thumb:hover {
+        background: var(--pub-text-muted);
+    }
 }
 </style>
