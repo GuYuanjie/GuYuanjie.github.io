@@ -1,4 +1,3 @@
-{{/* layouts/shortcodes/publication_item.html */}}
 {{ $title := .Get "title" }}
 {{ $year := .Get "year" }}
 {{ $type := .Get "type" }}
@@ -13,43 +12,49 @@
 {{ $bibtex := .Get "bibtex" }}
 
 <article class="pub-card" data-year="{{ $year }}" data-type="{{ $type }}" data-tags="{{ $tags }}" data-search="{{ $search }}">
+    {{/* 头部：标题与右侧标签 */}}
     <div class="pub-header">
         <h3 class="pub-title">{{ $title | safeHTML }}</h3>
         {{ if $venueStyle }}
-            <span class="meta-tag venue-tag" style="{{ $venueStyle | safeCSS }}">{{ $venue | safeHTML }}</span>
+            <span class="meta-tag" style="{{ $venueStyle | safeCSS }}">{{ $venue | safeHTML }}</span>
         {{ else }}
-            <span class="meta-tag venue-tag">{{ $venue | safeHTML }}</span>
+            <span class="meta-tag">{{ $type | upper }}</span>
         {{ end }}
     </div>
     
+    {{/* 奖项 */}}
     {{ if $award }}
     <div class="award-badge"><i class="fa-solid fa-trophy"></i> {{ $award }}</div>
     {{ end }}
 
+    {{/* 作者 */}}
     <div class="pub-authors">
         {{ $authors | safeHTML }}
     </div>
 
+    {{/* 发表地点 */}}
     <div class="pub-venue">
         {{ $venue | safeHTML }}
     </div>
     
+    {{/* 元数据：年份、IF等 */}}
     {{ if $meta }}
     <div class="pub-meta">
         {{ $meta | safeHTML }}
     </div>
     {{ end }}
 
+    {{/* 按钮组 */}}
     <div class="pub-actions">
         {{ .Inner }}
     </div>
 
+    {{/* BibTeX 代码块 */}}
     {{ if $bibtexId }}
-    <!-- Hidden BibTeX Container -->
     <div id="{{ $bibtexId }}" class="bibtex-container">
         <span class="copy-feedback">Copied!</span>
         <div class="code-content" onclick="copyBibtex('{{ $bibtexId }}')">{{ $bibtex }}</div>
-        <div class="copy-hint">Click code to Copy</div>
+        <div style="text-align: right; margin-top: 4px; color: var(--pub-text-muted); font-size: 0.65rem;">Click to Copy</div>
     </div>
     {{ end }}
 </article>

@@ -57,6 +57,7 @@ fullWidth: true
     <a href="#" class="btn-action"><i class="fa-solid fa-video"></i> Video</a>
     <button class="btn-action" onclick="toggleBibtex('bib2')"><i class="fa-solid fa-quote-right"></i> BibTeX</button>
     {{< /publication_item >}}
+    
     {{< publication_item
         title="Efficient Federated Learning for Edge Computing"
         year="2023"
