@@ -1,7 +1,7 @@
 ---
 title: "Publications"
 description: "Selected peer-reviewed journals and conference proceedings."
-layout: "single"
+layout: "simple"
 fullWidth: true
 ---
 
@@ -20,7 +20,7 @@ fullWidth: true
 <!-- 4. 论文列表开始 -->
 <div class="pub-list" id="publicationList">
 
-    <!-- Paper 1 -->
+
     {{< publication_item
         title="Towards Scalable Visual Representation Learning with Masked Generative Pretraining"
         year="2024"
@@ -40,7 +40,6 @@ fullWidth: true
     <button class="btn-action" onclick="toggleBibtex('bib1')"><i class="fa-solid fa-quote-right"></i> BibTeX</button>
     {{< /publication_item >}}
 
-    <!-- Paper 2 -->
     {{< publication_item
         title="Dynamic Neural Radiance Fields for Real-time View Synthesis"
         year="2024"
@@ -58,8 +57,6 @@ fullWidth: true
     <a href="#" class="btn-action"><i class="fa-solid fa-video"></i> Video</a>
     <button class="btn-action" onclick="toggleBibtex('bib2')"><i class="fa-solid fa-quote-right"></i> BibTeX</button>
     {{< /publication_item >}}
-
-    <!-- Paper 3 -->
     {{< publication_item
         title="Efficient Federated Learning for Edge Computing"
         year="2023"
