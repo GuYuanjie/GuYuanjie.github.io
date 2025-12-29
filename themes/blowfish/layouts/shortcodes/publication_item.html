@@ -15,9 +15,10 @@
          data-year="{{ $year }}" 
          data-type="{{ $type }}" 
          data-tags="{{ $tags }}" 
-         data-search="{{ lower $search }}"
-         data-authors="{{ lower $authors }}"
-         data-venue="{{ lower $venue }}">
+         data-search="{{ $search | lower }}"
+         data-authors="{{ $authors | lower }}"
+         data-venue="{{ $venue | lower }}"
+         data-title="{{ $title | lower }}">
     
     <!-- 卡片头部 -->
     <div class="pub-header">
@@ -69,7 +70,7 @@
                 <i class="fas fa-copy"></i> Copy
             </button>
         </div>
-        <pre class="code-content">{{ replace $bibtex "&#10;" "\n" }}</pre>
+        <pre class="code-content">{{ $bibtex }}</pre>
         <div class="copy-feedback">Copied to clipboard!</div>
     </div>
     {{ end }}

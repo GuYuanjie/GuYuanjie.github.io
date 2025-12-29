@@ -4,24 +4,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.pub-card');
     const visibleCountEl = document.getElementById('visibleCount');
+    const pubList = document.getElementById('publicationList');
     
     if (!searchInput || cards.length === 0) return;
     
     let activeFilter = 'all';
     let searchQuery = '';
     
+    // 创建空状态元素
+    let noResultsEl = document.createElement('div');
+    noResultsEl.className = 'no-results';
+    noResultsEl.innerHTML = `
+        <i class="fas fa-search"></i>
+        <h3>No publications found</h3>
+        <p>Try adjusting your search or filter</p>
+    `;
+    pubList.appendChild(noResultsEl);
+    
     // 搜索功能
-    searchInput.addEventListener('input', debounce(function(e) {
+    searchInput.addEventListener('input', function(e) {
         searchQuery = e.target.value.toLowerCase().trim();
         filterPublications();
-    }, 300));
+    });
     
     // 筛选功能
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            activeFilter = this.dataset.filter;
+            activeFilter = this.getAttribute('data-filter');
             filterPublications();
         });
     });
@@ -31,12 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
         let visibleCount = 0;
         
         cards.forEach(card => {
-            const year = card.dataset.year;
-            const type = card.dataset.type;
-            const tags = card.dataset.tags || '';
-            const authors = card.dataset.authors || '';
-            const venue = card.dataset.venue || '';
-            const title = card.querySelector('.pub-title').textContent.toLowerCase();
+            const year = card.getAttribute('data-year');
+            const type = card.getAttribute('data-type');
+            const tags = card.getAttribute('data-tags') || '';
+            const authors = card.getAttribute('data-authors') || '';
+            const venue = card.getAttribute('data-venue') || '';
+            const title = card.getAttribute('data-title') || '';
+            const searchData = card.getAttribute('data-search') || '';
             
             // 检查筛选条件
             let matchesFilter = false;
@@ -44,7 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchesFilter = true;
             } else if (activeFilter === 'selected') {
                 matchesFilter = tags.includes('selected');
-            } else if (activeFilter === year || activeFilter === type) {
+            } else if (activeFilter === year) {
+                matchesFilter = true;
+            } else if (activeFilter === type) {
                 matchesFilter = true;
             } else {
                 matchesFilter = tags.includes(activeFilter);
@@ -53,16 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // 检查搜索条件
             let matchesSearch = true;
             if (searchQuery) {
-                const searchableText = [
+                const combinedText = [
                     title,
                     authors,
                     venue,
-                    tags,
+                    searchData,
                     card.querySelector('.pub-authors')?.textContent || '',
                     card.querySelector('.pub-venue')?.textContent || ''
                 ].join(' ').toLowerCase();
                 
-                matchesSearch = searchableText.includes(searchQuery);
+                matchesSearch = combinedText.includes(searchQuery);
             }
             
             // 显示/隐藏卡片
@@ -70,12 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.display = 'block';
                 card.classList.remove('hidden');
                 visibleCount++;
-                
-                // 添加高亮效果
-                if (searchQuery && title.includes(searchQuery)) {
-                    card.classList.add('highlight');
-                    setTimeout(() => card.classList.remove('highlight'), 1000);
-                }
             } else {
                 card.style.display = 'none';
                 card.classList.add('hidden');
@@ -87,37 +95,19 @@ document.addEventListener('DOMContentLoaded', function() {
             visibleCountEl.textContent = visibleCount;
         }
         
-        // 显示空状态
-        const listContainer = document.querySelector('.pub-list');
-        let noResultsEl = listContainer.querySelector('.no-results');
-        
+        // 显示/隐藏空状态
         if (visibleCount === 0) {
-            if (!noResultsEl) {
-                noResultsEl = document.createElement('div');
-                noResultsEl.className = 'no-results';
-                noResultsEl.innerHTML = `
-                    <i class="fas fa-search"></i>
-                    <h3>No publications found</h3>
-                    <p>Try adjusting your search or filter</p>
-                `;
-                listContainer.appendChild(noResultsEl);
-            }
-        } else if (noResultsEl) {
-            noResultsEl.remove();
+            noResultsEl.classList.add('show');
+        } else {
+            noResultsEl.classList.remove('show');
         }
-    }
-    
-    // 防抖函数
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
+        
+        console.log('Filter applied:', {
+            activeFilter,
+            searchQuery,
+            visibleCount,
+            totalCards: cards.length
+        });
     }
     
     // 初始化

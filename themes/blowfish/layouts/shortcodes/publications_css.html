@@ -43,7 +43,7 @@
 }
 
 /* 暗色模式适配 */
-.dark {
+html.dark {
     --pub-bg-card: #1e293b;
     --pub-border: #334155;
     --pub-text-main: #f1f5f9;
@@ -106,6 +106,8 @@
     top: 50%;
     transform: translateY(-50%);
     color: var(--pub-text-muted);
+    font-size: 1rem;
+    z-index: 1;
 }
 
 .search-input {
@@ -117,6 +119,8 @@
     color: var(--pub-text-main);
     font-size: 0.95rem;
     transition: border-color 0.2s;
+    position: relative;
+    z-index: 0;
 }
 
 .search-input:focus {
@@ -143,6 +147,7 @@
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;
+    line-height: 1;
 }
 
 .filter-btn:hover {
@@ -166,6 +171,7 @@
 .pub-list {
     display: grid;
     gap: 1rem;
+    width: 100%;
 }
 
 .pub-card {
@@ -175,6 +181,11 @@
     padding: var(--pub-spacing);
     transition: all 0.2s;
     position: relative;
+    display: block;
+}
+
+.pub-card.hidden {
+    display: none !important;
 }
 
 .pub-card:hover {
@@ -193,6 +204,7 @@
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 0.5rem;
+    width: 100%;
 }
 
 .pub-title {
@@ -227,6 +239,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.025em;
+    line-height: 1;
 }
 
 .award-badge {
@@ -241,6 +254,7 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     width: fit-content;
+    line-height: 1;
 }
 
 .award-badge i {
@@ -267,6 +281,7 @@
     color: var(--pub-text-muted);
     font-style: italic;
     margin: 0 0 0.5rem 0;
+    line-height: 1.4;
 }
 
 .pub-meta {
@@ -275,6 +290,7 @@
     font-size: 0.85rem;
     color: var(--pub-text-muted);
     margin-bottom: 0.75rem;
+    line-height: 1;
 }
 
 .pub-meta span {
@@ -295,11 +311,13 @@
     margin: 0 !important;
     padding: 0 !important;
     display: inline-flex !important;
+    line-height: 1 !important;
 }
 
 .btn-action {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background: var(--pub-bg-card);
@@ -312,6 +330,8 @@
     cursor: pointer;
     transition: all 0.2s;
     line-height: 1;
+    height: 32px;
+    min-width: fit-content;
 }
 
 .btn-action:hover {
@@ -329,6 +349,7 @@
 .btn-primary:hover {
     background: var(--pub-primary-light);
     border-color: var(--pub-primary-light);
+    color: white !important;
 }
 
 /* === BibTeX 区域 === */
@@ -373,6 +394,7 @@
     font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.2s;
+    line-height: 1;
 }
 
 .copy-btn:hover {
@@ -444,10 +466,11 @@
     .filter-group {
         overflow-x: auto;
         padding-bottom: 0.5rem;
+        justify-content: flex-start;
     }
     
     .pub-actions {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         overflow-x: auto;
         padding-bottom: 0.5rem;
     }
@@ -459,11 +482,23 @@
     text-align: center;
     padding: 3rem 1rem;
     color: var(--pub-text-muted);
+    display: none;
+}
+
+.no-results.show {
+    display: block;
 }
 
 .no-results i {
     font-size: 2rem;
     margin-bottom: 1rem;
     opacity: 0.5;
+}
+
+/* 修复所有元素的 line-height */
+.stats-grid *,
+.pub-controls *,
+.pub-card * {
+    line-height: 1.2;
 }
 </style>
