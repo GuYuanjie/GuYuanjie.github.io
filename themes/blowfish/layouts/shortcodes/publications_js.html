@@ -1,100 +1,146 @@
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.pub-card');
+    const visibleCountEl = document.getElementById('visibleCount');
     
-    // 安全检查：如果页面上没有这些元素，不执行后续逻辑
     if (!searchInput || cards.length === 0) return;
-
-    let activeFilter = 'all';
     
-    // 1. 搜索功能
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        filterPublications(activeFilter, query);
-    });
-
-    // 2. 标签点击筛选
+    let activeFilter = 'all';
+    let searchQuery = '';
+    
+    // 搜索功能
+    searchInput.addEventListener('input', debounce(function(e) {
+        searchQuery = e.target.value.toLowerCase().trim();
+        filterPublications();
+    }, 300));
+    
+    // 筛选功能
     filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // 移除其他按钮激活状态
+        btn.addEventListener('click', function() {
             filterBtns.forEach(b => b.classList.remove('active'));
-            // 激活当前按钮
-            btn.classList.add('active');
-            
-            activeFilter = btn.getAttribute('data-filter');
-            const query = searchInput.value.toLowerCase().trim();
-            
-            filterPublications(activeFilter, query);
+            this.classList.add('active');
+            activeFilter = this.dataset.filter;
+            filterPublications();
         });
     });
-
+    
     // 综合筛选函数
-    function filterPublications(filter, query) {
+    function filterPublications() {
         let visibleCount = 0;
-
+        
         cards.forEach(card => {
-            const year = card.getAttribute('data-year');
-            const type = card.getAttribute('data-type');
-            const tags = card.getAttribute('data-tags') || '';
-            // 将搜索内容组合：标题+自定义搜索关键词
-            const searchData = (card.getAttribute('data-search') + ' ' + card.innerText).toLowerCase();
-
-            // 检查标签匹配 (支持 year, type, tags)
+            const year = card.dataset.year;
+            const type = card.dataset.type;
+            const tags = card.dataset.tags || '';
+            const authors = card.dataset.authors || '';
+            const venue = card.dataset.venue || '';
+            const title = card.querySelector('.pub-title').textContent.toLowerCase();
+            
+            // 检查筛选条件
             let matchesFilter = false;
-            if (filter === 'all') matchesFilter = true;
-            else if (filter === year) matchesFilter = true;
-            else if (filter === type) matchesFilter = true;
-            else if (tags.includes(filter)) matchesFilter = true;
-
-            // 检查搜索匹配
-            const matchesSearch = query === '' || searchData.includes(query);
-
+            if (activeFilter === 'all') {
+                matchesFilter = true;
+            } else if (activeFilter === 'selected') {
+                matchesFilter = tags.includes('selected');
+            } else if (activeFilter === year || activeFilter === type) {
+                matchesFilter = true;
+            } else {
+                matchesFilter = tags.includes(activeFilter);
+            }
+            
+            // 检查搜索条件
+            let matchesSearch = true;
+            if (searchQuery) {
+                const searchableText = [
+                    title,
+                    authors,
+                    venue,
+                    tags,
+                    card.querySelector('.pub-authors')?.textContent || '',
+                    card.querySelector('.pub-venue')?.textContent || ''
+                ].join(' ').toLowerCase();
+                
+                matchesSearch = searchableText.includes(searchQuery);
+            }
+            
+            // 显示/隐藏卡片
             if (matchesFilter && matchesSearch) {
                 card.style.display = 'block';
-                // 简单的淡入效果
-                card.style.opacity = '1'; 
+                card.classList.remove('hidden');
                 visibleCount++;
+                
+                // 添加高亮效果
+                if (searchQuery && title.includes(searchQuery)) {
+                    card.classList.add('highlight');
+                    setTimeout(() => card.classList.remove('highlight'), 1000);
+                }
             } else {
                 card.style.display = 'none';
-                card.style.opacity = '0';
+                card.classList.add('hidden');
             }
         });
+        
+        // 更新计数
+        if (visibleCountEl) {
+            visibleCountEl.textContent = visibleCount;
+        }
+        
+        // 显示空状态
+        const listContainer = document.querySelector('.pub-list');
+        let noResultsEl = listContainer.querySelector('.no-results');
+        
+        if (visibleCount === 0) {
+            if (!noResultsEl) {
+                noResultsEl = document.createElement('div');
+                noResultsEl.className = 'no-results';
+                noResultsEl.innerHTML = `
+                    <i class="fas fa-search"></i>
+                    <h3>No publications found</h3>
+                    <p>Try adjusting your search or filter</p>
+                `;
+                listContainer.appendChild(noResultsEl);
+            }
+        } else if (noResultsEl) {
+            noResultsEl.remove();
+        }
     }
+    
+    // 防抖函数
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    // 初始化
+    filterPublications();
 });
 
-// 3. BibTeX 切换显示 (挂载到 window 以便 onclick 调用)
-window.toggleBibtex = function(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    if (el.classList.contains('show')) {
-        el.classList.remove('show');
-        setTimeout(() => el.style.display = 'none', 300);
-    } else {
-        el.style.display = 'block';
-        // 延时添加 class 触发 CSS transition
-        setTimeout(() => el.classList.add('show'), 10);
-    }
-}
-
-// 4. BibTeX 复制功能
-window.copyBibtex = function(id) {
+// BibTeX 复制功能
+function copyBibtex(id) {
     const container = document.getElementById(id);
     if (!container) return;
     
-    const code = container.querySelector('.code-content').innerText;
+    const code = container.querySelector('.code-content').textContent;
+    const feedback = container.querySelector('.copy-feedback');
     
     navigator.clipboard.writeText(code).then(() => {
-        const feedback = container.querySelector('.copy-feedback');
         feedback.style.display = 'block';
         setTimeout(() => {
             feedback.style.display = 'none';
         }, 2000);
     }).catch(err => {
-        console.error('Failed to copy: ', err);
-        alert('Failed to copy to clipboard.');
+        console.error('Failed to copy:', err);
+        alert('Failed to copy to clipboard. Please select and copy manually.');
     });
 }
-</script>
+
+// 暴露函数到全局
+window.copyBibtex = copyBibtex;

@@ -7,96 +7,106 @@ fullWidth: true
 <!-- 引入 FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-{{< publications_css >}}
+<div class="pub-content">
 
-<!-- 统计栏：会自动变成 2x2 (手机) 或 1x4 (电脑) -->
-{{< publications_stats >}}
+<!-- 统计栏 -->
+{{< publications_stats 
+    total="15" 
+    first="3" 
+    impact="24.3" 
+    citations="250+" 
+>}}
 
+<!-- 搜索和筛选 -->
 {{< publications_search >}}
 
-<!-- 文章列表：CSS Grid 布局，每行一个 Card，紧凑排列 -->
+<!-- 论文列表 -->
 <div class="pub-list" id="publicationList">
 
-<!-- Card 1 -->
-    {{< publication_item
-        title="Towards Scalable Visual Representation Learning"
-        year="2024"
-        type="journal"
-        tags="cv selected"
-        authors="<span class='author-me'>Your Name</span>, et al."
-        venue="IEEE TPAMI"
-        meta="<span>2024</span><span>IF: 24.3</span>"
-        venueStyle="border: 1px solid var(--pub-primary); color: var(--pub-primary);"
-        bibtexId="bib1"
-        bibtex="@article{...}"
-    >}}
-    <a href="#" class="btn-action btn-primary">PDF</a>
-    <a href="#" class="btn-action">Code</a>
+      <!-- 示例1 -->
+      {{< publication_item
+          title="Towards Scalable Visual Representation Learning"
+          year="2024"
+          type="journal"
+          tags="cv,selected"
+          search="vision transformer deep learning"
+          authors="<span class='author-me'>Your Name</span>, Jane Smith, John Doe"
+          venue="IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)"
+          award="Best Paper Award"
+          meta="<span><i class='fas fa-calendar'></i> 2024</span><span><i class='fas fa-star'></i> Impact: 24.3</span><span><i class='fas fa-quote-right'></i> Citations: 150</span>"
+          venueStyle="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
+          bibtexId="bib1"
+          bibtex="@article{example2024,
+                            title={Towards Scalable Visual Representation Learning},
+                            author={Your Name and Jane Smith and John Doe},
+                            journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+                            volume={46},
+                            number={1},
+                            pages={1--15},
+                            year={2024},
+                            publisher={IEEE}
+                            }"
+      >}}
+        <a href="https://example.com/paper.pdf" class="btn-action btn-primary">
+            <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        <a href="https://github.com/example/code" class="btn-action">
+            <i class="fab fa-github"></i> Code
+        </a>
+        <button class="btn-action" onclick="toggleBibtex('bib1')">
+            <i class="fas fa-quote-right"></i> BibTeX
+        </button>
+        <a href="https://arxiv.org/abs/xxxx.xxxxx" class="btn-action">
+            <i class="fas fa-external-link-alt"></i> arXiv
+        </a>
     {{< /publication_item >}}
     
-<!-- Card 2 -->
+    <!-- 示例2 -->
     {{< publication_item
-        title="Another Paper Title"
+        title="Efficient Multi-Modal Learning for Visual Recognition"
         year="2023"
         type="conference"
-        tags="cv"
-        authors="Author A, <span class='author-me'>Your Name</span>"
-        venue="CVPR 2023"
-        meta="<span>2023</span>"
+        tags="cv,multimodal"
+        search="multimodal attention efficient"
+        authors="Alice Johnson, <span class='author-me'>Your Name</span>, Bob Wilson"
+        venue="International Conference on Computer Vision and Pattern Recognition (CVPR)"
+        meta="<span><i class='fas fa-calendar'></i> 2023</span><span><i class='fas fa-quote-right'></i> Citations: 85</span>"
         bibtexId="bib2"
-        bibtex="@inproceedings{...}"
+        bibtex="@inproceedings{example2023,
+  title={Efficient Multi-Modal Learning for Visual Recognition},
+  author={Alice Johnson and Your Name and Bob Wilson},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={12345--12355},
+  year={2023}
+}"
     >}}
-    <a href="#" class="btn-action btn-primary">PDF</a>
+        <a href="https://example.com/paper2.pdf" class="btn-action btn-primary">
+            <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        <a href="https://github.com/example/multimodal" class="btn-action">
+            <i class="fab fa-github"></i> Code
+        </a>
+        <button class="btn-action" onclick="toggleBibtex('bib2')">
+            <i class="fas fa-quote-right"></i> BibTeX
+        </button>
     {{< /publication_item >}}
-
-    <!-- Card 2 -->
-    {{< publication_item
-        title="Another Paper Title"
-        year="2023"
-        type="conference"
-        tags="cv"
-        authors="Author A, <span class='author-me'>Your Name</span>"
-        venue="CVPR 2023"
-        meta="<span>2023</span>"
-        bibtexId="bib2"
-        bibtex="@inproceedings{...}"
-    >}}
-    <a href="#" class="btn-action btn-primary">PDF</a>
-    {{< /publication_item >}}
-
-
-<!-- Card 2 -->
-    {{< publication_item
-        title="Another Paper Title"
-        year="2023"
-        type="conference"
-        tags="cv"
-        authors="Author A, <span class='author-me'>Your Name</span>"
-        venue="CVPR 2023"
-        meta="<span>2023</span>"
-        bibtexId="bib2"
-        bibtex="@inproceedings{...}"
-    >}}
-    <a href="#" class="btn-action btn-primary">PDF</a>
-    {{< /publication_item >}}
-
-
-<!-- Card 2 -->
-    {{< publication_item
-        title="Another Paper Title"
-        year="2023"
-        type="conference"
-        tags="cv"
-        authors="Author A, <span class='author-me'>Your Name</span>"
-        venue="CVPR 2023"
-        meta="<span>2023</span>"
-        bibtexId="bib2"
-        bibtex="@inproceedings{...}"
-    >}}
-    <a href="#" class="btn-action btn-primary">PDF</a>
-    {{< /publication_item >}}
-
 
 </div>
 
-{{< publications_js >}}
+</div>
+
+<!-- 添加 toggleBibtex 函数 -->
+<script>
+function toggleBibtex(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    
+    if (el.classList.contains('show')) {
+        el.classList.remove('show');
+        setTimeout(() => el.style.display = 'none', 300);
+    } else {
+        el.style.display = 'block';
+        setTimeout(() => el.classList.add('show'), 10);
+    }
+}
+</script>

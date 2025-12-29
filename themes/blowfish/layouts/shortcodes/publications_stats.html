@@ -1,19 +1,24 @@
+<!-- 修改为 Hugo 参数化 -->
+{{ $total := .Get "total" | default "15" }}
+{{ $first := .Get "first" | default "3" }}
+{{ $impact := .Get "impact" | default "24.3" }}
+{{ $citations := .Get "citations" | default "250+" }}
+
 <div class="stats-grid">
     <div class="stat-item">
-        <!-- 如果需要动态更新，保留id，否则纯静态即可 -->
-        <h4 id="stat-total">15</h4>
-        <p>Total Papers</p>
+        <h4 class="stat-number" {{ if .Get "dynamic" }}id="stat-total"{{ end }}>{{ $total }}</h4>
+        <p class="stat-label">Total Papers</p>
     </div>
     <div class="stat-item">
-        <h4 id="stat-first">3</h4>
-        <p>First Author</p>
+        <h4 class="stat-number" {{ if .Get "dynamic" }}id="stat-first"{{ end }}>{{ $first }}</h4>
+        <p class="stat-label">First Author</p>
     </div>
     <div class="stat-item">
-        <h4>24.3</h4>
-        <p>Max Impact</p> <!-- 缩短文案防止换行 -->
+        <h4 class="stat-number">{{ $impact }}</h4>
+        <p class="stat-label">Max Impact</p>
     </div>
     <div class="stat-item">
-        <h4>250+</h4>
-        <p>Citations</p>
+        <h4 class="stat-number">{{ $citations }}</h4>
+        <p class="stat-label">Citations</p>
     </div>
 </div>

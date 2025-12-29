@@ -1,230 +1,465 @@
-<style>
-/* --- 1. 核心变量定义 --- */
+/* === 核心修复：重置 Hugo/Blowfish 样式干扰 === */
+.pub-content * {
+    box-sizing: border-box;
+}
+
+/* 重置 Hugo 自动生成的 p 标签 */
+.pub-list > p,
+.pub-actions > p {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 阻止 Blowfish prose 干扰 */
+.pub-content .prose * {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* === 变量定义 === */
 :root {
+    /* 色彩 */
     --pub-primary: #2563eb;
+    --pub-primary-light: #3b82f6;
     --pub-bg-card: #ffffff;
     --pub-border: #e2e8f0;
     --pub-text-main: #1e293b;
     --pub-text-muted: #64748b;
     --pub-tag-bg: #f1f5f9;
     --pub-award: #d97706;
+    --pub-highlight: #fef3c7;
+    
+    /* 尺寸 */
     --pub-radius: 8px;
-    --pub-spacing: 1rem; /* 控制卡片内间距 */
+    --pub-spacing: 1rem;
+    --pub-spacing-sm: 0.75rem;
+    --pub-spacing-xs: 0.5rem;
+    
+    /* 阴影 */
+    --pub-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --pub-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Blowfish 暗色模式自动适配 */
-html.dark :root {
-    --pub-primary: #60a5fa;
-    --pub-bg-card: #1e293b; /* slate-800 */
-    --pub-border: #334155;  /* slate-700 */
+/* 暗色模式适配 */
+.dark {
+    --pub-bg-card: #1e293b;
+    --pub-border: #334155;
     --pub-text-main: #f1f5f9;
     --pub-text-muted: #94a3b8;
     --pub-tag-bg: #334155;
+    --pub-primary: #60a5fa;
+    --pub-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* --- 2. 布局容器重置 (关键修复) --- */
-
-/* 强制清除 Hugo 在列表间自动插入的 P 标签干扰 */
-.pub-list > p {
-    display: none; 
-    margin: 0; 
-    padding: 0;
+/* === 统计卡片 === */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-/* 列表容器：使用 CSS Grid 实现紧凑垂直排列 */
+.stat-item {
+    background: var(--pub-bg-card);
+    border: 1px solid var(--pub-border);
+    border-radius: var(--pub-radius);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--pub-shadow);
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--pub-primary);
+    margin: 0 0 0.25rem 0;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--pub-text-muted);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* === 控制区域 === */
+.pub-controls {
+    margin-bottom: 1.5rem;
+}
+
+.search-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pub-text-muted);
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 1px solid var(--pub-border);
+    border-radius: var(--pub-radius);
+    background: var(--pub-bg-card);
+    color: var(--pub-text-main);
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--pub-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--pub-border);
+    border-radius: 2rem;
+    background: var(--pub-bg-card);
+    color: var(--pub-text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: var(--pub-primary);
+    color: var(--pub-primary);
+}
+
+.filter-btn.active {
+    background: var(--pub-primary);
+    border-color: var(--pub-primary);
+    color: white;
+}
+
+.results-count {
+    font-size: 0.875rem;
+    color: var(--pub-text-muted);
+    text-align: right;
+}
+
+/* === 论文列表 === */
 .pub-list {
     display: grid;
-    gap: 1rem; /* 卡片之间的间距 */
-    width: 100%;
-    margin-top: 1rem;
+    gap: 1rem;
 }
 
-/* --- 3. 论文卡片设计 (Compact Mode) --- */
 .pub-card {
     background: var(--pub-bg-card);
     border: 1px solid var(--pub-border);
     border-radius: var(--pub-radius);
-    padding: var(--pub-spacing); /* 紧凑内边距 */
-    display: flex;
-    flex-direction: column;
+    padding: var(--pub-spacing);
+    transition: all 0.2s;
     position: relative;
-    transition: all 0.2s ease-in-out;
-    box-sizing: border-box;
-    /* 强制重置 Blowfish prose 样式干扰 */
-    text-align: left;
-    line-height: 1.5;
 }
 
-/* 悬停效果 */
 .pub-card:hover {
     border-color: var(--pub-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    z-index: 10;
+    box-shadow: var(--pub-shadow-hover);
 }
 
-/* --- 4. 内部元素排版 (覆盖 prose 默认巨大的 margin) --- */
+.pub-card.highlight {
+    background: var(--pub-highlight);
+    border-color: var(--pub-primary);
+}
 
-/* 头部：标题 + 标签 */
 .pub-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
+    gap: 1rem;
     margin-bottom: 0.5rem;
 }
 
-/* 标题：强制去除 margin，设置紧凑行高 */
-.pub-card h3.pub-title {
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    color: var(--pub-text-main) !important;
-    margin: 0 !important; /* 核心修复：去除默认间距 */
-    line-height: 1.3 !important;
+.pub-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--pub-text-main);
+    margin: 0;
+    line-height: 1.3;
     flex: 1;
 }
 
-/* 标签：防止换行 */
-.meta-tag {
-    background: var(--pub-tag-bg);
-    color: var(--pub-text-muted);
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    white-space: nowrap;
-    flex-shrink: 0;
-    height: fit-content;
+.pub-title a {
+    color: inherit;
+    text-decoration: none;
 }
 
-/* 奖项：紧凑显示 */
+.pub-title a:hover {
+    color: var(--pub-primary);
+}
+
+.pub-type-tag {
+    flex-shrink: 0;
+}
+
+.meta-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--pub-tag-bg);
+    color: var(--pub-text-muted);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
 .award-badge {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    font-size: 0.75rem;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(245, 158, 11, 0.1));
     color: var(--pub-award);
-    font-weight: 700;
-    background: rgba(217, 119, 6, 0.1);
-    padding: 2px 6px;
     border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
     width: fit-content;
 }
 
-/* 作者列表 */
+.award-badge i {
+    font-size: 0.9em;
+}
+
 .pub-authors {
-    font-size: 0.9rem !important;
-    color: var(--pub-text-muted) !important;
-    margin: 0 0 0.25rem 0 !important; /* 微小下间距 */
-    line-height: 1.4 !important;
+    font-size: 0.95rem;
+    color: var(--pub-text-main);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.4;
 }
 
 .author-me {
-    color: var(--pub-text-main);
+    color: var(--pub-primary);
     font-weight: 700;
     text-decoration: underline;
-    text-decoration-color: var(--pub-primary);
+    text-decoration-thickness: 2px;
     text-underline-offset: 2px;
 }
 
-/* 发表场所 */
 .pub-venue {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem;
+    color: var(--pub-text-muted);
     font-style: italic;
-    color: var(--pub-text-main) !important;
-    margin: 0 0 0.5rem 0 !important;
+    margin: 0 0 0.5rem 0;
 }
 
-/* 元数据 (年份/IF) */
 .pub-meta {
     display: flex;
-    gap: 12px;
-    font-size: 0.75rem;
+    gap: 1rem;
+    font-size: 0.85rem;
     color: var(--pub-text-muted);
     margin-bottom: 0.75rem;
-    opacity: 0.9;
 }
 
-/* --- 5. 按钮区域修复 --- */
+.pub-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 .pub-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto; /* 将按钮推到底部 */
+    gap: 0.5rem;
+    margin-top: 0.75rem;
 }
 
-/* 修复：防止 .Inner 中的内容被 Hugo 包裹 p 标签导致换行 */
-.pub-actions p {
+/* 关键修复：防止按钮换行 */
+.pub-actions > * {
     margin: 0 !important;
     padding: 0 !important;
-    display: contents; /* 关键：消除 p 标签的盒模型影响 */
+    display: inline-flex !important;
 }
 
 .btn-action {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 4px 10px;
-    height: 28px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-decoration: none !important; /* 去除 prose 下划线 */
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--pub-bg-card);
     border: 1px solid var(--pub-border);
-    color: var(--pub-text-muted) !important;
-    background: transparent;
+    border-radius: 4px;
+    color: var(--pub-text-main);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.2s;
     line-height: 1;
 }
 
-.btn-primary {
-    color: var(--pub-primary) !important;
-    border-color: var(--pub-primary);
-    background: rgba(37, 99, 235, 0.05);
-}
-
 .btn-action:hover {
     background: var(--pub-tag-bg);
-    color: var(--pub-text-main) !important;
+    border-color: var(--pub-primary);
+    color: var(--pub-primary);
 }
 
-.btn-primary:hover {
+.btn-primary {
     background: var(--pub-primary);
+    border-color: var(--pub-primary);
     color: white !important;
 }
 
-/* --- 6. BibTeX 区域 --- */
+.btn-primary:hover {
+    background: var(--pub-primary-light);
+    border-color: var(--pub-primary-light);
+}
+
+/* === BibTeX 区域 === */
 .bibtex-container {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     background: var(--pub-tag-bg);
     border-radius: 6px;
-    padding: 0.75rem;
-    font-family: monospace;
-    font-size: 0.7rem;
-    position: relative;
-    display: none; /* 默认隐藏 */
+    padding: 1rem;
+    display: none;
     border: 1px dashed var(--pub-border);
 }
 
 .bibtex-container.show {
     display: block;
-    animation: fadeIn 0.2s ease;
+    animation: fadeIn 0.3s ease;
 }
 
-/* 移动端适配 */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--pub-border);
+}
+
+.bibtex-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--pub-text-main);
+}
+
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--pub-bg-card);
+    border: 1px solid var(--pub-border);
+    border-radius: 4px;
+    color: var(--pub-text-muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: var(--pub-primary);
+    border-color: var(--pub-primary);
+    color: white;
+}
+
+.code-content {
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--pub-text-main);
+    margin: 0;
+    overflow-x: auto;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.copy-feedback {
+    display: none;
+    font-size: 0.8rem;
+    color: #10b981;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* === 动画 === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === 响应式设计 === */
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .pub-list {
+        gap: 1.25rem;
+    }
+    
+    .pub-card {
+        padding: 1.25rem;
+    }
+}
+
 @media (max-width: 640px) {
     .pub-header {
         flex-direction: column;
-        gap: 4px;
+        gap: 0.5rem;
     }
-    .meta-tag {
+    
+    .pub-type-tag {
         align-self: flex-start;
+    }
+    
+    .filter-group {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .pub-actions {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
     }
 }
 
-/* 通用工具类 */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-</style>
+/* === 空状态 === */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--pub-text-muted);
+}
+
+.no-results i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
