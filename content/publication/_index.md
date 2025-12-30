@@ -209,7 +209,7 @@ fullWidth: true
         tags="ai,image fusion"
         award="SPIE Wechat Highlight Paper"
         search="infrared visible image fusion retinex"
-        authors="<span class='author-me'>Yuanjie Gu</span>, Zhibo Xiao, Yinghan Guan, Haoran Dai, Cheng Liu, Liang Xue, Shouyu Wang"
+        authors="<span class='author-me'>Yuanjie Gu</span>, Zhibo Xiao, Yinghan Guan, Haoran Dai, Cheng Liu, Liang Xue, Shouyu Wang*"
         venue="Optical Engineering"
         meta="<span><i class='fas fa-calendar'></i> 2023</span><span><i class='fas fa-book'></i> Opt. Eng.</span><span><i class='fas fa-star'></i> IF: ~1.3</span><span><i class='fas fa-quote-right'></i> Citations: TBD</span>"
         bibtexId="bib7"
