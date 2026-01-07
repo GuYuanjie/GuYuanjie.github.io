@@ -65,7 +65,7 @@ showReadingTime: false
 
 ### 🏆 Honors
 - 🏅 **National Scholarship** for Doctoral Students (Highest Honor), 2025.
-- 🚀 **Young Talent Lifting Project**, Selected by CAST (China Association for Science and Technology), 2024.
+- 🚀 **Young Elite Scientists Sponsorship Program by CAST**, Selected by CAST (China Association for Science and Technology), 2024.
 - 🧬 **CSHL (Asia) Scholar**, Selected for Neural Data Analysis Summer School, 2024.
 - 🥇 **Gold Medal**, China International College Students' Innovation Competition (Shanghai), 2024.
 
