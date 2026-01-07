@@ -9,21 +9,21 @@ pageRef = "research"
 weight = 20
 
 [[main]]
-name = "Field 1"
+name = "Computational Imaging"
 parent = "Research"
-pageRef = "/research/android"
+pageRef = "/research/computational-imaging"
 weight = 21
 
 [[main]]
-name = "Field 2"
+name = "Neuromodulation"
 parent = "Research"
-pageRef = "/research/ui-ux"
+pageRef = "/research/all-optical-neuromodulation"
 weight = 22
 
 [[main]]
-name = "Field 3"
+name = "AI‑assisted Medical Analysis & Diagnostics"
 parent = "Research"
-pageRef = "/research/website"
+pageRef = "/research/medical-imaging"
 weight = 23
 
 [[main]]
@@ -32,13 +32,8 @@ pageRef = "publication"
 weight = 30
 
 [[main]]
-name = "Gallery"
-pageRef = "gallery"
-weight = 40
-
-[[main]]
 name = "Contact"
 pageRef = "contact"
-weight = 50
+weight = 40
 
 

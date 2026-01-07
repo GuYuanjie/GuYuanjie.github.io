@@ -20,7 +20,7 @@ showScrollToTop = true
 [homepage]
 layout = "background"
 homepageImage = "img/background.svg"
-showRecent = true
+showRecent = false
 showRecentItems = 3
 showMoreLink = true
 showMoreLinkDest = "/blowfish_artist/posts"
