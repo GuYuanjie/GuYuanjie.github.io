@@ -30,6 +30,27 @@ fullWidth: true
 <!-- 论文列表 -->
 <div class="pub-list" id="publicationList">
     <!-- ================================================================================== -->
+    <!-- 2026 Papers -->
+    <!-- ================================================================================== -->
+    {{< publication_item
+        title="Data-efficient self-supervised 3DCNN for real-time terahertz image denoising and enhancement"
+        year="2026"
+        type="journal"
+        tags="ai,denoising"
+        search="self-supervised denoising"
+        authors="Xinhua Li, Xiaoran Li, <span class='author-me'>Yuanjie Gu</span>, Xinyan Qian, jiandong Sun, Biqin Dong* and Xiaoping Zheng*"
+        venue="Optics and Laser Technology"
+        meta="<span><i class='fas fa-calendar'></i> 2026</span><span><i class='fas fa-book'></i> Opt. Laser Technol.</span><span><i class='fas fa-star'></i> IF: ~5.1~</span><span><i class='fas fa-quote-right'></i> Citations: TBD</span>"
+        bibtexId="bib202601"
+        bibtexKey="gu2026thz"
+        bibtexContent="@article{gu2026thz, title={Data-efficient self-supervised 3DCNN for real-time terahertz image denoising and enhancement}, author={Li, Xinhua and Li, Xiaoran and Gu, Yuanjie and Qian, Xinyan and Sun, Jiandong and Dong, Biqin and Zheng, Xiaoping}, journal={Optics and Laser Technology}, volume={196}, pages={114656}, year={2026}}"
+    >}}
+        <a href="#" class="btn-action btn-primary"><i class="fas fa-file-pdf"></i> PDF</a>
+        <a href="#" class="btn-action"><i class="fab fa-github"></i> Code</a>
+        <button class="btn-action" onclick="toggleBibtex('bib3')"><i class="fas fa-quote-right"></i> BibTeX</button>
+        <a href="#" class="btn-action"><i class="fas fa-external-link-alt"></i> arXiv</a>
+    {{< /publication_item >}}
+    <!-- ================================================================================== -->
     <!-- 2025 Papers -->
     <!-- ================================================================================== -->
     {{< publication_item
