@@ -47,7 +47,7 @@ fullWidth: true
     >}}
         <a href="#" class="btn-action btn-primary"><i class="fas fa-file-pdf"></i> PDF</a>
         <a href="#" class="btn-action"><i class="fab fa-github"></i> Code</a>
-        <button class="btn-action" onclick="toggleBibtex('bib3')"><i class="fas fa-quote-right"></i> BibTeX</button>
+        <button class="btn-action" onclick="toggleBibtex('bib202601')"><i class="fas fa-quote-right"></i> BibTeX</button>
         <a href="#" class="btn-action"><i class="fas fa-external-link-alt"></i> arXiv</a>
     {{< /publication_item >}}
     <!-- ================================================================================== -->
