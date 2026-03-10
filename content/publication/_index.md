@@ -33,6 +33,25 @@ fullWidth: true
     <!-- 2026 Papers -->
     <!-- ================================================================================== -->
     {{< publication_item
+        title="Enhancing Biomedical Optical Volumetric Imaging via Self-Supervised Orthogonal Learning"
+        year="2026"
+        type="journal"
+        tags="ai,imaging,selected"
+        search="self-supervised biomedical optical imaging"
+        authors="<span class='author-me'>Yuanjie Gu</span>#, Yiqun Wang#, Ang Xuan, Jianping Wang, Linyi Wang, Lei Zhang, Xiaoran Li, Yao Wu, Jun Zhang, Zhi Lu*, Biqin Dong*"
+        venue="Science Advances"
+        venueStyle="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
+        meta="<span><i class='fas fa-calendar'></i> 2025</span><span><i class='fas fa-book'></i> Sci. Adv.</span><span><i class='fas fa-star'></i> IF: ~11.6</span><span><i class='fas fa-info-circle'></i> Accepted</span>"
+        bibtexId="bib1"
+        bibtexKey="gu2026enhancing"
+        bibtexContent="@article{gu2026enhancing, title={Enhancing Biomedical Optical Volumetric Imaging via Self-Supervised Orthogonal Learning}, author={Gu, Yuanjie and Wang, Yiqun and Xuan, Ang and Wang, Jianping and Wang, Linyi and Zhang, Lei and Li, Xiaoran and Wu, Yao and Zhang, Jun and Lu, Zhi and Dong, Biqin}, journal={Science Advances}, year={2026}}"
+    >}}
+        <a href="#" class="btn-action btn-primary"><i class="fas fa-file-pdf"></i> PDF</a>
+        <a href="#" class="btn-action"><i class="fab fa-github"></i> Code</a>
+        <button class="btn-action" onclick="toggleBibtex('bib1')"><i class="fas fa-quote-right"></i> BibTeX</button>
+        <a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654259v1" class="btn-action"><i class="fas fa-external-link-alt"></i> bioRxiv</a>
+    {{< /publication_item >}}
+    {{< publication_item
         title="Data-efficient self-supervised 3DCNN for real-time terahertz image denoising and enhancement"
         year="2026"
         type="journal"
@@ -53,25 +72,6 @@ fullWidth: true
     <!-- ================================================================================== -->
     <!-- 2025 Papers -->
     <!-- ================================================================================== -->
-    {{< publication_item
-        title="Enhancing Biomedical Optical Volumetric Imaging via Self-Supervised Orthogonal Learning"
-        year="2025"
-        type="journal"
-        tags="ai,imaging,selected"
-        search="self-supervised biomedical optical imaging"
-        authors="<span class='author-me'>Yuanjie Gu</span>#, Yiqun Wang#, Ang Xuan, Jianping Wang, Linyi Wang, Lei Zhang, Xiaoran Li, Yao Wu, Jun Zhang, Zhi Lu*, Biqin Dong*"
-        venue="Science Advances"
-        venueStyle="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
-        meta="<span><i class='fas fa-calendar'></i> 2025</span><span><i class='fas fa-book'></i> Sci. Adv.</span><span><i class='fas fa-star'></i> IF: ~11.6</span><span><i class='fas fa-info-circle'></i> Minor Revision</span>"
-        bibtexId="bib1"
-        bibtexKey="gu2025enhancing"
-        bibtexContent="@article{gu2025enhancing, title={Enhancing Biomedical Optical Volumetric Imaging via Self-Supervised Orthogonal Learning}, author={Gu, Yuanjie and Wang, Yiqun and Xuan, Ang and Wang, Jianping and Wang, Linyi and Zhang, Lei and Li, Xiaoran and Wu, Yao and Zhang, Jun and Lu, Zhi and Dong, Biqin}, journal={Science Advances}, year={2025}}"
-    >}}
-        <a href="#" class="btn-action btn-primary"><i class="fas fa-file-pdf"></i> PDF</a>
-        <a href="#" class="btn-action"><i class="fab fa-github"></i> Code</a>
-        <button class="btn-action" onclick="toggleBibtex('bib1')"><i class="fas fa-quote-right"></i> BibTeX</button>
-        <a href="https://www.biorxiv.org/content/10.1101/2025.05.16.654259v1" class="btn-action"><i class="fas fa-external-link-alt"></i> bioRxiv</a>
-    {{< /publication_item >}}
     {{< publication_item
         title="Real-time Self-supervised Denoising for High-speed Fluorescence Neural Imaging"
         year="2025"
