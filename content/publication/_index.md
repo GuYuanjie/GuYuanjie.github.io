@@ -41,7 +41,7 @@ fullWidth: true
         authors="<span class='author-me'>Yuanjie Gu</span>#, Yiqun Wang#, Ang Xuan, Jianping Wang, Linyi Wang, Lei Zhang, Xiaoran Li, Yao Wu, Jun Zhang, Zhi Lu*, Biqin Dong*"
         venue="Science Advances"
         venueStyle="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
-        meta="<span><i class='fas fa-calendar'></i> 2025</span><span><i class='fas fa-book'></i> Sci. Adv.</span><span><i class='fas fa-star'></i> IF: ~11.6</span><span><i class='fas fa-info-circle'></i> Accepted</span>"
+        meta="<span><i class='fas fa-calendar'></i> 2026</span><span><i class='fas fa-book'></i> Sci. Adv.</span><span><i class='fas fa-star'></i> IF: ~11.6</span><span><i class='fas fa-info-circle'></i> Accepted</span>"
         bibtexId="bib1"
         bibtexKey="gu2026enhancing"
         bibtexContent="@article{gu2026enhancing, title={Enhancing Biomedical Optical Volumetric Imaging via Self-Supervised Orthogonal Learning}, author={Gu, Yuanjie and Wang, Yiqun and Xuan, Ang and Wang, Jianping and Wang, Linyi and Zhang, Lei and Li, Xiaoran and Wu, Yao and Zhang, Jun and Lu, Zhi and Dong, Biqin}, journal={Science Advances}, year={2026}}"

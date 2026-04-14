@@ -16,7 +16,7 @@ title = "Yuanjie's Home"
   name = "Yuanjie Gu"
   image = "img/avatar.png"
   headline = "Fudan University"
-  bio = "Yuanjie Gu is a Ph.D. Candidate at Fudan University, undertaking his research in conjunction with his role as Chief Technology Officer at Healin Tech Co., Ltd."
+  bio = "Yuanjie Gu is a Ph.D. Candidate at Fudan University, jointly cultivated at Tsinghua University, and is a research intern at DAMO Academy."
    links = [
      { google = "https://scholar.google.com/citations?user=DN4ZT7YAAAAJ&hl=zh-CN" },
      { github = "https://github.com/guyuanjie" },

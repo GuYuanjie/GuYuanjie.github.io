@@ -3,7 +3,9 @@ title: "Latest News"
 headless: true
 date: 2026-01-07
 ---
-### 2026-03-10 <span class="ml-2 px-1.5 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs border border-blue-200">Funding</span>
+### 2026-04-01 <span class="ml-2 px-1.5 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs border border-blue-200">Top Intern</span>
+- Joined Alibaba Group's *DAMO Academy* as a research intern! 🎉
+### 2026-03-10 <span class="ml-2 px-1.5 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs border border-blue-200">Top Journal</span>
 - A paper has been accpeted by *Science Advances*! 🎉🎉🎉
 ### 2026-01-01 <span class="ml-2 px-1.5 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs border border-blue-200">Funding</span>
 - Granted the National Natural Science Foundation of China (NSFC) - Youth Student Foundational Research Project! 🎉🎉🎉
